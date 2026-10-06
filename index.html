@@ -59,6 +59,10 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .fall h3{margin:0 0 4px;font-size:20px;line-height:1.25;color:var(--nacht)}
 .fall .werkzeug{font-size:13px;color:var(--petrol);font-weight:600;margin:0 0 16px}
 .fall dl{margin:0}
+.fall.gross{grid-column:1/-1}
+.fall.gross dl{display:grid;grid-template-columns:repeat(3,1fr);column-gap:28px}
+.fall.gross dt{grid-row:1}
+.fall.gross dd{grid-row:2}
 .fall dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--petrol);margin-top:14px}
 .fall dd{margin:4px 0 0;font-size:16px;line-height:1.5}
 
@@ -90,6 +94,7 @@ footer p{margin:0 0 10px}
 
 @media (max-width:820px){
   .faelle,.schritte,.privat{grid-template-columns:1fr}
+  .fall.gross dl{display:block}
   .profil .oben{grid-template-columns:1fr;gap:8px}
   .profil .foto{width:150px;height:150px;grid-row:1;margin:0 0 20px}
   footer .spalten{grid-template-columns:1fr}
@@ -143,6 +148,15 @@ footer p{margin:0 0 10px}
   <div class="rahmen">
     <h2>Aus der Praxis</h2>
     <div class="faelle">
+      <article class="fall gross">
+        <h3>40.000 Rückforderungen ohne Aktenberg</h3>
+        <p class="werkzeug">Power Automate Desktop (RPA)</p>
+        <dl>
+          <dt>Problem</dt><dd>Die Servicepauschale beschäftigt alle österreichischen Provider: Anwaltskanzleien fordern sie massenhaft zurück. Jeder Fall heißt prüfen, seit wann der Kunde zahlt, und die Rückerstattung samt Zinsen und Kosten berechnen — rund 15 Minuten pro Fall, bei Zehntausenden Fällen.</dd>
+          <dt>Lösung</dt><dd>Ein Software-Roboter übernimmt genau diese Schritte — Zeitraum ermitteln, Betrag im bestehenden Berechnungstool ausrechnen — so, wie es ein Mensch tun würde. Nur ohne Pause.</dd>
+          <dt>Ergebnis</dt><dd>Ausgelegt auf 40.000 Fälle pro Jahr, bis zu 99 % automatisierbar. Rund 8.900 Arbeitsstunden im Jahr gespart — über sieben Vollzeitstellen.</dd>
+        </dl>
+      </article>
       <article class="fall">
         <h3>Sehen, wo Aufträge wirklich hängen</h3>
         <p class="werkzeug">Celonis Process Mining</p>
