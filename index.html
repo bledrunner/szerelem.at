@@ -54,7 +54,7 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .zahl span{display:block;margin-top:8px;font-size:15px;color:var(--text2);line-height:1.4}
 
 .grau{background:var(--grau)}
-.faelle{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.faelle{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:36px}
 .fall{background:#fff;border-left:5px solid var(--koralle);padding:26px 24px 22px}
 .fall h3{margin:0 0 4px;font-size:20px;line-height:1.25;color:var(--nacht)}
 .fall .werkzeug{font-size:13px;color:var(--petrol);font-weight:600;margin:0 0 16px}
@@ -144,30 +144,39 @@ footer p{margin:0 0 10px}
     <h2>Aus der Praxis</h2>
     <div class="faelle">
       <article class="fall">
-        <h3>Das Postfach, das sich selbst sortiert</h3>
-        <p class="werkzeug">Power Automate · KI/LLM · Schnittstellen</p>
+        <h3>Sehen, wo Aufträge wirklich hängen</h3>
+        <p class="werkzeug">Celonis Process Mining</p>
         <dl>
-          <dt>Problem</dt><dd>Kundenanfragen landen in einem Sammelpostfach. Jede Mail lesen, Kundennummer suchen, Fall anlegen — reine Handarbeit.</dd>
-          <dt>Lösung</dt><dd>Ein Sprachmodell liest jede Mail, erkennt Kundennummer und Anliegen und fasst zusammen. Abgleich mit dem Kundensystem, der Fall wird automatisch angelegt. Unsichere Fälle gehen bewusst an einen Menschen.</dd>
-          <dt>Ergebnis</dt><dd>Das Team bearbeitet Anliegen, statt Mails zu sortieren — und niemand muss der KI blind vertrauen.</dd>
+          <dt>Problem</dt><dd>Bekannt waren nur Mengen und Bearbeitungsdauer. Wo Aufträge liegen bleiben oder zwischen Abteilungen hin- und hergeschoben werden, wusste niemand genau.</dd>
+          <dt>Lösung</dt><dd>Process Mining über den ganzen Ablauf: Durchlaufzeit, Liegezeit je Abteilung, „Ping-Pong“ zwischen Teams, Anteil der Fälle, die automatisch durchlaufen oder mit Fehler hängen bleiben.</dd>
+          <dt>Ergebnis</dt><dd>Erstmals durchgängige Transparenz. Verbessert wird dort, wo es nachweislich hakt — nicht dort, wo man es vermutet.</dd>
+        </dl>
+      </article>
+      <article class="fall">
+        <h3>Das Postfach, das sich selbst sortiert</h3>
+        <p class="werkzeug">Power Automate · KI/LLM · SharePoint</p>
+        <dl>
+          <dt>Problem</dt><dd>Über 50.000 Kundenmails im Jahr landen in einem Sammelpostfach und müssen binnen zwei Stunden händisch der richtigen Abteilung zugeteilt werden.</dd>
+          <dt>Lösung</dt><dd>Ein Sprachmodell liest jede Mail, erkennt Kundennummer und Thema und legt den Fall direkt im Kundensystem an. Die Regeln pflegt der Fachbereich selbst in einer Liste — nicht ich im Code. Unsichere Fälle gehen bewusst an einen Menschen.</dd>
+          <dt>Ergebnis</dt><dd>52.000 Fälle pro Jahr automatisch zugeordnet, über 1.200 Arbeitsstunden im Jahr frei für die eigentlichen Anliegen.</dd>
+        </dl>
+      </article>
+      <article class="fall">
+        <h3>Angebote in 30 Minuten statt 20 Stunden</h3>
+        <p class="werkzeug">Power Apps · Power Automate · eigene API · Word</p>
+        <dl>
+          <dt>Problem</dt><dd>Das gekaufte Tool für Angebotskonzepte läuft aus. Ohne Ersatz heißt das: Textbausteine suchen, kopieren, prüfen, formatieren — rund 20 Stunden pro Konzept, 190 Konzepte im Jahr.</dd>
+          <dt>Lösung</dt><dd>Eigener Ersatz: Vorlagen zentral mit Freigabeprozess, eine App zur Auswahl, ein eigener Schnittstellen-Endpunkt setzt das fertige Word-Dokument automatisch zusammen.</dd>
+          <dt>Ergebnis</dt><dd>Eine halbe statt 20 Stunden pro Konzept — rund 3.700 Stunden im Jahr gespart. Die Angebotslegung lief ohne Unterbrechung weiter.</dd>
         </dl>
       </article>
       <article class="fall">
         <h3>Altsystem am Handy, ohne Schnittstelle</h3>
         <p class="werkzeug">Power Apps · Power Automate Desktop (RPA)</p>
         <dl>
-          <dt>Problem</dt><dd>Techniker vor Ort brauchen Daten aus einem Altsystem, das nur am Büro-PC per Tastatur bedienbar ist.</dd>
-          <dt>Lösung</dt><dd>Eine schlanke App am Handy. Im Hintergrund bedient ein Software-Roboter das Altsystem — so, wie es ein Mensch tun würde.</dd>
-          <dt>Ergebnis</dt><dd>Die Info kommt dorthin, wo gearbeitet wird. Kein Anruf ins Büro, kein teurer Umbau des Altsystems.</dd>
-        </dl>
-      </article>
-      <article class="fall">
-        <h3>Sitzplätze buchen statt suchen</h3>
-        <p class="werkzeug">Power Apps · Power Automate · SharePoint</p>
-        <dl>
-          <dt>Problem</dt><dd>Während Covid durften nur begrenzt viele Plätze besetzt sein. Wer sitzt wann wo? Niemand hatte den Überblick.</dd>
-          <dt>Lösung</dt><dd>Aus Eigeninitiative eine Buchungs-App gebaut: Platz wählen, buchen, fertig — mit automatischer Bestätigung.</dd>
-          <dt>Ergebnis</dt><dd>Klare Belegung, nachvollziehbar für alle — entstanden, weil ich das Problem im Alltag selbst gesehen habe.</dd>
+          <dt>Problem</dt><dd>Techniker vor Ort müssen Leitungswerte prüfen — in einem Altsystem ohne Schnittstelle, das nur per Terminal am Laptop bedienbar ist.</dd>
+          <dt>Lösung</dt><dd>Eine schlanke App am Handy. Im Hintergrund bedient ein Software-Roboter das Terminal — so, wie es ein Mensch tun würde — und schreibt die Ergebnisse zurück.</dd>
+          <dt>Ergebnis</dt><dd>Rund 138.000 Minuten Handarbeit pro Jahr automatisiert, gut 1,5 Vollzeitstellen. Ohne das Altsystem umzubauen.</dd>
         </dl>
       </article>
     </div>
