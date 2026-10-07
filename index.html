@@ -80,6 +80,7 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .kennzahl.satz{display:block;font-size:19px;line-height:1.4;font-weight:700;color:var(--nacht);max-width:760px}
 .fall dl{margin:6px 0 0;display:grid;grid-template-columns:repeat(2,1fr);column-gap:32px}
 .fall dt{grid-row:1}
+.mehr summary{display:none}
 .fall dd{grid-row:2}
 .fall dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--petrol);margin-top:14px}
 .fall dd{margin:4px 0 0;font-size:16px;line-height:1.5}
@@ -135,6 +136,13 @@ footer p{margin:0 0 10px}
   .leiste .r{display:block;height:26px !important;border-radius:3px}
   .leiste nav a{margin-left:14px;font-size:14px}
   .kopf .logo{height:28px}
+  .mehr summary{display:block;list-style:none;cursor:pointer;margin-top:10px;padding:10px 0 2px;font-size:15px;font-weight:700;color:var(--petrol)}
+  .mehr summary::-webkit-details-marker{display:none}
+  .mehr summary::after{content:" ▾"}
+  .mehr[open] summary{margin-bottom:-4px}
+  .mehr[open] summary::after{content:" ▴"}
+  .mehr .auf,.mehr[open] .zu{display:none}
+  .mehr[open] .auf{display:inline}
   .zahlen{gap:12px}
   .zahl b{font-size:28px}
   .zahl span{font-size:13px}
@@ -194,46 +202,56 @@ footer p{margin:0 0 10px}
         <h3>40.000 Rückforderungen ohne Aktenberg</h3>
         <p class="werkzeug"><span>Power Automate Desktop (RPA)</span></p>
         <p class="kennzahl"><b>8.900</b><span><span class="einheit">Stunden pro Jahr gespart</span>Ausgelegt auf 40.000 Fälle pro Jahr, bis zu 99 % automatisierbar — über sieben Vollzeitstellen</span></p>
+        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Anwaltskanzleien fordern die Servicepauschale massenhaft zurück. Jeder Fall heißt prüfen, seit wann der Kunde zahlt, und die Rückerstattung samt Zinsen und Kosten berechnen — rund 15 Minuten pro Fall.</dd>
           <dt>Lösung</dt><dd>Ein Software-Roboter übernimmt genau diese Schritte — Zeitraum ermitteln, Betrag im bestehenden Berechnungstool ausrechnen — so, wie es ein Mensch tun würde. Nur ohne Pause.</dd>
         </dl>
+        </details>
       </article>
       <article class="fall">
         <h3>Sehen, wo Aufträge wirklich hängen</h3>
         <p class="werkzeug"><span>Celonis Process Mining</span></p>
         <p class="kennzahl satz">Erstmals durchgängige Transparenz. Verbessert wird dort, wo es nachweislich hakt — nicht dort, wo man es vermutet.</p>
+        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Bekannt waren nur Mengen und Bearbeitungsdauer. Wo Aufträge liegen bleiben oder zwischen Abteilungen hin- und hergeschoben werden, wusste niemand genau.</dd>
           <dt>Lösung</dt><dd>Process Mining über den ganzen Ablauf: Durchlaufzeit, Liegezeit je Abteilung, „Ping-Pong“ zwischen Teams, Anteil der Fälle, die automatisch durchlaufen oder mit Fehler hängen bleiben.</dd>
         </dl>
+        </details>
       </article>
       <article class="fall">
         <h3>Das Postfach, das sich selbst sortiert</h3>
         <p class="werkzeug"><span>Power Automate</span> · <span>KI/LLM</span> · <span>SharePoint</span></p>
         <p class="kennzahl"><b>1.200+</b><span><span class="einheit">Stunden pro Jahr frei</span>52.000 Fälle pro Jahr automatisch zugeordnet — Zeit für die eigentlichen Anliegen</span></p>
+        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Über 50.000 Kundenmails im Jahr landen in einem Sammelpostfach und müssen binnen zwei Stunden händisch der richtigen Abteilung zugeteilt werden.</dd>
           <dt>Lösung</dt><dd>Ein Sprachmodell liest jede Mail, erkennt Kundennummer und Thema und legt den Fall direkt im Kundensystem an. Die Regeln pflegt der Fachbereich selbst in einer Liste — nicht ich im Code. Unsichere Fälle gehen bewusst an einen Menschen.</dd>
         </dl>
+        </details>
       </article>
       <article class="fall">
         <h3>Angebote in 30 Minuten statt 20 Stunden</h3>
         <p class="werkzeug"><span>Power Apps</span> · <span>Power Automate</span> · <span>eigene API</span> · <span>Word</span></p>
         <p class="kennzahl"><b>3.700</b><span><span class="einheit">Stunden pro Jahr gespart</span>Eine halbe statt 20 Stunden pro Konzept — die Angebotslegung lief ohne Unterbrechung weiter</span></p>
+        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Das gekaufte Tool für Angebotskonzepte läuft aus. Ohne Ersatz heißt das: Textbausteine suchen, kopieren, prüfen, formatieren — rund 20 Stunden pro Konzept, 190 Konzepte im Jahr.</dd>
           <dt>Lösung</dt><dd>Eigener Ersatz: Vorlagen zentral mit Freigabeprozess, eine App zur Auswahl, ein eigener Schnittstellen-Endpunkt setzt das fertige Word-Dokument automatisch zusammen.</dd>
         </dl>
+        </details>
       </article>
       <article class="fall">
         <h3>Altsystem am Handy, ohne Schnittstelle</h3>
         <p class="werkzeug"><span>Power Apps</span> · <span>Power Automate Desktop (RPA)</span></p>
         <p class="kennzahl"><b>2.300</b><span><span class="einheit">Stunden pro Jahr automatisiert</span>Gut 1,5 Vollzeitstellen Handarbeit — ohne das Altsystem umzubauen</span></p>
+        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Techniker vor Ort müssen Leitungswerte prüfen — in einem Altsystem ohne Schnittstelle, das nur per Terminal am Laptop bedienbar ist.</dd>
           <dt>Lösung</dt><dd>Eine schlanke App am Handy. Im Hintergrund bedient ein Software-Roboter das Terminal — so, wie es ein Mensch tun würde — und schreibt die Ergebnisse zurück.</dd>
         </dl>
+        </details>
       </article>
     </div>
   </div>
@@ -308,6 +326,10 @@ footer p{margin:0 0 10px}
   </div>
 </footer>
 <script>
+// Handy: Problem/Lösung zugeklappt (ohne JS bleibt alles offen), Desktop immer offen
+const handy = matchMedia('(max-width:520px)');
+const klappen = () => document.querySelectorAll('.mehr').forEach(d => d.open = !handy.matches);
+handy.addEventListener('change', klappen); klappen();
 // Leiste ein, sobald der Kopf weg ist; aktiven Abschnitt markieren
 const leiste = document.querySelector('.leiste');
 new IntersectionObserver(([e]) => leiste.classList.toggle('an', !e.isIntersecting))
