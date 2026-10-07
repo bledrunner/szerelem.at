@@ -19,6 +19,8 @@
   --schrift:Aptos,"Segoe UI Variable","Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+section{scroll-margin-top:56px}
 body{margin:0;background:#fff;color:var(--schwarz);font:17px/1.6 var(--schrift)}
 a{color:inherit}
 .rahmen{max-width:1080px;margin:0 auto;padding:0 24px}
@@ -40,6 +42,17 @@ a{color:inherit}
 .knopf.rand{border:2px solid rgba(255,255,255,.6);color:#fff;padding:11px 22px}
 .knopf:hover{filter:brightness(1.08)}
 .motiv{display:block;width:100%;height:clamp(150px,22vw,300px);object-fit:cover;object-position:center bottom;margin-top:clamp(24px,4vw,48px)}
+
+/* Leiste: erscheint, sobald der Kopf aus dem Bild ist */
+.leiste{position:fixed;top:0;left:0;right:0;z-index:10;background:var(--nacht);box-shadow:0 1px 0 rgba(255,255,255,.08);transform:translateY(-100%);transition:transform .2s;visibility:hidden}
+.leiste.an{transform:none;visibility:visible}
+.leiste .rahmen{display:flex;justify-content:space-between;align-items:center;height:56px}
+.leiste .hoch{display:flex;align-items:center;line-height:0}
+.leiste .hoch img{height:20px;width:auto}
+.leiste .r{display:none}
+.leiste nav a{color:#fff;text-decoration:none;font-weight:600;font-size:15px;margin-left:22px;opacity:.75;padding:17px 0 15px;border-bottom:2px solid transparent}
+.leiste nav a:hover{opacity:1}
+.leiste nav a.aktiv{opacity:1;border-bottom-color:var(--koralle)}
 
 /* Abschnitte */
 section{padding:clamp(56px,8vw,96px) 0}
@@ -115,7 +128,12 @@ footer p{margin:0 0 10px}
 @media (max-width:520px){
   body{font-size:16px}
   .rahmen{padding:0 18px}
-  .kopf nav a:not(:last-child){display:none}
+  .kopf .oben{flex-wrap:wrap}
+  .kopf nav{width:100%;margin-top:16px}
+  .kopf nav a{margin:0 18px 0 0}
+  .leiste .hoch .wm{display:none}
+  .leiste .r{display:block;height:26px !important;border-radius:3px}
+  .leiste nav a{margin-left:14px;font-size:14px}
   .kopf .logo{height:28px}
   .zahlen{gap:12px}
   .zahl b{font-size:28px}
@@ -128,7 +146,7 @@ footer p{margin:0 0 10px}
 </head>
 <body>
 
-<header class="kopf">
+<header class="kopf" id="top">
   <div class="rahmen">
     <div class="oben">
       <img class="logo" src="wortmarke.svg" alt="Rene Szerelem" width="764" height="108">
@@ -144,6 +162,13 @@ footer p{margin:0 0 10px}
   </div>
   <img class="motiv" src="motiv.svg" alt="" width="1584" height="396">
 </header>
+
+<div class="leiste" aria-hidden="true">
+  <div class="rahmen">
+    <a class="hoch" href="#top" title="Nach oben" tabindex="-1"><img class="wm" src="wortmarke.svg" alt="" width="764" height="108"><img class="r" src="favicon.svg" alt="" width="26" height="26"></a>
+    <nav><a href="#praxis" tabindex="-1">Praxis</a><a href="#arbeitsweise" tabindex="-1">Arbeitsweise</a><a href="#privat" tabindex="-1">Privat</a><a href="#kontakt" tabindex="-1">Kontakt</a></nav>
+  </div>
+</div>
 
 <main>
 <section class="profil">
@@ -283,6 +308,18 @@ footer p{margin:0 0 10px}
   </div>
 </footer>
 <script>
+// Leiste ein, sobald der Kopf weg ist; aktiven Abschnitt markieren
+const leiste = document.querySelector('.leiste');
+new IntersectionObserver(([e]) => leiste.classList.toggle('an', !e.isIntersecting))
+  .observe(document.querySelector('.kopf .knoepfe'));
+const links = leiste.querySelectorAll('nav a');
+const markieren = () => {
+  let aktiv = null;
+  for (const a of links) if (document.querySelector(a.hash).getBoundingClientRect().top < innerHeight * 0.4) aktiv = a;
+  if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) aktiv = links[links.length - 1];
+  links.forEach(a => a.classList.toggle('aktiv', a === aktiv));
+};
+addEventListener('scroll', markieren, {passive: true}); markieren();
 // Fallback, wenn am Firmenrechner kein Mailprogramm eingerichtet ist
 const k = document.querySelector('.kopieren');
 if (navigator.clipboard) {
