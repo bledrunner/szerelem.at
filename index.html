@@ -30,6 +30,9 @@ a{color:inherit}
 .kopf{background:var(--nacht);color:#fff;overflow:hidden}
 .kopf .oben{display:flex;justify-content:space-between;align-items:center;padding-top:28px}
 .kopf .logo{height:34px;width:auto;display:block}
+/* Wortmarke: einmaliger Wisch von links, 0,8 s, ease-out-quart; ohne Bewegung (reduced-motion) bleibt sie statisch */
+@keyframes wisch{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@media (prefers-reduced-motion:no-preference){.kopf .logo{animation:wisch .8s cubic-bezier(.25,1,.5,1) .15s backwards}}
 .kopf nav a{color:#fff;text-decoration:none;font-weight:600;font-size:15px;margin-left:22px;opacity:.85}
 .kopf nav a:hover{opacity:1}
 .kopf h1{margin:clamp(48px,9vw,96px) 0 0;line-height:0}
