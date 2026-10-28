@@ -106,6 +106,9 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .skills ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
 .skills li{border-left:3px solid var(--nacht);padding-left:14px;color:var(--text2);font-size:16px}
 .skills li b{color:var(--nacht)}
+.grafik{margin:28px 0 0;max-width:540px}
+.grafik img{display:block;width:100%;height:auto;border:1px solid var(--grau)}
+.grafik figcaption{margin-top:8px;font-size:14px;color:var(--text2)}
 .intro{max-width:760px;color:var(--text2);margin:16px 0 0}
 .schritte{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;counter-reset:s}
 .schritt{counter-increment:s}
@@ -361,10 +364,12 @@ footer p{margin:0 0 10px}
     </div>
     <div class="skills">
       <h3>Skills: Anleitungen, die Claude bei einer Aufgabe lädt</h3>
-      <p>Ein Skill hält Ablauf, Regeln und Vorlagen für eine wiederkehrende Aufgabe fest. Ich muss die Aufgabe nicht jedes Mal neu erklären. Ein Beispiel aus meinem Alltag:</p>
+      <p>Ein Skill hält Ablauf, Regeln und Vorlagen für eine wiederkehrende Aufgabe fest. Ich muss die Aufgabe nicht jedes Mal neu erklären. Zwei Beispiele aus meinem Alltag:</p>
       <ul>
         <li><b>Textprüfung nach Hausregeln:</b> findet AI-typische Formulierungen in deutschen Texten und schreibt sie um.</li>
+        <li><b>Infografiken im eigenen Design:</b> zeichnet aus Text und echten Zahlen eine fertige Grafik. Erster Einsatz: warum lange Chats mehr Token verbrauchen.</li>
       </ul>
+      <figure class="grafik"><img src="token-treppe.webp" alt="Infografik: Ein langer Chat mit 12 Nachrichten verbraucht 78 Blöcke, dieselbe Arbeit in zwei kurzen Chats nur 42. Jede neue Nachricht liest den ganzen Chat noch einmal mit." width="1080" height="1350" loading="lazy"><figcaption>Mit dem Infografik-Skill gebaut, Zahlen aus meinen eigenen Logs.</figcaption></figure>
     </div>
   </div>
 </section>
