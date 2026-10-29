@@ -122,6 +122,26 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .grafik .g-legende{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 18px;margin:12px 0 0;font-size:13px;color:var(--text2)}
 .grafik .g-legende span{display:inline-flex;align-items:center;gap:6px}
 .grafik .g-legende svg{width:12px;height:12px;flex:none}
+.grafik .g-legende svg.saeule{width:6px;height:18px}
+.grafik [hidden]{display:none !important}
+.g-reiter{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.g-reiter button,.g-knoepfe button{font:inherit;font-size:14px;font-weight:700;padding:7px 15px;border:1.5px solid var(--nacht);border-radius:999px;background:transparent;color:var(--nacht);cursor:pointer}
+.g-reiter button[aria-selected=true]{background:var(--nacht);color:#fff}
+.g-knoepfe .g-weiter{background:var(--koralle);border-color:var(--koralle);color:var(--schwarz)}
+.g-reiter button:focus-visible,.g-knoepfe button:focus-visible,.g-zum-beispiel:focus-visible{outline:2px solid var(--petrol);outline-offset:2px}
+.g-knoepfe button:disabled{opacity:.35;cursor:default}
+.g-schema{display:contents}
+.g-zum-beispiel{font:inherit;font-size:15px;font-weight:700;color:var(--petrol);background:none;border:0;padding:0;margin:12px 0 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.g-beispiel{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.15fr;grid-template-areas:"intro bild" "steuer bild";gap:8px 32px;align-items:start}
+.g-intro{grid-area:intro}.g-steuer{grid-area:steuer}.g-beispiel .g-bild{grid-area:bild;align-self:center}
+.g-beispiel .g-bild{cursor:pointer}
+.g-frage{background:#fff;border-left:3px solid var(--koralle);padding:10px 14px;margin:4px 0 12px}
+.g-frage small{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--petrol);margin-bottom:2px}
+.g-frage q{font-size:17px;font-weight:600;color:var(--nacht)}
+.grafik .g-erklaer{min-height:6.6em}
+.g-knoepfe{display:flex;flex-wrap:wrap;gap:8px}
+@media (prefers-reduced-motion:no-preference){.g-beispiel .neu{animation:g-auf .35s ease-out backwards}}
+@keyframes g-auf{from{opacity:0;transform:translateY(-6px)}}
 .intro{max-width:760px;color:var(--text2);margin:16px 0 0}
 .schritte{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;counter-reset:s}
 .schritt{counter-increment:s}
@@ -153,6 +173,8 @@ footer p{margin:0 0 10px}
   .schritte,.privat,.aiprojekte,.grafik{grid-template-columns:1fr}
   .grafik{padding:22px 20px 18px}
   .grafik .g-bild{max-width:520px}
+  .g-beispiel{grid-template-columns:1fr;grid-template-areas:"intro" "bild" "steuer";gap:12px}
+  .grafik .g-erklaer{min-height:0}
   .fall dl{display:block}
   .fall{padding:22px 20px}
   .profil .oben{grid-template-columns:1fr;gap:8px}
@@ -384,19 +406,46 @@ footer p{margin:0 0 10px}
         <li><b>Textprüfung nach Hausregeln:</b> findet AI-typische Formulierungen in deutschen Texten und schreibt sie um.</li>
         <li><b>Infografiken im eigenen Design:</b> zeichnet aus Text und echten Zahlen eine fertige Grafik. Erster Einsatz: warum lange Chats mehr Token verbrauchen.</li>
       </ul>
-      <figure class="grafik" aria-label="Infografik: Ein langer Chat mit 12 Nachrichten verbraucht 78 Blöcke, dieselbe Arbeit in zwei kurzen Chats nur 42.">
+      <figure class="grafik" aria-label="Infografik: Ein langer Chat mit 12 Fragen verbraucht 78 Blöcke, dieselbe Arbeit in zwei kurzen Chats nur 42.">
+        <div class="g-reiter" role="tablist" aria-label="Ansicht" hidden>
+          <button type="button" role="tab" aria-selected="true" aria-controls="g-schema" data-ansicht="schema">Schema</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="g-beispiel" data-ansicht="beispiel">Beispiel zum Durchklicken</button>
+        </div>
+        <div class="g-schema" id="g-schema" role="tabpanel">
         <div class="g-text">
           <p class="g-titel">Lange Chats verbrennen Token</p>
-          <p>Jede neue Nachricht liest den ganzen Chat noch einmal mit. Jede Säule ist eine Nachricht, darum werden die Säulen immer höher.</p>
+          <p>Bei jeder neuen Frage liest die AI den ganzen Chat noch einmal mit. Jede Säule ist eine Frage, ihre Höhe zeigt, wie viel die AI dafür liest. Darum wird jede Säule höher als die davor.</p>
           <p>Im Schema spart das fast die Hälfte. In meinen echten Chats wäre so <mark>rund ein Fünftel</mark> der Token vermeidbar gewesen.</p>
           <p class="g-tipp">Pro Aufgabe ein neuer Chat.</p>
+          <button type="button" class="g-zum-beispiel" data-ansicht="beispiel" hidden>Lieber an einem Beispiel? Hier durchklicken ›</button>
         </div>
         <div class="g-bild" aria-hidden="true">
           <div><svg viewBox="0 0 168 168"><rect class="voll" x="1" y="155" width="12" height="12" rx="2"/><rect class="voll" x="15" y="155" width="12" height="12" rx="2"/><rect class="voll" x="15" y="141" width="12" height="12" rx="2"/><rect class="voll" x="29" y="155" width="12" height="12" rx="2"/><rect class="voll" x="29" y="141" width="12" height="12" rx="2"/><rect class="voll" x="29" y="127" width="12" height="12" rx="2"/><rect class="voll" x="43" y="155" width="12" height="12" rx="2"/><rect class="voll" x="43" y="141" width="12" height="12" rx="2"/><rect class="voll" x="43" y="127" width="12" height="12" rx="2"/><rect class="voll" x="43" y="113" width="12" height="12" rx="2"/><rect class="voll" x="57" y="155" width="12" height="12" rx="2"/><rect class="voll" x="57" y="141" width="12" height="12" rx="2"/><rect class="voll" x="57" y="127" width="12" height="12" rx="2"/><rect class="voll" x="57" y="113" width="12" height="12" rx="2"/><rect class="voll" x="57" y="99" width="12" height="12" rx="2"/><rect class="voll" x="71" y="155" width="12" height="12" rx="2"/><rect class="voll" x="71" y="141" width="12" height="12" rx="2"/><rect class="voll" x="71" y="127" width="12" height="12" rx="2"/><rect class="voll" x="71" y="113" width="12" height="12" rx="2"/><rect class="voll" x="71" y="99" width="12" height="12" rx="2"/><rect class="voll" x="71" y="85" width="12" height="12" rx="2"/><rect class="voll" x="85" y="155" width="12" height="12" rx="2"/><rect class="rot" x="85" y="141" width="12" height="12" rx="2"/><rect class="rot" x="85" y="127" width="12" height="12" rx="2"/><rect class="rot" x="85" y="113" width="12" height="12" rx="2"/><rect class="rot" x="85" y="99" width="12" height="12" rx="2"/><rect class="rot" x="85" y="85" width="12" height="12" rx="2"/><rect class="rot" x="85" y="71" width="12" height="12" rx="2"/><rect class="voll" x="99" y="155" width="12" height="12" rx="2"/><rect class="voll" x="99" y="141" width="12" height="12" rx="2"/><rect class="rot" x="99" y="127" width="12" height="12" rx="2"/><rect class="rot" x="99" y="113" width="12" height="12" rx="2"/><rect class="rot" x="99" y="99" width="12" height="12" rx="2"/><rect class="rot" x="99" y="85" width="12" height="12" rx="2"/><rect class="rot" x="99" y="71" width="12" height="12" rx="2"/><rect class="rot" x="99" y="57" width="12" height="12" rx="2"/><rect class="voll" x="113" y="155" width="12" height="12" rx="2"/><rect class="voll" x="113" y="141" width="12" height="12" rx="2"/><rect class="voll" x="113" y="127" width="12" height="12" rx="2"/><rect class="rot" x="113" y="113" width="12" height="12" rx="2"/><rect class="rot" x="113" y="99" width="12" height="12" rx="2"/><rect class="rot" x="113" y="85" width="12" height="12" rx="2"/><rect class="rot" x="113" y="71" width="12" height="12" rx="2"/><rect class="rot" x="113" y="57" width="12" height="12" rx="2"/><rect class="rot" x="113" y="43" width="12" height="12" rx="2"/><rect class="voll" x="127" y="155" width="12" height="12" rx="2"/><rect class="voll" x="127" y="141" width="12" height="12" rx="2"/><rect class="voll" x="127" y="127" width="12" height="12" rx="2"/><rect class="voll" x="127" y="113" width="12" height="12" rx="2"/><rect class="rot" x="127" y="99" width="12" height="12" rx="2"/><rect class="rot" x="127" y="85" width="12" height="12" rx="2"/><rect class="rot" x="127" y="71" width="12" height="12" rx="2"/><rect class="rot" x="127" y="57" width="12" height="12" rx="2"/><rect class="rot" x="127" y="43" width="12" height="12" rx="2"/><rect class="rot" x="127" y="29" width="12" height="12" rx="2"/><rect class="voll" x="141" y="155" width="12" height="12" rx="2"/><rect class="voll" x="141" y="141" width="12" height="12" rx="2"/><rect class="voll" x="141" y="127" width="12" height="12" rx="2"/><rect class="voll" x="141" y="113" width="12" height="12" rx="2"/><rect class="voll" x="141" y="99" width="12" height="12" rx="2"/><rect class="rot" x="141" y="85" width="12" height="12" rx="2"/><rect class="rot" x="141" y="71" width="12" height="12" rx="2"/><rect class="rot" x="141" y="57" width="12" height="12" rx="2"/><rect class="rot" x="141" y="43" width="12" height="12" rx="2"/><rect class="rot" x="141" y="29" width="12" height="12" rx="2"/><rect class="rot" x="141" y="15" width="12" height="12" rx="2"/><rect class="voll" x="155" y="155" width="12" height="12" rx="2"/><rect class="voll" x="155" y="141" width="12" height="12" rx="2"/><rect class="voll" x="155" y="127" width="12" height="12" rx="2"/><rect class="voll" x="155" y="113" width="12" height="12" rx="2"/><rect class="voll" x="155" y="99" width="12" height="12" rx="2"/><rect class="voll" x="155" y="85" width="12" height="12" rx="2"/><rect class="rot" x="155" y="71" width="12" height="12" rx="2"/><rect class="rot" x="155" y="57" width="12" height="12" rx="2"/><rect class="rot" x="155" y="43" width="12" height="12" rx="2"/><rect class="rot" x="155" y="29" width="12" height="12" rx="2"/><rect class="rot" x="155" y="15" width="12" height="12" rx="2"/><rect class="rot" x="155" y="1" width="12" height="12" rx="2"/></svg><b>78 Blöcke</b><span>1 langer Chat, 12 Nachrichten</span></div>
           <div><svg viewBox="0 0 182 168"><rect class="voll" x="1" y="155" width="12" height="12" rx="2"/><rect class="voll" x="15" y="155" width="12" height="12" rx="2"/><rect class="voll" x="15" y="141" width="12" height="12" rx="2"/><rect class="voll" x="29" y="155" width="12" height="12" rx="2"/><rect class="voll" x="29" y="141" width="12" height="12" rx="2"/><rect class="voll" x="29" y="127" width="12" height="12" rx="2"/><rect class="voll" x="43" y="155" width="12" height="12" rx="2"/><rect class="voll" x="43" y="141" width="12" height="12" rx="2"/><rect class="voll" x="43" y="127" width="12" height="12" rx="2"/><rect class="voll" x="43" y="113" width="12" height="12" rx="2"/><rect class="voll" x="57" y="155" width="12" height="12" rx="2"/><rect class="voll" x="57" y="141" width="12" height="12" rx="2"/><rect class="voll" x="57" y="127" width="12" height="12" rx="2"/><rect class="voll" x="57" y="113" width="12" height="12" rx="2"/><rect class="voll" x="57" y="99" width="12" height="12" rx="2"/><rect class="voll" x="71" y="155" width="12" height="12" rx="2"/><rect class="voll" x="71" y="141" width="12" height="12" rx="2"/><rect class="voll" x="71" y="127" width="12" height="12" rx="2"/><rect class="voll" x="71" y="113" width="12" height="12" rx="2"/><rect class="voll" x="71" y="99" width="12" height="12" rx="2"/><rect class="voll" x="71" y="85" width="12" height="12" rx="2"/><rect class="voll" x="99" y="155" width="12" height="12" rx="2"/><rect class="weg" x="99" y="141" width="12" height="12" rx="2"/><rect class="weg" x="99" y="127" width="12" height="12" rx="2"/><rect class="weg" x="99" y="113" width="12" height="12" rx="2"/><rect class="weg" x="99" y="99" width="12" height="12" rx="2"/><rect class="weg" x="99" y="85" width="12" height="12" rx="2"/><rect class="weg" x="99" y="71" width="12" height="12" rx="2"/><rect class="voll" x="113" y="155" width="12" height="12" rx="2"/><rect class="voll" x="113" y="141" width="12" height="12" rx="2"/><rect class="weg" x="113" y="127" width="12" height="12" rx="2"/><rect class="weg" x="113" y="113" width="12" height="12" rx="2"/><rect class="weg" x="113" y="99" width="12" height="12" rx="2"/><rect class="weg" x="113" y="85" width="12" height="12" rx="2"/><rect class="weg" x="113" y="71" width="12" height="12" rx="2"/><rect class="weg" x="113" y="57" width="12" height="12" rx="2"/><rect class="voll" x="127" y="155" width="12" height="12" rx="2"/><rect class="voll" x="127" y="141" width="12" height="12" rx="2"/><rect class="voll" x="127" y="127" width="12" height="12" rx="2"/><rect class="weg" x="127" y="113" width="12" height="12" rx="2"/><rect class="weg" x="127" y="99" width="12" height="12" rx="2"/><rect class="weg" x="127" y="85" width="12" height="12" rx="2"/><rect class="weg" x="127" y="71" width="12" height="12" rx="2"/><rect class="weg" x="127" y="57" width="12" height="12" rx="2"/><rect class="weg" x="127" y="43" width="12" height="12" rx="2"/><rect class="voll" x="141" y="155" width="12" height="12" rx="2"/><rect class="voll" x="141" y="141" width="12" height="12" rx="2"/><rect class="voll" x="141" y="127" width="12" height="12" rx="2"/><rect class="voll" x="141" y="113" width="12" height="12" rx="2"/><rect class="weg" x="141" y="99" width="12" height="12" rx="2"/><rect class="weg" x="141" y="85" width="12" height="12" rx="2"/><rect class="weg" x="141" y="71" width="12" height="12" rx="2"/><rect class="weg" x="141" y="57" width="12" height="12" rx="2"/><rect class="weg" x="141" y="43" width="12" height="12" rx="2"/><rect class="weg" x="141" y="29" width="12" height="12" rx="2"/><rect class="voll" x="155" y="155" width="12" height="12" rx="2"/><rect class="voll" x="155" y="141" width="12" height="12" rx="2"/><rect class="voll" x="155" y="127" width="12" height="12" rx="2"/><rect class="voll" x="155" y="113" width="12" height="12" rx="2"/><rect class="voll" x="155" y="99" width="12" height="12" rx="2"/><rect class="weg" x="155" y="85" width="12" height="12" rx="2"/><rect class="weg" x="155" y="71" width="12" height="12" rx="2"/><rect class="weg" x="155" y="57" width="12" height="12" rx="2"/><rect class="weg" x="155" y="43" width="12" height="12" rx="2"/><rect class="weg" x="155" y="29" width="12" height="12" rx="2"/><rect class="weg" x="155" y="15" width="12" height="12" rx="2"/><rect class="voll" x="169" y="155" width="12" height="12" rx="2"/><rect class="voll" x="169" y="141" width="12" height="12" rx="2"/><rect class="voll" x="169" y="127" width="12" height="12" rx="2"/><rect class="voll" x="169" y="113" width="12" height="12" rx="2"/><rect class="voll" x="169" y="99" width="12" height="12" rx="2"/><rect class="voll" x="169" y="85" width="12" height="12" rx="2"/><rect class="weg" x="169" y="71" width="12" height="12" rx="2"/><rect class="weg" x="169" y="57" width="12" height="12" rx="2"/><rect class="weg" x="169" y="43" width="12" height="12" rx="2"/><rect class="weg" x="169" y="29" width="12" height="12" rx="2"/><rect class="weg" x="169" y="15" width="12" height="12" rx="2"/><rect class="weg" x="169" y="1" width="12" height="12" rx="2"/></svg><b>42 Blöcke</b><span>2 kurze Chats, 36 gespart</span></div>
         </div>
-        <p class="g-legende" aria-label="Legende: Ein Block ist eine Nachricht, die mitgelesen wird. Rot nur wegen des langen Verlaufs. Gestrichelt mit neuem Chat gespart.">
-          <span><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="voll" width="12" height="12" rx="2"/></svg>1 Block = eine Nachricht, die mitgelesen wird</span>
+        </div>
+        <div class="g-beispiel" id="g-beispiel" role="tabpanel" hidden>
+          <div class="g-text g-intro">
+            <p class="g-titel">Erst Urlaub, dann Bewerbung</p>
+            <p>Die AI merkt sich nichts zwischen zwei Antworten. Vor jeder Antwort liest sie den ganzen Chat von vorn, wie ein Kollege, der vor jedem Satz das ganze Protokoll durchblättert.</p>
+            <p>Du stellst 6 Fragen zum Urlaub, dann 6 zu einer Bewerbung. Links bleibt alles in einem Chat, rechts fängt bei Frage 7 ein neuer an.</p>
+          </div>
+          <div class="g-text g-steuer">
+            <div class="g-frage"><small class="g-nr"></small><q class="g-q"></q></div>
+            <p class="g-erklaer" aria-live="polite"></p>
+            <div class="g-knoepfe">
+              <button type="button" class="g-zurueck">‹ Zurück</button>
+              <button type="button" class="g-weiter">Nächste Frage ›</button>
+            </div>
+          </div>
+          <div class="g-bild" aria-hidden="true">
+            <div><svg viewBox="0 0 168 168" class="g-lang"></svg><b class="g-summe-lang"></b><span>ein Chat für alles</span></div>
+            <div><svg viewBox="0 0 182 168" class="g-kurz"></svg><b class="g-summe-kurz"></b><span class="g-text-kurz"></span></div>
+          </div>
+        </div>
+        <p class="g-legende" aria-label="Legende: Eine Säule ist eine Frage von dir. Ein Block ist eine Nachricht, die die AI dafür mitliest. Rot nur wegen des langen Verlaufs. Gestrichelt mit neuem Chat gespart.">
+          <span><svg class="saeule" viewBox="0 0 12 40" aria-hidden="true"><rect class="voll" width="12" height="12" rx="2"/><rect class="voll" y="14" width="12" height="12" rx="2"/><rect class="voll" y="28" width="12" height="12" rx="2"/></svg>1 Säule = eine Frage von dir</span>
+          <span><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="voll" width="12" height="12" rx="2"/></svg>1 Block = eine Nachricht, die die AI dafür mitliest</span>
           <span><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="rot" width="12" height="12" rx="2"/></svg>nur wegen des langen Verlaufs</span>
           <span><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="weg" x=".6" y=".6" width="10.8" height="10.8" rx="2"/></svg>mit neuem Chat gespart</span>
         </p>
@@ -463,6 +512,63 @@ if (navigator.clipboard) {
     k.textContent = 'Kopiert: rene@szerelem.at';
     setTimeout(() => k.textContent = 'Mail-Adresse kopieren', 2500);
   });
+}
+// Token-Grafik: Reiter Schema/Beispiel, Beispiel Frage für Frage
+const fig = document.querySelector('.grafik');
+if (fig) {
+  const reiter = fig.querySelectorAll('[role=tab]');
+  const schema = fig.querySelector('.g-schema'), bsp = fig.querySelector('.g-beispiel');
+  const zeigen = (ansicht) => {
+    schema.hidden = ansicht !== 'schema'; bsp.hidden = ansicht !== 'beispiel';
+    reiter.forEach(r => r.setAttribute('aria-selected', r.dataset.ansicht === ansicht));
+  };
+  fig.querySelector('.g-reiter').hidden = false;
+  fig.querySelector('.g-zum-beispiel').hidden = false;
+  fig.querySelectorAll('[data-ansicht]').forEach(b => b.addEventListener('click', () => zeigen(b.dataset.ansicht)));
+  const fragen = ['Such mir eine Ferienwohnung in Kroatien für Juli, mit Kindern.', 'Welche davon liegt nah am Strand?',
+    'Wie lang fahren wir von Wien hin?', 'Mach mir eine Packliste für eine Woche.', 'Was kann man dort bei Schlechtwetter machen?',
+    'Fass mir alles in einer Nachricht zusammen.', 'Was anderes: Hilf mir bei einem Anschreiben.', 'Da ist die Stellenanzeige.',
+    'Der Einstieg ist mir zu steif.', 'Bitte kürzer.', 'Passt mein Lebenslauf dazu?', 'Schreib mir noch eine kurze Mail dazu.'];
+  const ns = 'http://www.w3.org/2000/svg';
+  const block = (x, y, art, neu) => {
+    const r = document.createElementNS(ns, 'rect');
+    if (art === 'weg') { r.setAttribute('x', x + .6); r.setAttribute('y', y + .6); r.setAttribute('width', 10.8); r.setAttribute('height', 10.8); }
+    else { r.setAttribute('x', x); r.setAttribute('y', y); r.setAttribute('width', 12); r.setAttribute('height', 12); }
+    r.setAttribute('rx', 2); r.setAttribute('class', art + (neu ? ' neu' : '')); return r;
+  };
+  // Säule i: unten die Nachrichten zum aktuellen Thema, oben ab Frage 7 die 6 Urlaubs-Nachrichten
+  const saeule = (svg, i, n, kurz) => {
+    const x = 1 + 14 * (i - 1) + (kurz && i > 6 ? 14 : 0), eigene = i > 6 ? i - 6 : i;
+    for (let k = 0; k < i; k++) svg.append(block(x, 155 - 14 * k, k < eigene ? 'voll' : (kurz ? 'weg' : 'rot'), i === n));
+  };
+  const summe = (n, kurz) => { let s = 0; for (let i = 1; i <= n; i++) s += kurz && i > 6 ? i - 6 : i; return s; };
+  const lang = fig.querySelector('.g-lang'), kurz = fig.querySelector('.g-kurz');
+  const zurueck = fig.querySelector('.g-zurueck'), weiter = fig.querySelector('.g-weiter');
+  let n = 1;
+  const malen = () => {
+    lang.replaceChildren(); kurz.replaceChildren();
+    for (let i = 1; i <= n; i++) { saeule(lang, i, n, false); saeule(kurz, i, n, true); }
+    const sl = summe(n, false), sk = summe(n, true);
+    fig.querySelector('.g-nr').textContent = `Frage ${n} von 12 · ${n <= 6 ? 'Urlaub' : 'Bewerbung'}`;
+    fig.querySelector('.g-q').textContent = fragen[n - 1];
+    const bloecke = (z) => z === 1 ? '1 Block' : `${z} Blöcke`;
+    fig.querySelector('.g-summe-lang').textContent = bloecke(sl);
+    fig.querySelector('.g-summe-kurz').textContent = bloecke(sk);
+    fig.querySelector('.g-text-kurz').textContent = n > 6 ? `neuer Chat ab Frage 7, ${sl - sk} gespart` : 'neuer Chat ab Frage 7';
+    fig.querySelector('.g-erklaer').textContent =
+      n === 1 ? 'Die AI liest nur deine Frage: 1 Block. Rechts ist es bis Frage 6 genau gleich.' :
+      n <= 6 ? `Die AI liest deine Frage und ${n === 2 ? 'die eine' : `die ${n - 1}`} davor, also ${n} Blöcke. Alles gehört zum Urlaub, nichts davon ist umsonst.` :
+      n === 7 ? 'Neues Thema. Links liest die AI trotzdem alle 6 Urlaubs-Nachrichten mit (rot), obwohl sie fürs Anschreiben nichts bringen. Rechts im neuen Chat liest sie nur deine Frage.' :
+      n < 12 ? `Links liest die AI ${n} Nachrichten, 6 davon zum Urlaub. Rechts nur die ${n - 6} zur Bewerbung.` :
+      `Gleiche Arbeit, aber links ${sl} Blöcke und rechts ${sk}. Der neue Chat hat ${sl - sk} Blöcke gespart, fast die Hälfte.`;
+    zurueck.disabled = n === 1;
+    weiter.textContent = n === 12 ? 'Noch einmal von vorn' : 'Nächste Frage ›';
+  };
+  const vor = () => { n = n === 12 ? 1 : n + 1; malen(); };
+  weiter.addEventListener('click', vor);
+  zurueck.addEventListener('click', () => { if (n > 1) { n--; malen(); } });
+  bsp.querySelector('.g-bild').addEventListener('click', vor);
+  malen();
 }
 </script>
 </body>
