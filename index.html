@@ -88,7 +88,7 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .fall dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--petrol);margin-top:14px}
 .fall dd{margin:4px 0 0;font-size:16px;line-height:1.5}
 
-.privat{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.privat{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:36px}
 .privat article{border-top:3px solid var(--nacht);padding-top:16px}
 .privat h3{margin:0 0 4px;font-size:19px;line-height:1.25;color:var(--nacht)}
 .privat .werkzeug{font-size:13px;color:var(--petrol);font-weight:600;margin:0 0 10px}
@@ -336,11 +336,6 @@ footer p{margin:0 0 10px}
         <p>AI sortiert unser Familienpostfach stündlich nach Themen und Fristen. Verschiebe ich ein Mail, merkt sich das System die Korrektur und schlägt mir jede Woche neue Regeln vor. Übernommen wird nichts ohne mein OK.</p>
       </article>
       <article>
-        <h3>Ein Smart Home, das sich selbst überwacht</h3>
-        <p class="werkzeug"><span>Home Assistant</span> · <span>Zigbee</span> · <span>Python</span></p>
-        <p>Über 50 Automationen von Heizung bis Rollos. Mindestens so wichtig sind die Wächter: Sie erkennen hängende Geräte und starten sie neu. Dazu kommen tägliche Backups und ein Familien-Bot, der meldet, wenn etwas nicht stimmt.</p>
-      </article>
-      <article>
         <h3>Eine Lern- und Spieleplattform für die Kinder</h3>
         <p class="werkzeug"><span>Python</span> · <span>WebSockets</span> · <span>Docker</span></p>
         <p>Mathe-Training und Brettspiele wie „Mensch ärgere dich nicht“, live über mehrere Tablets, jedes Kind am eigenen Gerät. Getestet von den strengsten Anwendern, die es gibt.</p>
@@ -355,12 +350,12 @@ footer p{margin:0 0 10px}
     <p class="intro">Vier Projekte, die ich mit AI gebaut habe und im Alltag betreibe.</p>
     <div class="aiprojekte">
       <article class="proj">
-        <h3>Ein Überwacher für meine Hausautomatik</h3>
-        <p class="werkzeug"><span>Python</span> · <span>Home Assistant</span> · <span>AI/LLM</span></p>
+        <h3>Ein Smart Home, das sich selbst überwacht</h3>
+        <p class="werkzeug"><span>Home Assistant</span> · <span>Python</span> · <span>AI/LLM</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
-          <dt>Problem</dt><dd>Bei rund 70 Automationen fällt nicht auf, wenn eine ins Leere verweist oder nie läuft.</dd>
-          <dt>Lösung</dt><dd>Ein Skript prüft täglich alle Automationen, ein zweites merkt sich den Normalzustand der Geräte. Ein Modell liest nur die geänderten Automationen und bewertet sie. Repariert wird erst nach meinem OK.</dd>
+          <dt>Problem</dt><dd>Rund 70 Automationen von Heizung bis Rollos. Dabei fällt nicht auf, wenn eine ins Leere verweist, nie läuft oder ein Gerät hängt.</dd>
+          <dt>Lösung</dt><dd>Wächter erkennen hängende Geräte und starten sie neu, tägliche Backups sichern alles, ein Familien-Bot meldet Störungen. Dazu prüft ein Skript täglich alle Automationen, ein zweites merkt sich den Normalzustand der Geräte. Ein Modell liest nur die geänderten Automationen und bewertet sie. Repariert wird erst nach meinem OK.</dd>
           <dt>Ergebnis</dt><dd>Im ersten Lauf waren 14 von 40 geprüften Automationen auffällig, bei Kosten von 0,34 Dollar. Mehrere davon habe ich inzwischen repariert.</dd>
         </dl>
         </details>
