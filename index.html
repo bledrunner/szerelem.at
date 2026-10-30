@@ -96,6 +96,10 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .fall .cb{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin:28px 0 4px}
 .fall .cb h4{margin:0 0 4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--petrol)}
 .fall .cb p{margin:0 0 14px;font-size:15px;color:var(--text2);line-height:1.4}
+.fall .grafiken summary{cursor:pointer;margin-top:16px;font-size:15px;font-weight:700;color:var(--petrol);list-style:none}
+.fall .grafiken summary::-webkit-details-marker{display:none}
+.fall .grafiken summary::after{content:" ▾"}
+.fall .grafiken[open] summary::after{content:" ▴"}
 .fall .cg{display:block;width:100%;height:auto;font-family:inherit}
 
 .privat{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:36px}
@@ -284,18 +288,14 @@ footer p{margin:0 0 10px}
       <article class="fall">
         <h3>Sehen, wo Aufträge wirklich hängen</h3>
         <p class="werkzeug"><span>Celonis Process Mining</span></p>
-        <p class="kennzahl satz">Zum ersten Mal war der ganze Ablauf sichtbar. Verbessert wurde dort, wo die Daten einen Stau zeigten, statt dort, wo man ihn vermutet hatte.</p>
-        <div class="cz">
-          <div><b>18 Min.</b><span>Bearbeitungszeit einer schriftlichen Kundenanfrage (Median) ...</span></div>
-          <div><b>5 Tage</b><span>... bis sie fertig ist. Dazwischen liegt sie.</span></div>
-          <div><b>1 von 4</b><span>braucht fünf oder mehr Arbeitsschritte.</span></div>
-        </div>
+        <p class="kennzahl"><b>18 Min.</b><span><span class="einheit">Bearbeitung, aber 5 Tage bis zur Antwort</span>Median einer schriftlichen Kundenanfrage. Jede vierte brauchte fünf oder mehr Arbeitsschritte.</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Bekannt waren nur Mengen und Bearbeitungsdauer. Wo Aufträge liegen bleiben oder zwischen Abteilungen hin- und hergeschoben werden, wusste niemand genau.</dd>
-          <dt>Lösung</dt><dd>Process Mining über den ganzen Ablauf: Durchlaufzeit, Liegezeit je Abteilung, „Ping-Pong“ zwischen Teams, Anteil der Fälle, die automatisch durchlaufen oder mit Fehler hängen bleiben.</dd>
+          <dt>Lösung</dt><dd>Process Mining über den ganzen Ablauf: Durchlaufzeit, Liegezeit je Abteilung, „Ping-Pong“ zwischen Teams, Anteil der Fälle, die automatisch durchlaufen oder mit Fehler hängen bleiben. Verbessert wurde dort, wo die Daten einen Stau zeigten, nicht dort, wo man ihn vermutet hatte.</dd>
         </dl>
         </details>
+        <details class="grafiken"><summary>Zwei Grafiken dazu ansehen</summary>
         <div class="cb">
           <div><h4>Der Weg einer Anfrage</h4><p>Wenige Minuten Arbeit, dazwischen Warten. Schematisch, nicht maßstabsgetreu.</p><svg class="cg" role="img" aria-label="Schematischer Weg einer Anfrage: wenige Bearbeitungspunkte, dazwischen Wartezeit über fünf Tage" width="100%" viewBox="0 0 952 270" style="display:block;height:auto;overflow:visible">
 <line x1="40" y1="203" x2="912" y2="203" stroke="#CBD6D7" stroke-width="2"/>
@@ -307,6 +307,7 @@ footer p{margin:0 0 10px}
 </svg></div>
           <div><h4>Wie die Anfrage ankommt</h4><p>Liegezeit je Eingangskanal, Formular = 100. Auf Papier liegt sie mehr als doppelt so lang.</p><svg class="cg" role="img" aria-label="Liegezeit je Eingangskanal als Index, Formular 100, E-Mail 159, Brief 353, Fax 359" width="100%" viewBox="0 0 952 280" style="display:block;height:auto"><text x="0" y="46" font-size="32" fill="#0F1212">Formular</text><line x1="200" y1="36" x2="375" y2="36" stroke="#0B3C41" stroke-width="3"/><circle cx="375" cy="36" r="17" fill="#0B3C41"/><text x="405" y="47" font-size="32" font-weight="700" fill="#0F1212" >100</text><text x="0" y="110" font-size="32" fill="#0F1212">E-Mail</text><line x1="200" y1="100" x2="478" y2="100" stroke="#0B3C41" stroke-width="3"/><circle cx="478" cy="100" r="17" fill="#0B3C41"/><text x="508" y="111" font-size="32" font-weight="700" fill="#0F1212" >159</text><text x="0" y="174" font-size="32" fill="#0F1212">Brief</text><line x1="200" y1="164" x2="818" y2="164" stroke="#0B3C41" stroke-width="3"/><circle cx="818" cy="164" r="17" fill="#FF7A59"/><text x="848" y="175" font-size="32" font-weight="700" fill="#0F1212" >353</text><text x="0" y="238" font-size="32" fill="#0F1212">Fax</text><line x1="200" y1="228" x2="828" y2="228" stroke="#0B3C41" stroke-width="3"/><circle cx="828" cy="228" r="17" fill="#FF7A59"/><text x="858" y="239" font-size="32" font-weight="700" fill="#0F1212" >359</text></svg></div>
         </div>
+        </details>
       </article>
       <article class="fall">
         <h3>Das Postfach, das sich selbst sortiert</h3>
