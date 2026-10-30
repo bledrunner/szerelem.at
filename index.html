@@ -89,6 +89,16 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .fall dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--petrol);margin-top:14px}
 .fall dd{margin:4px 0 0;font-size:16px;line-height:1.5}
 
+.fall .cz{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;margin-top:26px}
+.fall .cz div{border-top:3px solid var(--nacht);padding-top:12px}
+.fall .cz b{display:block;font-size:clamp(30px,4vw,42px);line-height:1;font-weight:800;color:var(--nacht)}
+.fall .cz .hero b{font-size:clamp(34px,5vw,56px)}
+.fall .cz .hero em{font-style:normal;background:linear-gradient(transparent 50%,var(--koralle) 50% 84%,transparent 84%);padding:0 2px;white-space:nowrap}
+.fall .cz span{display:block;margin-top:8px;font-size:15px;color:var(--text2);line-height:1.4}
+.fall .cb{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin:34px 0 8px}
+.fall .cb h4{margin:0 0 4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--petrol)}
+.fall .cb p{margin:0 0 14px;font-size:15px;color:var(--text2);line-height:1.4}
+
 .privat{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:36px}
 .privat article{border-top:3px solid var(--nacht);padding-top:16px}
 .privat h3{margin:0 0 4px;font-size:19px;line-height:1.25;color:var(--nacht)}
@@ -177,6 +187,7 @@ footer p{margin:0 0 10px}
   .g-beispiel{grid-template-columns:1fr;grid-template-areas:"intro" "bild" "steuer";gap:12px}
   .grafik .g-erklaer{min-height:0}
   .fall dl{display:block}
+  .fall .cz,.fall .cb{grid-template-columns:1fr}
   .fall{padding:22px 20px}
   .profil .oben{grid-template-columns:1fr;gap:8px}
   .profil .foto{width:150px;height:150px;grid-row:1;margin:0 0 20px}
@@ -270,6 +281,22 @@ footer p{margin:0 0 10px}
         <h3>Sehen, wo Aufträge wirklich hängen</h3>
         <p class="werkzeug"><span>Celonis Process Mining</span></p>
         <p class="kennzahl satz">Zum ersten Mal war der ganze Ablauf sichtbar. Verbessert wurde dort, wo die Daten einen Stau zeigten, statt dort, wo man ihn vermutet hatte.</p>
+        <div class="cz">
+          <div class="hero"><b><em>18 Min.</em></b><span>Bearbeitungszeit einer schriftlichen Kundenanfrage (Median) ...</span></div>
+          <div><b>5 Tage</b><span>... bis sie fertig ist. Dazwischen liegt sie.</span></div>
+          <div><b>1 von 4</b><span>braucht fünf oder mehr Arbeitsschritte.</span></div>
+        </div>
+        <div class="cb">
+          <div><h4>Der Weg einer Anfrage</h4><p>Wenige Minuten Arbeit, dazwischen Warten. Schematisch, nicht maßstabsgetreu.</p><svg role="img" aria-label="Schematischer Weg einer Anfrage: wenige Bearbeitungspunkte, dazwischen Wartezeit über fünf Tage" width="100%" viewBox="0 0 952 270" style="display:block;height:auto;overflow:visible">
+<line x1="40" y1="203" x2="912" y2="203" stroke="#CBD6D7" stroke-width="2"/>
+<line x1="40" y1="196" x2="40" y2="210" stroke="#3A4A4C" stroke-width="2"/><text x="40" y="246" text-anchor="middle" font-size="28" fill="#3A4A4C" style="font-family:Aptos,'Segoe UI',Arial,sans-serif">Tag 0</text><line x1="214" y1="196" x2="214" y2="210" stroke="#3A4A4C" stroke-width="2"/><text x="214" y="246" text-anchor="middle" font-size="28" fill="#3A4A4C" style="font-family:Aptos,'Segoe UI',Arial,sans-serif">Tag 1</text><line x1="389" y1="196" x2="389" y2="210" stroke="#3A4A4C" stroke-width="2"/><text x="389" y="246" text-anchor="middle" font-size="28" fill="#3A4A4C" style="font-family:Aptos,'Segoe UI',Arial,sans-serif">Tag 2</text><line x1="563" y1="196" x2="563" y2="210" stroke="#3A4A4C" stroke-width="2"/><text x="563" y="246" text-anchor="middle" font-size="28" fill="#3A4A4C" style="font-family:Aptos,'Segoe UI',Arial,sans-serif">Tag 3</text><line x1="738" y1="196" x2="738" y2="210" stroke="#3A4A4C" stroke-width="2"/><text x="738" y="246" text-anchor="middle" font-size="28" fill="#3A4A4C" style="font-family:Aptos,'Segoe UI',Arial,sans-serif">Tag 4</text><line x1="912" y1="196" x2="912" y2="210" stroke="#3A4A4C" stroke-width="2"/><text x="912" y="246" text-anchor="middle" font-size="28" fill="#3A4A4C" style="font-family:Aptos,'Segoe UI',Arial,sans-serif">Tag 5</text><line x1="62" y1="150" x2="128" y2="150" stroke="#0F1212" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 15"/><line x1="172" y1="150" x2="448" y2="150" stroke="#0F1212" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 15"/><line x1="492" y1="150" x2="738" y2="150" stroke="#0F1212" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 15"/><line x1="782" y1="150" x2="890" y2="150" stroke="#0F1212" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 15"/><circle cx="40" cy="150" r="18" fill="#0B3C41"/><circle cx="150" cy="150" r="15" fill="#FF7A59"/><circle cx="470" cy="150" r="15" fill="#FF7A59"/><circle cx="760" cy="150" r="15" fill="#FF7A59"/><circle cx="912" cy="150" r="18" fill="#0B3C41"/>
+<text x="22" y="100" font-size="30" font-weight="700" fill="#0B3C41" style="font-family:Aptos,'Segoe UI',Arial,sans-serif">Eingang</text>
+<text x="930" y="100" text-anchor="end" font-size="30" font-weight="700" fill="#0B3C41" style="font-family:Aptos,'Segoe UI',Arial,sans-serif">Antwort</text>
+<g transform="rotate(-4 300 40)"><text x="215" y="46" font-size="40" fill="#0F1212"  style="font-family:'Segoe Print','Bradley Hand','Comic Sans MS',cursive">hier liegt sie</text></g>
+<path d="M330 66 C 352 84, 352 104, 340 126" fill="none" stroke="#0F1212" stroke-width="3" stroke-linecap="round"/><path d="M328 112 L340 128 L355 116" fill="none" stroke="#0F1212" stroke-width="3" stroke-linecap="round"/>
+</svg></div>
+          <div><h4>Wie die Anfrage ankommt</h4><p>Liegezeit je Eingangskanal, Formular = 100. Auf Papier liegt sie mehr als doppelt so lang.</p><svg role="img" aria-label="Liegezeit je Eingangskanal als Index, Formular 100, E-Mail 159, Brief 353, Fax 359" width="100%" viewBox="0 0 952 280" style="display:block;height:auto"><text x="0" y="46" font-size="32" fill="#0F1212" style="font-family:Aptos,'Segoe UI',Arial,sans-serif">Formular</text><line x1="200" y1="36" x2="375" y2="36" stroke="#0B3C41" stroke-width="3"/><circle cx="375" cy="36" r="17" fill="#0B3C41"/><text x="405" y="47" font-size="32" font-weight="700" fill="#0F1212"  style="font-family:Aptos,'Segoe UI',Arial,sans-serif">100</text><text x="0" y="110" font-size="32" fill="#0F1212" style="font-family:Aptos,'Segoe UI',Arial,sans-serif">E-Mail</text><line x1="200" y1="100" x2="478" y2="100" stroke="#0B3C41" stroke-width="3"/><circle cx="478" cy="100" r="17" fill="#0B3C41"/><text x="508" y="111" font-size="32" font-weight="700" fill="#0F1212"  style="font-family:Aptos,'Segoe UI',Arial,sans-serif">159</text><text x="0" y="174" font-size="32" fill="#0F1212" style="font-family:Aptos,'Segoe UI',Arial,sans-serif">Brief</text><line x1="200" y1="164" x2="818" y2="164" stroke="#0B3C41" stroke-width="3"/><circle cx="818" cy="164" r="17" fill="#FF7A59"/><text x="848" y="175" font-size="32" font-weight="700" fill="#0F1212"  style="font-family:Aptos,'Segoe UI',Arial,sans-serif">353</text><text x="0" y="238" font-size="32" fill="#0F1212" style="font-family:Aptos,'Segoe UI',Arial,sans-serif">Fax</text><line x1="200" y1="228" x2="828" y2="228" stroke="#0B3C41" stroke-width="3"/><circle cx="828" cy="228" r="17" fill="#FF7A59"/><text x="858" y="239" font-size="32" font-weight="700" fill="#0F1212"  style="font-family:Aptos,'Segoe UI',Arial,sans-serif">359</text></svg></div>
+        </div>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Bekannt waren nur Mengen und Bearbeitungsdauer. Wo Aufträge liegen bleiben oder zwischen Abteilungen hin- und hergeschoben werden, wusste niemand genau.</dd>
