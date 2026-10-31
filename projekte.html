@@ -67,8 +67,9 @@ h2{font-size:clamp(26px,3.2vw,34px);line-height:1.15;font-weight:800;margin:0 0 
 h2::before{content:"";display:block;width:56px;height:6px;background:var(--koralle);margin-bottom:18px}
 .lead{font-size:clamp(20px,2.4vw,25px);line-height:1.45;font-weight:600;color:var(--nacht);max-width:820px;margin:24px 0 18px}
 .profil p{max-width:760px;color:var(--text2)}
-.profil .oben{display:grid;grid-template-columns:1fr 220px;gap:48px;align-items:start}
-.profil .foto{width:220px;height:220px;display:block;margin-top:8px}
+.held>div{flex:1;min-width:0}
+.held{display:flex;align-items:flex-end;justify-content:space-between;gap:48px}
+.held .foto{flex:none;width:clamp(170px,19vw,240px);height:auto;display:block;border-radius:50%}
 .zahlen{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
 .zahl{border-top:3px solid var(--nacht);padding-top:14px}
 .zahl b{display:block;font-size:clamp(30px,4vw,42px);line-height:1;font-weight:800;color:var(--nacht)}
@@ -211,8 +212,9 @@ footer p{margin:0 0 10px}
   .fall .cz b{flex:0 0 118px}
   .fall .cz span{margin:0;flex:1}
   .fall{padding:22px 20px}
-  .profil .oben{grid-template-columns:1fr;gap:8px}
-  .profil .foto{width:150px;height:150px;grid-row:1;margin:0 0 20px}
+  .held{flex-direction:column-reverse;align-items:flex-start;gap:0}
+  .held .foto{width:112px;margin-top:28px}
+  .kopf .held h1{margin-top:24px}
   footer .spalten{grid-template-columns:1fr}
   footer .monogramm{width:72px}
 }

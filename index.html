@@ -67,8 +67,9 @@ h2{font-size:clamp(26px,3.2vw,34px);line-height:1.15;font-weight:800;margin:0 0 
 h2::before{content:"";display:block;width:56px;height:6px;background:var(--koralle);margin-bottom:18px}
 .lead{font-size:clamp(20px,2.4vw,25px);line-height:1.45;font-weight:600;color:var(--nacht);max-width:820px;margin:24px 0 18px}
 .profil p{max-width:760px;color:var(--text2)}
-.profil .oben{display:grid;grid-template-columns:1fr 220px;gap:48px;align-items:start}
-.profil .foto{width:220px;height:220px;display:block;margin-top:8px}
+.held>div{flex:1;min-width:0}
+.held{display:flex;align-items:flex-end;justify-content:space-between;gap:48px}
+.held .foto{flex:none;width:clamp(170px,19vw,240px);height:auto;display:block;border-radius:50%}
 .zahlen{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
 .zahl{border-top:3px solid var(--nacht);padding-top:14px}
 .zahl b{display:block;font-size:clamp(30px,4vw,42px);line-height:1;font-weight:800;color:var(--nacht)}
@@ -211,8 +212,9 @@ footer p{margin:0 0 10px}
   .fall .cz b{flex:0 0 118px}
   .fall .cz span{margin:0;flex:1}
   .fall{padding:22px 20px}
-  .profil .oben{grid-template-columns:1fr;gap:8px}
-  .profil .foto{width:150px;height:150px;grid-row:1;margin:0 0 20px}
+  .held{flex-direction:column-reverse;align-items:flex-start;gap:0}
+  .held .foto{width:112px;margin-top:28px}
+  .kopf .held h1{margin-top:24px}
   footer .spalten{grid-template-columns:1fr}
   footer .monogramm{width:72px}
 }
@@ -251,6 +253,7 @@ footer p{margin:0 0 10px}
       <img class="logo" src="wortmarke.svg" alt="Rene Szerelem" width="764" height="108">
       <nav><a href="#praxis">Praxis</a><a href="#arbeitsweise">Arbeitsweise</a><a href="projekte.html">Eigenprojekte</a><a href="#kontakt">Kontakt</a></nav>
     </div>
+    <div class="held"><div>
     <h1><img src="claim.svg" alt="Ich weiß, warum Automatisierung scheitert. Darum fange ich beim Prozess an." width="811" height="182"></h1>
     <p class="rolle">Process Automation Developer</p>
     <p class="status">Offen für eine neue Stelle · Wien, gerne hybrid</p>
@@ -258,6 +261,7 @@ footer p{margin:0 0 10px}
       <a class="knopf voll" href="mailto:rene@szerelem.at?subject=Anfrage%20%C3%BCber%20szerelem.at">rene@szerelem.at</a>
       <a class="knopf rand" href="https://www.linkedin.com/in/rene-szerelem">LinkedIn-Profil</a>
     </div>
+    </div><img class="foto" src="foto.webp" alt="Rene Szerelem" width="220" height="220"></div>
   </div>
   <img class="motiv" src="motiv.svg" alt="" width="1584" height="396">
 </header>
@@ -272,11 +276,9 @@ footer p{margin:0 0 10px}
 <main>
 <section class="profil">
   <div class="rahmen">
-    <div class="oben"><div>
     <h2>Kurz zu mir</h2>
     <p class="lead">Ich bringe technische Automatisierung und Prozessverständnis zusammen, weil ich beides von Grund auf selbst erarbeitet habe.</p>
     <p>20 Jahre habe ich operativ gearbeitet, vom Kundentelefon über die Qualitätssicherung bis zur Projektleitung. In den letzten Jahren habe ich mir dazu Power Platform, Schnittstellen, Datenmodelle und AI selbst beigebracht. Deshalb weiß ich, woran Automatisierung im Alltag scheitert. Ich kläre, was sich zu automatisieren lohnt, betreibe die Lösung verantwortlich und zeige in den Daten, ob sie wirkt.</p>
-    </div><img class="foto" src="foto.webp" alt="Rene Szerelem" width="220" height="220"></div>
     <div class="zahlen">
       <div class="zahl"><b>20+</b><span>Jahre Prozesspraxis auf allen operativen Ebenen</span></div>
       <div class="zahl"><b>60+</b><span>Serviceprozesse analysiert und verbessert</span></div>
