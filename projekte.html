@@ -110,7 +110,7 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .fall .cb{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin:28px 0 4px}
 .fall .cb h4{margin:0 0 4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--petrol)}
 .fall .cb p{margin:0 0 14px;font-size:15px;color:var(--text2);line-height:1.4}
-.fall .grafiken summary{cursor:pointer;margin-top:16px;font-size:15px;font-weight:700;color:var(--petrol);list-style:none}
+.fall .grafiken summary{cursor:pointer;margin-top:6px;padding:10px 0;font-size:15px;font-weight:700;color:var(--petrol);list-style:none}
 .fall .grafiken summary::-webkit-details-marker{display:none}
 .fall .grafiken summary::after{content:" ▾"}
 .fall .grafiken[open] summary::after{content:" ▴"}
@@ -191,7 +191,7 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .fakten{display:grid;grid-template-columns:auto 1fr;gap:6px 24px;margin:28px 0 0;max-width:640px}
 .fakten dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;opacity:.7;padding-top:4px}
 .fakten dd{margin:0;font-weight:600}
-.kopieren{all:unset;display:inline-block;cursor:pointer;margin-top:16px;font-size:15px;text-decoration:underline;text-underline-offset:3px;opacity:.85}
+.kopieren{all:unset;display:inline-block;cursor:pointer;margin-top:6px;padding:10px 0;font-size:15px;text-decoration:underline;text-underline-offset:3px;opacity:.85}
 .kopieren[hidden]{display:none}
 .kopieren:hover,.kopieren:focus-visible{opacity:1;outline:2px solid rgba(255,255,255,.5);outline-offset:3px}
 footer{background:#082E32;color:rgba(255,255,255,.75);font-size:14px;line-height:1.55;padding:36px 0 44px}
@@ -226,13 +226,13 @@ footer p{margin:0 0 10px}
   body{font-size:16px}
   .rahmen{padding:0 18px}
   .kopf .oben{flex-wrap:wrap}
-  .kopf nav{width:100%;margin-top:16px}
-  .kopf nav a{margin:0 18px 0 0}
+  .kopf nav{width:100%;margin-top:4px;display:flex;justify-content:space-between}
+  .kopf nav a{display:inline-block;margin:0;padding:13px 0}
   .leiste .hoch .wm{display:none}
   .leiste .r{display:block;height:26px !important;border-radius:3px}
   .leiste nav a{margin-left:14px;font-size:14px}
   .kopf .logo{height:28px}
-  .mehr summary{display:block;list-style:none;cursor:pointer;margin-top:10px;padding:10px 0 2px;font-size:15px;font-weight:700;color:var(--petrol)}
+  .mehr summary{display:block;list-style:none;cursor:pointer;margin-top:4px;padding:14px 0 8px;font-size:15px;font-weight:700;color:var(--petrol)}
   .mehr summary::-webkit-details-marker{display:none}
   .mehr summary::after{content:" ▾"}
   .mehr[open] summary{margin-bottom:-4px}
@@ -245,6 +245,10 @@ footer p{margin:0 0 10px}
   .fakten{grid-template-columns:1fr;gap:0}
   .fakten dd{margin-bottom:10px}
   .knopf{flex:1 1 100%;text-align:center}
+}
+@media (max-width:380px){
+  .kopf nav a{font-size:15px}
+  .leiste nav a{margin-left:9px;font-size:13px}
 }
 </style>
 </head>
