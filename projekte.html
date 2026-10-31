@@ -362,7 +362,7 @@ footer p{margin:0 0 10px}
           <div class="g-text g-intro">
             <p class="g-titel">Erst Urlaub, dann Bewerbung</p>
             <p>Die AI merkt sich nichts zwischen zwei Antworten. Vor jeder Antwort liest sie den ganzen Chat von vorn, wie ein Kollege, der vor jedem Satz das ganze Protokoll durchblättert.</p>
-            <p>Du stellst 6 Fragen zum Urlaub, dann 6 zu einer Bewerbung. Links bleibt alles in einem Chat, rechts fängt bei Frage 7 ein neuer an.</p>
+            <p>Sie stellen 6 Fragen zum Urlaub, dann 6 zu einer Bewerbung. Links bleibt alles in einem Chat, rechts fängt bei Frage 7 ein neuer an.</p>
           </div>
           <div class="g-text g-steuer">
             <div class="g-frage"><small class="g-nr"></small><q class="g-q"></q></div>
@@ -377,7 +377,7 @@ footer p{margin:0 0 10px}
             <div><svg viewBox="0 0 182 168" class="g-kurz"></svg><b class="g-summe-kurz"></b><span class="g-text-kurz"></span></div>
           </div>
         </div>
-        <p class="g-legende" aria-label="Legende: Eine Säule ist eine Frage von dir. Ein Block ist eine Nachricht, die die AI dafür mitliest. Rot nur wegen des langen Verlaufs. Gestrichelt mit neuem Chat gespart.">
+        <p class="g-legende" aria-label="Legende: Eine Säule ist eine Frage von Ihnen. Ein Block ist eine Nachricht, die die AI dafür mitliest. Rot nur wegen des langen Verlaufs. Gestrichelt mit neuem Chat gespart.">
           <span><svg class="saeule" viewBox="0 0 12 40" aria-hidden="true"><rect class="voll" width="12" height="12" rx="2"/><rect class="voll" y="14" width="12" height="12" rx="2"/><rect class="voll" y="28" width="12" height="12" rx="2"/></svg>1 Säule = eine Frage von dir</span>
           <span><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="voll" width="12" height="12" rx="2"/></svg>1 Block = eine Nachricht, die die AI dafür mitliest</span>
           <span><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="rot" width="12" height="12" rx="2"/></svg>nur wegen des langen Verlaufs</span>
@@ -394,7 +394,7 @@ footer p{margin:0 0 10px}
     <h2>Reden wir darüber</h2>
     <p>Ich suche eine neue Aufgabe in Automatisierung und Datenanalyse. Wenn Sie einen Prozess haben, der nach Automatisierung schreit, oder eine Stelle, die dazu passt: Schreiben Sie mir.</p>
     <dl class="fakten">
-      <dt>Rollen</dt><dd class="werkzeug"><span>Automation Analyst</span> · <span>Data / BI Analyst</span> · <span>Power-Platform-Entwicklung</span> · <span>AI-Integration</span></dd>
+      <dt>Rollen</dt><dd class="werkzeug"><span>Process Automation Developer</span> · <span>Power Platform Developer</span> · <span>Data / BI Analyst</span> · <span>AI-Integration</span></dd>
       <dt>Ort</dt><dd>Wien, gerne hybrid</dd>
       <dt>Verfügbar</dt><dd>ab sofort</dd>
       <dt>Lebenslauf</dt><dd>schicke ich gern auf Anfrage</dd>
@@ -480,9 +480,9 @@ if (fig) {
     fig.querySelector('.g-summe-kurz').textContent = bloecke(sk);
     fig.querySelector('.g-text-kurz').textContent = n > 6 ? `neuer Chat ab Frage 7, ${sl - sk} gespart` : 'neuer Chat ab Frage 7';
     fig.querySelector('.g-erklaer').textContent =
-      n === 1 ? 'Die AI liest nur deine Frage: 1 Block. Rechts ist es bis Frage 6 genau gleich.' :
-      n <= 6 ? `Die AI liest deine Frage und ${n === 2 ? 'die eine' : `die ${n - 1}`} davor, also ${n} Blöcke. Alles gehört zum Urlaub, nichts davon ist umsonst.` :
-      n === 7 ? 'Neues Thema. Links liest die AI trotzdem alle 6 Urlaubs-Nachrichten mit (rot), obwohl sie fürs Anschreiben nichts bringen. Rechts im neuen Chat liest sie nur deine Frage.' :
+      n === 1 ? 'Die AI liest nur Ihre Frage: 1 Block. Rechts ist es bis Frage 6 genau gleich.' :
+      n <= 6 ? `Die AI liest Ihre Frage und ${n === 2 ? 'die eine' : `die ${n - 1}`} davor, also ${n} Blöcke. Alles gehört zum Urlaub, nichts davon ist umsonst.` :
+      n === 7 ? 'Neues Thema. Links liest die AI trotzdem alle 6 Urlaubs-Nachrichten mit (rot), obwohl sie fürs Anschreiben nichts bringen. Rechts im neuen Chat liest sie nur Ihre Frage.' :
       n < 12 ? `Links liest die AI ${n} Nachrichten, 6 davon zum Urlaub. Rechts nur die ${n - 6} zur Bewerbung.` :
       `Gleiche Arbeit, aber links ${sl} Blöcke und rechts ${sk}. Der neue Chat hat ${sl - sk} Blöcke gespart, fast die Hälfte.`;
     zurueck.disabled = n === 1;
