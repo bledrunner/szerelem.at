@@ -171,9 +171,6 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 @media (prefers-reduced-motion:no-preference){.g-beispiel .neu{animation:g-auf .35s ease-out backwards}}
 @keyframes g-auf{from{opacity:0;transform:translateY(-6px)}}
 .intro{max-width:760px;color:var(--text2);margin:16px 0 0}
-.systembild{margin:28px 0 8px;max-width:480px}
-.systembild img{display:block;width:100%;height:auto;border:1px solid #DDE3E3}
-.systembild figcaption{margin-top:8px;font-size:13px;color:var(--text2)}
 .quelle{max-width:760px;color:var(--text2);font-size:.9em;margin:24px 0 0}
 .schritte{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;counter-reset:s}
 .schritt{counter-increment:s}
@@ -297,10 +294,169 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
   <div class="rahmen">
     <h2>Was ich mit AI gebaut habe</h2>
     <p class="intro">Vier Projekte, die ich mit AI gebaut habe und im Alltag betreibe.</p>
-    <figure class="systembild">
-      <a href="systeme.webp" title="Grafik groß öffnen"><img src="systeme.webp" width="1080" height="1350" loading="lazy" alt="Infografik: Jede größere Änderung nimmt denselben Weg. Eine Schleife führt vom Wissensarchiv, in dem Notizen, Regeln und der Stand jedes Projekts liegen, zum Bauen mit Claude Code und Skills. Danach läuft sie durch drei Prüf-Agenten, die Code, Texte und Webseiten prüfen und nichts ändern. Dann geht es in den Betrieb mit Smart Home und Mail-Sortierer, beide zeigt das Cockpit auf einen Blick. Was auffällt, wird behoben, und der neue Stand landet wieder im Archiv."></a>
-      <figcaption>Mit dem Infografik-Skill entworfen. Antippen öffnet die Grafik in voller Größe.</figcaption>
-    </figure>
+    <figure class="sy" id="ablauf-systeme" aria-label="Animierte Grafik: Jede größere Änderung nimmt denselben Weg. Eine Schleife führt vom Wissensarchiv, in dem Notizen, Regeln und der Stand jedes Projekts liegen, zum Bauen mit Claude Code und Skills. Danach läuft sie durch drei Prüf-Agenten, die Code, Texte und Webseiten prüfen und nichts ändern. Dann geht es in den Betrieb mit Smart Home und Mail-Sortierer, das Cockpit zeigt beide zusammen mit den Terminen auf einen Blick. Was auffällt, wird behoben, und der neue Stand landet wieder im Archiv.">
+<style>
+.sy{margin:28px 0 8px;position:relative}
+.sy .sy-titel{margin:0;font-weight:700;font-size:22px;line-height:1.25;color:var(--nacht)}
+.sy .sy-unter{margin:4px 0 0;font-size:15px;color:var(--text2)}
+.sy .sy-buehne{position:relative;overflow:hidden;margin-top:14px}
+.sy .sy-ig{position:absolute;left:0;top:0;transform-origin:0 0;font-family:var(--schrift);color:var(--schwarz)}
+.sy .sy-ig>*{position:absolute;margin:0}
+.sy .sy-ig svg{left:0;top:0;overflow:visible}
+.sy .sy-st b{display:block;font-size:40px;line-height:1.1;color:var(--nacht);margin-bottom:8px}
+.sy .sy-st p{margin:0;font-size:30px;line-height:1.35;color:var(--text2)}
+.sy .sy-tor .sy-zahl{display:block;font-size:54px;font-weight:800;line-height:1;color:var(--nacht);margin-bottom:12px;white-space:nowrap;letter-spacing:-.01em}
+.sy .sy-cockpit b{font-size:36px;margin-bottom:4px}
+.sy .sy-cockpit p{font-size:28px}
+.sy .sy-betrieb{font-size:32px;font-weight:700;color:var(--nacht);white-space:nowrap;line-height:1.2}
+.sy .sy-notiz p{margin:0;font-size:29px;line-height:1.3;font-style:italic;color:var(--schwarz);transform:rotate(-3deg);transform-origin:left top}
+.sy.schmal .sy-st p{font-size:32px}
+.sy .sy-nochmal{position:absolute;right:0;bottom:0;background:none;border:0;padding:0;min-height:44px;font:inherit;font-size:15px;font-weight:700;color:var(--petrol);cursor:pointer;opacity:0;pointer-events:none;visibility:hidden}
+.sy .sy-nochmal.an{opacity:1;pointer-events:auto;visibility:visible}
+.sy figcaption{margin-top:10px;font-size:15px;color:var(--text2);line-height:1.4;padding-right:150px}
+.sy.schmal figcaption{padding-right:0}.sy.schmal .sy-nochmal{position:static;display:block;margin-top:2px}
+</style>
+<p class="sy-titel">Jede größere Änderung nimmt denselben Weg.</p>
+<p class="sy-unter">So spielen meine Systeme zusammen.</p>
+<div class="sy-buehne"><div class="sy-ig">
+  <svg class="sy-svg" aria-hidden="true"></svg>
+  <div class="sy-st sy-archiv"><b>Wissensarchiv</b><p>Notizen, Regeln und der Stand jedes Projekts. Die AI startet hier statt bei null.</p></div>
+  <div class="sy-st sy-bauen"><b>Bauen</b><p>Claude Code baut, Skills bringen Ablauf und Vorlagen mit.</p></div>
+  <div class="sy-st sy-tor"><span class="sy-zahl">3 Prüf-Agenten</span><p>prüfen Code, Texte und Webseiten. Sie ändern nichts, sie liefern Befunde.</p></div>
+  <div class="sy-st sy-cockpit"><b>Cockpit</b><p>zeigt Haus, Mails und Termine auf einen Blick</p></div>
+  <div class="sy-betrieb sy-smart">Smart Home</div>
+  <div class="sy-betrieb sy-mail">Mail-Sortierer</div>
+  <div class="sy-notiz"><p>Was auffällt, wird behoben. Der neue Stand landet wieder im Archiv.</p></div>
+</div></div>
+<figcaption>Mit dem Infografik-Skill entworfen.</figcaption>
+<button class="sy-nochmal" type="button">Nochmal abspielen ↻</button>
+</figure>
+<script>
+(() => {
+  const fig = document.getElementById('ablauf-systeme'); if (!fig) return;
+  const buehne = fig.querySelector('.sy-buehne'), ig = fig.querySelector('.sy-ig'), svg = fig.querySelector('.sy-svg'), knopf = fig.querySelector('.sy-nochmal');
+  const DAUER = 7.6, NS = 'http://www.w3.org/2000/svg';
+  // Zeit-Helfer (wie ablauf-postfach.html)
+  const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+  const phase = (t, v, b) => clamp((t - v) / (b - v));
+  const einaus = p => { p = clamp(p); return p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; };
+  const feder = (p, z = .6) => { p = clamp(p); if (p === 0 || p === 1) return p; const w0 = 11, wd = w0 * Math.sqrt(1 - z * z);
+    const f = q => 1 - Math.exp(-z * w0 * q) * (Math.cos(wd * q) + (z * w0 / wd) * Math.sin(wd * q)); return f(p) / f(1); };
+  const mix = (a, b, p) => a + (b - a) * p;
+  const ankommen = (el, p, dy = 18) => { el.style.opacity = clamp(p * 2.5); el.style.transform = `translateY(${mix(dy, 0, feder(p, .8))}px)`; };
+
+  // Koordinaten je Layout (Bühne wird auf die Spaltenbreite skaliert)
+  const LAYOUT = {
+    breit: { w: 1600, h: 680, schleife: { x0: 40, y0: 40, x1: 1540, y1: 590, r: 70 }, start: 300,
+      archiv: [300, 40], bauen: [820, 40], tor: { y: 230, h: 170, b: 60 }, smart: [1220, 590], mail: [720, 590], cockpit: [970, 505],
+      pfeile: [[560, 40, 0], [1540, 490, 90], [470, 590, 180], [40, 470, 270]],
+      notizPfeil: 'M120 322 C 92 306, 72 286, 68 246', notizSpitze: 'M56 262 L68 242 L80 262',
+      text: { archiv: { x: 110, y: 82, b: 440 }, bauen: { x: 640, y: 82, b: 400 }, tor: { x: 1010, y: 190, b: 450, a: 'right' },
+              cockpit: { x: 770, y: 366, b: 400, a: 'center' }, smart: { x: 1220, y: 612 }, mail: { x: 720, y: 612 }, notiz: { x: 104, y: 330, b: 340 } } },
+    schmal: { w: 720, h: 1010, schleife: { x0: 24, y0: 24, x1: 680, y1: 930, r: 60 }, start: 200,
+      archiv: [200, 24], bauen: [680, 300], tor: { y: 475, h: 170, b: 56 }, smart: [580, 930], mail: [210, 930], cockpit: [470, 852],
+      pfeile: [[470, 24, 0], [680, 410, 90], [395, 930, 180], [24, 420, 270]],
+      notizPfeil: 'M72 690 C 54 672, 48 646, 48 612', notizSpitze: 'M36 628 L48 608 L60 628',
+      text: { archiv: { x: 70, y: 64, b: 580 }, bauen: { x: 100, y: 262, b: 534, a: 'right' }, tor: { x: 80, y: 462, b: 540, a: 'right' },
+              cockpit: { x: 300, y: 700, b: 340, a: 'center' }, smart: { x: 580, y: 952 }, mail: { x: 210, y: 952 }, notiz: { x: 56, y: 700, b: 230 } } },
+  };
+  const q = s => ig.querySelector(s);
+  const T = { archiv: q('.sy-archiv'), bauen: q('.sy-bauen'), tor: q('.sy-tor'), cockpit: q('.sy-cockpit'), smart: q('.sy-smart'), mail: q('.sy-mail'), notiz: q('.sy-notiz') };
+
+  let K, layoutName, el, L, ZEIT, stift;
+  const neu = (tag, at, eltern = svg) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(at)) e.setAttribute(k, v); eltern.appendChild(e); return e; };
+  const aufbauen = name => {
+    layoutName = name; K = LAYOUT[name];
+    ig.style.width = K.w + 'px'; ig.style.height = K.h + 'px';
+    svg.setAttribute('width', K.w); svg.setAttribute('height', K.h); svg.setAttribute('viewBox', `0 0 ${K.w} ${K.h}`); svg.innerHTML = '';
+    const { x0, y0, x1, y1, r } = K.schleife, s = K.start;
+    // Schleife im Uhrzeigersinn, Start beim Wissensarchiv
+    const d = `M${s} ${y0} H${x1 - r} A${r} ${r} 0 0 1 ${x1} ${y0 + r} V${y1 - r} A${r} ${r} 0 0 1 ${x1 - r} ${y1} H${x0 + r} A${r} ${r} 0 0 1 ${x0} ${y1 - r} V${y0 + r} A${r} ${r} 0 0 1 ${x0 + r} ${y0} H${s}`;
+    el = {};
+    el.linien = neu('g', { stroke: '#0B3C41', 'stroke-width': 2.5, 'stroke-dasharray': '6 8' });
+    el.l1 = neu('line', { x1: K.cockpit[0], y1: K.cockpit[1], x2: K.smart[0], y2: K.smart[1] }, el.linien);
+    el.l2 = neu('line', { x1: K.cockpit[0], y1: K.cockpit[1], x2: K.mail[0], y2: K.mail[1] }, el.linien);
+    el.weg = neu('path', { d, fill: 'none', stroke: '#0B3C41', 'stroke-width': 4, 'stroke-linejoin': 'round' });
+    el.pfeile = K.pfeile.map(([x, y, w]) => neu('path', { d: 'M-12 -16 L4 0 L-12 16', fill: 'none', stroke: '#0B3C41', 'stroke-width': 4,
+      'stroke-linecap': 'round', 'stroke-linejoin': 'round', transform: `translate(${x} ${y}) rotate(${w})` }));
+    const tor = K.tor;
+    el.tor = neu('g', { transform: `translate(${x1} ${tor.y + tor.h / 2})` });
+    el.torIn = neu('g', {}, el.tor);
+    neu('rect', { x: -tor.b / 2, y: -tor.h / 2, width: tor.b, height: tor.h, rx: 10, fill: '#FF7A59' }, el.torIn);
+    el.torStrich = neu('line', { x1: 0, y1: -tor.h / 2 + 16, x2: 0, y2: tor.h / 2 - 16, stroke: '#fff', 'stroke-width': 4, 'stroke-dasharray': '10 10' }, el.torIn);
+    el.punkt = neu('circle', { r: 13, fill: '#FF7A59', stroke: '#fff', 'stroke-width': 5 });  // unter den Stationen: taucht aus dem Archiv auf
+    el.stationen = ['archiv', 'bauen', 'smart', 'mail', 'cockpit'].map(k => {
+      const g = neu('g', { transform: `translate(${K[k][0]} ${K[k][1]})` });
+      neu('circle', { r: k === 'cockpit' ? 12 : 16, fill: '#0B3C41', stroke: '#fff', 'stroke-width': 6 }, neu('g', {}, g)); return [k, g.firstChild]; });
+    el.notiz = neu('g', { stroke: '#0F1212', 'stroke-width': 3, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' });
+    el.notizPfeil = neu('path', { d: K.notizPfeil, pathLength: 100 }, el.notiz);
+    el.notizSpitze = neu('path', { d: K.notizSpitze }, el.notiz);
+    // Länge entlang der Schleife für jeden Punkt (nächster Abtastpunkt)
+    const ges = el.weg.getTotalLength(), probe = Array.from({ length: 801 }, (_, i) => { const p = el.weg.getPointAtLength(ges * i / 800); return [p.x, p.y, ges * i / 800]; });
+    const laenge = ([x, y]) => probe.slice(1).reduce((m, p) => (Math.hypot(p[0] - x, p[1] - y) < Math.hypot(m[0] - x, m[1] - y) ? p : m))[2];
+    L = { ges, archiv: 0, bauen: laenge(K.bauen), tor: laenge([x1, tor.y + tor.h / 2]), smart: laenge(K.smart), mail: laenge(K.mail),
+          pfeile: K.pfeile.map(laenge), notiz: laenge([x0, (y0 + y1) / 2]) };
+    // Stift: bis zum Tor, dort kurz Prüfung, dann einmal herum zurück ins Archiv
+    stift = t => t < 2.8 ? mix(0, L.tor, einaus(phase(t, .3, 2.8))) : t < 3.6 ? L.tor : mix(L.tor, ges, einaus(phase(t, 3.6, 6.4)));
+    const wann = l => { for (let t = 0; t <= DAUER; t += .01) if (stift(t) >= l - .5) return t; return DAUER; };
+    ZEIT = { bauen: wann(L.bauen), tor: wann(L.tor - K.tor.h / 2), smart: wann(L.smart), mail: wann(L.mail), notiz: wann(L.notiz), pfeile: L.pfeile.map(wann) };
+    for (const [k, o] of Object.entries(K.text)) {
+      const e = T[k]; Object.assign(e.style, { left: o.x + 'px', top: o.y + 'px', width: o.b ? o.b + 'px' : '', textAlign: o.a || 'left' });
+      if (!o.b) e.style.left = (o.x - e.offsetWidth / 2) + 'px';  // Betriebs-Beschriftung mittig unter dem Punkt
+    }
+  };
+
+  const plopp = (g, p) => g.setAttribute('transform', `scale(${feder(p, .45)})`);
+  const seek = t => {
+    const s = stift(t);
+    el.weg.style.strokeDasharray = `${s} ${L.ges + 10}`;
+    const pkt = el.weg.getPointAtLength(Math.min(s, L.ges - .01));
+    el.punkt.setAttribute('cx', pkt.x); el.punkt.setAttribute('cy', pkt.y);
+    el.punkt.style.opacity = clamp(phase(t, 0, .3) * (1 - phase(t, 6.5, 6.9)));
+    el.pfeile.forEach((p, i) => p.style.opacity = phase(t, ZEIT.pfeile[i], ZEIT.pfeile[i] + .25));
+    const z = { archiv: 0, bauen: ZEIT.bauen, smart: ZEIT.smart, mail: ZEIT.mail, cockpit: ZEIT.mail + .5 };
+    for (const [k, g] of el.stationen) plopp(g, phase(t, z[k], z[k] + .6));
+    // Archiv nimmt den neuen Stand auf: kurzer Puls am Ende
+    const puls = phase(t, 6.4, 7.2); if (puls > 0) el.stationen[0][1].setAttribute('transform', `scale(${1 + .5 * Math.sin(Math.PI * puls)})`);
+    // Tor: erscheint vor dem Punkt, Strichlinie läuft während der Prüfung
+    el.torIn.setAttribute('transform', `scale(1 ${feder(phase(t, ZEIT.tor - .3, ZEIT.tor + .3), .5)})`);
+    el.torStrich.style.strokeDashoffset = -40 * phase(t, 2.6, 3.8) * 1.2;
+    // Cockpit holt Haus und Mails zusammen
+    el.linien.style.opacity = einaus(phase(t, ZEIT.mail + .3, ZEIT.mail + .9));
+    ankommen(T.archiv, phase(t, .1, .7));
+    ankommen(T.bauen, phase(t, ZEIT.bauen, ZEIT.bauen + .6));
+    ankommen(T.tor, phase(t, 2.8, 3.4));
+    ankommen(T.smart, phase(t, ZEIT.smart, ZEIT.smart + .6), 10);
+    ankommen(T.mail, phase(t, ZEIT.mail, ZEIT.mail + .6), 10);
+    ankommen(T.cockpit, phase(t, ZEIT.mail + .6, ZEIT.mail + 1.2));
+    const zn = Math.max(ZEIT.notiz, ZEIT.mail + 1.4);  // Notiz erst nach dem Cockpit
+    const np = einaus(phase(t, zn - .2, zn + .4));
+    el.notizPfeil.style.strokeDasharray = `${100 * np} 100`; el.notizPfeil.style.opacity = np > 0 ? 1 : 0;  // runde Enden zeigen sonst einen Punkt
+    el.notizSpitze.style.opacity = phase(t, zn + .3, zn + .5);
+    ankommen(T.notiz, phase(t, zn - .4, zn + .3), 12);
+  };
+
+  let jetzt = DAUER;
+  const passen = () => {
+    const name = fig.clientWidth < 760 ? 'schmal' : 'breit';  // breites Layout erst ab 760 px, sonst wird die Schrift zu klein
+    if (name !== layoutName) { fig.classList.toggle('schmal', name === 'schmal'); buehne.style.maxWidth = name === 'schmal' ? '480px' : ''; aufbauen(name); }
+    const s = buehne.clientWidth / K.w; ig.style.transform = `scale(${s})`; buehne.style.height = (K.h * s) + 'px';
+    seek(jetzt);
+  };
+  new ResizeObserver(passen).observe(buehne); passen();
+
+  const ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let start = null, laeuft = false;
+  const bild = ts => { if (start === null) start = ts; jetzt = Math.min(DAUER, (ts - start) / 1000); seek(jetzt);
+    if (jetzt < DAUER) requestAnimationFrame(bild); else { laeuft = false; knopf.classList.add('an'); } };
+  const abspielen = () => { if (laeuft) return; laeuft = true; start = null; knopf.classList.remove('an'); requestAnimationFrame(bild); };
+  knopf.onclick = abspielen;
+  if (ruhig) { knopf.classList.add('an'); return; }
+  jetzt = 0; seek(0);
+  const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { io.disconnect(); abspielen(); } }, { threshold: .5 });
+  io.observe(buehne);
+})();
+</script>
     <div class="aiprojekte">
       <article class="proj">
         <h3>Ein Smart Home, das sich selbst überwacht</h3>
