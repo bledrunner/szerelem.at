@@ -69,6 +69,13 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .zahl{border-top:3px solid var(--nacht);padding-top:14px}
 .zahl b{display:block;font-size:clamp(30px,4vw,42px);line-height:1;font-weight:800;color:var(--nacht)}
 .zahl span{display:block;margin-top:8px;font-size:15px;color:var(--text2);line-height:1.4}
+.stationen{margin-top:56px;max-width:860px}
+.stationen h3{margin:0 0 6px;font-size:22px;line-height:1.25;color:var(--nacht)}
+.stationen ol{list-style:none;margin:20px 0 0;padding:0;border-top:3px solid var(--nacht)}
+.stationen li{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid #DCE4E4}
+.stationen .j{font-weight:800;color:var(--nacht);font-variant-numeric:tabular-nums}
+.stationen .r b{display:block;color:var(--schwarz)}
+.stationen .r span{display:block;margin-top:2px;font-size:15px;color:var(--text2);line-height:1.4}
 
 .grau{background:var(--grau)}
 .faelle{display:grid;gap:20px;margin-top:36px}
@@ -204,6 +211,7 @@ footer p{margin:0 0 10px}
   footer .monogramm{width:72px}
 }
 @media (max-width:520px){
+  .stationen li{grid-template-columns:1fr;gap:2px}
   body{font-size:16px}
   .rahmen{padding:0 18px}
   .kopf .oben{flex-wrap:wrap}
@@ -268,6 +276,17 @@ footer p{margin:0 0 10px}
       <div class="zahl"><b>60+</b><span>Serviceprozesse analysiert und verbessert</span></div>
       <div class="zahl"><b>100+</b><span>Kolleg:innen für den Technik-Support geschult, Privat- und Businesskunden</span></div>
       <div class="zahl"><b>16.000+</b><span>Stunden Handarbeit pro Jahr automatisiert, in vier Projekten</span></div>
+    </div>
+    <div class="stationen">
+      <h3>Stationen</h3>
+      <p>24 Jahre im selben Telekommunikations-Unternehmen, fünf Rollen. Jeden Wechsel habe ich selbst angestoßen.</p>
+      <ol>
+        <li><span class="j">2024–2026</span><span class="r"><b>Senior Automation Analyst &amp; Developer</b><span>IT-Automatisierung mit Power Platform, RPA und AI</span></span></li>
+        <li><span class="j">2022–2024</span><span class="r"><b>Service Data Expert</b><span>Datenanalyse und Prozessmonitoring mit Power BI und Celonis</span></span></li>
+        <li><span class="j">2017–2022</span><span class="r"><b>Digital Coordination Manager</b><span>Prozessdigitalisierung und Projektleitung</span></span></li>
+        <li><span class="j">2012–2017</span><span class="r"><b>Quality Coach &amp; Teamcoach</b><span>Schulung, Qualitätssicherung und Prozessverbesserung, Privat- und Businesskunden</span></span></li>
+        <li><span class="j">2002–2012</span><span class="r"><b>Kundenservice &amp; Teamleiter-Stellvertretung</b><span>Technischer und kaufmännischer Support am Telefon</span></span></li>
+      </ol>
     </div>
   </div>
 </section>
