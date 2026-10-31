@@ -359,6 +359,192 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
           <dt>Lösung</dt><dd>Ein Sprachmodell liest jedes Mail, erkennt Kundennummer und Thema und legt den Fall direkt im Kundensystem an. Die Regeln pflegt der Fachbereich selbst in einer Liste, dafür braucht er keinen Entwickler. Unsichere Fälle gehen bewusst an einen Menschen.</dd>
         </dl>
         </details>
+        <figure class="ablauf" id="ablauf-postfach" aria-label="Animierter Ablauf: Mails landen im Sammelpostfach, ein Sprachmodell liest Kundennummer und Thema und legt den Fall in der richtigen Abteilung an. Unsichere Fälle gehen an einen Menschen.">
+<style>
+.ablauf{margin:22px 0 4px;position:relative}
+.ablauf .buehne{position:relative;overflow:hidden}
+.ablauf .ig{position:absolute;left:0;top:0;transform-origin:0 0;font-family:var(--schrift);color:var(--schwarz);
+  --haupt:var(--nacht);--akzent:var(--koralle);--hg:#fff;--flaeche:var(--grau);--linie:#DCE4E4;--leise:#8C9A9B}
+.ablauf .ig>*{position:absolute}
+.ablauf .lab{font-size:34px;color:var(--text2);white-space:nowrap;line-height:1.3}
+.ablauf .fach{border:4px solid var(--haupt);border-top:none;border-radius:0 0 8px 8px}
+.ablauf .brief{background:var(--hg);border:3px solid var(--haupt);border-radius:5px;overflow:hidden;z-index:5;box-sizing:border-box}
+.ablauf .brief svg{position:absolute;inset:0;width:100%;height:100%}
+.ablauf .frage{position:absolute;right:-2px;top:-2px;width:50%;aspect-ratio:1;border-radius:50%;background:var(--akzent);color:var(--nacht);font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1}
+.ablauf .held{z-index:8}
+.ablauf .inhalt{position:absolute;inset:0;padding:24px 28px;display:flex;flex-direction:column;gap:14px}
+.ablauf .inhalt i{display:block;height:5px;border-radius:3px;background:var(--leise)}
+.ablauf .chip{position:relative;align-self:flex-start;font-size:36px;font-weight:600;padding:0 6px;white-space:nowrap;isolation:isolate;line-height:1.25}
+.ablauf .chip b{position:absolute;left:0;right:0;bottom:0;height:36%;background:var(--akzent);z-index:-1;transform-origin:left center}
+.ablauf .modell{border:3px solid var(--haupt);border-radius:8px;background:var(--flaeche);box-sizing:border-box}
+.ablauf .modell .lab{position:absolute;left:22px;top:14px;color:var(--haupt);font-weight:700}
+.ablauf .erkennt{position:absolute;left:0;right:0;top:50%;margin-top:-1.25em;text-align:center;font-size:36px;line-height:1.25}
+.ablauf .uhr,.ablauf .lab-uhr{z-index:3}
+.ablauf .abt{display:flex;align-items:center;border-bottom:2px solid var(--linie);font-size:36px;box-sizing:border-box}
+.ablauf .abt.mensch{border-bottom:none;font-weight:700;color:var(--haupt)}
+.ablauf .beleg{display:flex;flex-direction:column;gap:4px}
+.ablauf .beleg .bl{font-size:34px;color:var(--text2);line-height:1.25}
+.ablauf .pf-zahl{font-size:132px;font-weight:800;line-height:1;letter-spacing:-.03em;color:var(--haupt);font-variant-numeric:tabular-nums}
+.ablauf .beleg .zwei{font-size:36px;font-weight:600}
+.ablauf .nochmal{position:absolute;right:0;bottom:-6px;background:none;border:0;padding:6px 0;font:inherit;font-size:15px;font-weight:700;color:var(--petrol);cursor:pointer;opacity:0;pointer-events:none}
+.ablauf .nochmal.an{opacity:1;pointer-events:auto}
+.ablauf figcaption{margin-top:10px;font-size:15px;color:var(--text2);line-height:1.4;padding-right:150px}
+@media(max-width:600px){.ablauf figcaption{padding-right:0}.ablauf .nochmal{position:static;display:block;margin-top:6px}}
+</style>
+<div class="buehne"><div class="ig">
+  <div class="fach"></div>
+  <div class="lab lab-fach">Sammelpostfach</div>
+  <div class="lab lab-hand">von Hand</div>
+  <svg class="uhr" viewBox="0 0 100 100" aria-hidden="true">
+    <circle cx="50" cy="50" r="42" fill="none" stroke="#DCE4E4" stroke-width="8"/>
+    <circle class="bogen" cx="50" cy="50" r="42" fill="none" stroke="#FF7A59" stroke-width="8" transform="rotate(-90 50 50)" pathLength="100" stroke-dasharray="0 100"/>
+    <text x="50" y="61" text-anchor="middle" font-size="32" font-weight="800" fill="#0F1212">2 h</text>
+  </svg>
+  <div class="lab lab-uhr">Frist</div>
+  <div class="modell"><div class="lab">Sprachmodell liest</div><div class="erkennt">erkennt Kundennummer<br>und Thema</div></div>
+  <div class="abt"><span>Rechnung</span></div>
+  <div class="abt"><span>Technik</span></div>
+  <div class="abt"><span>Vertrag</span></div>
+  <div class="abt"><span>Kündigung</span></div>
+  <div class="abt mensch"><span>Mensch prüft</span></div>
+  <div class="beleg">
+    <div class="bl">Fälle pro Jahr automatisch zugeordnet</div>
+    <div class="pf-zahl">52.000</div>
+    <div class="zwei">1.200+ Stunden pro Jahr frei</div>
+  </div>
+</div></div>
+<figcaption>Schematisch: Was sicher ist, landet direkt in der Abteilung. Was unsicher ist, geht an einen Menschen.</figcaption>
+<button class="nochmal" type="button">Nochmal abspielen ↻</button>
+</figure>
+<script>
+(() => {
+  const fig = document.getElementById('ablauf-postfach'); if (!fig) return;
+  const buehne = fig.querySelector('.buehne'), ig = fig.querySelector('.ig'), knopf = fig.querySelector('.nochmal');
+  const DAUER = 12.8;
+  // Zeit-Helfer (wie infografik-claude/scripts/zeit.js)
+  const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+  const phase = (t, v, b) => clamp((t - v) / (b - v));
+  const aus = p => 1 - Math.pow(1 - clamp(p), 3), ein = p => Math.pow(clamp(p), 3);
+  const einaus = p => { p = clamp(p); return p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; };
+  const feder = (p, z = .6) => { p = clamp(p); if (p === 0 || p === 1) return p; const w0 = 11, wd = w0 * Math.sqrt(1 - z * z);
+    const f = q => 1 - Math.exp(-z * w0 * q) * (Math.cos(wd * q) + (z * w0 / wd) * Math.sin(wd * q)); return f(p) / f(1); };
+  const mix = (a, b, p) => a + (b - a) * p;
+  const rgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  const farbe = (a, b, p) => { const x = rgb(a), y = rgb(b); return '#' + x.map((v, i) => Math.round(mix(v, y[i], clamp(p))).toString(16).padStart(2, '0')).join(''); };
+  const form = (a, b, p) => Object.fromEntries(Object.keys(a).map(k => [k, mix(a[k], b[k], p)]));
+  const setzeForm = (el, f) => { el.style.left = f.x + 'px'; el.style.top = f.y + 'px'; el.style.width = f.b + 'px'; el.style.height = f.h + 'px'; };
+  const staffel = (t, s, i, ab, d) => phase(t, s + i * ab, s + i * ab + d);
+  const ankommen = (el, p, dy = 20) => { const f = feder(p, .8); el.style.opacity = clamp(p * 2.5); el.style.transform = `translateY(${mix(dy, 0, f)}px)`; };
+  const weg = (el, p, dy = -12) => { el.style.opacity = 1 - clamp(p); el.style.transform = `translateY(${mix(0, dy, ein(p))}px)`; };
+  const zufall = s => () => { s = (s * 1664525 + 1013904223) % 4294967296; return s / 4294967296; };
+
+  const LAYOUT = {
+    breit:  { w: 1740, h: 540, fach: { x: 20, y: 70, b: 420, h: 380 }, uhr: { x: 480, y: 70, d: 120 },
+              modell: { x: 660, y: 10, b: 520, h: 470 }, gross: { x: 690, y: 100, b: 460, h: 290 },
+              abt: { x: 1260, y: 10, b: 480, step: 100, track: 1510 }, beleg: { x: 20, y: 90, b: 620 }, bw: 130, bh: 88, cw: 62, ch: 44 },
+    schmal: { w: 720, h: 1060, fach: { x: 0, y: 20, b: 330, h: 250 }, uhr: { x: 400, y: 30, d: 120 },
+              modell: { x: 0, y: 360, b: 720, h: 300 }, gross: { x: 40, y: 420, b: 640, h: 220 },
+              abt: { x: 0, y: 690, b: 720, step: 70, track: 300 }, beleg: { x: 0, y: 30, b: 720 }, bw: 110, bh: 74, cw: 56, ch: 40 },
+  };
+  const N = 10, HAND = 9, HELD = 8, UNSICHER = 2, ABFLUG = [7, 6, 5, 4, 3, 2, 1, 0];
+  const ZEILE = { 9: 0, 8: 0, 7: 1, 6: 2, 5: 0, 4: 3, 3: 1, 2: 4, 1: 2, 0: 1 };
+  const HAUPT = '#0B3C41', HG = '#ffffff';
+  const q = s => ig.querySelector(s), qa = s => [...ig.querySelectorAll(s)];
+  const fach = q('.fach'), labFach = q('.lab-fach'), labHand = q('.lab-hand'), uhr = q('.uhr'), bogen = q('.bogen'), labUhr = q('.lab-uhr');
+  const modell = q('.modell'), erkennt = q('.erkennt'), abt = qa('.abt'), beleg = q('.beleg'), bl = [...beleg.children], zahl = q('.pf-zahl');
+
+  const briefe = [];
+  for (let i = 0; i < N; i++) {
+    const b = document.createElement('div'); b.className = 'brief' + (i === HELD ? ' held' : '');
+    b.innerHTML = '<svg viewBox="0 0 100 66" preserveAspectRatio="none"><path d="M0 0 L50 36 L100 0" fill="none" stroke="' + HAUPT + '" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>'
+      + (i === UNSICHER ? '<span class="frage">?</span>' : '')
+      + (i === HELD ? '<div class="inhalt"><i style="width:55%"></i><span class="chip"><b></b>Kundennummer</span><i style="width:85%"></i><span class="chip"><b></b>Thema: Rechnung</span><i style="width:70%"></i></div>' : '');
+    ig.appendChild(b); briefe.push(b);
+  }
+  const held = briefe[HELD], inhalt = held.querySelector('.inhalt'), chips = [...held.querySelectorAll('.chip b')], frage = briefe[UNSICHER].querySelector('.frage');
+  const r = zufall(7), dreh = Array.from({ length: N }, () => (r() - .5) * 8), versatz = Array.from({ length: N }, () => (r() - .5) * 40);
+
+  let K, stapel, mitte, zelle, layoutName;
+  const aufbauen = name => {
+    layoutName = name; K = LAYOUT[name];
+    ig.style.width = K.w + 'px'; ig.style.height = K.h + 'px';
+    const px = (el, o) => Object.entries(o).forEach(([k, v]) => el.style[k] = typeof v === 'number' ? v + 'px' : v);
+    px(fach, { left: K.fach.x, top: K.fach.y, width: K.fach.b, height: K.fach.h });
+    px(labFach, { left: K.fach.x, top: K.fach.y + K.fach.h + 14 });
+    px(labHand, { left: K.fach.x + labFach.offsetWidth + 24, top: K.fach.y + K.fach.h + 14 });
+    uhr.setAttribute('width', K.uhr.d); uhr.setAttribute('height', K.uhr.d); px(uhr, { left: K.uhr.x, top: K.uhr.y });
+    px(labUhr, { left: K.uhr.x, width: K.uhr.d, textAlign: 'center', top: K.uhr.y + K.uhr.d + 10 });
+    px(modell, { left: K.modell.x, top: K.modell.y, width: K.modell.b, height: K.modell.h });
+    abt.forEach((a, z) => px(a, { left: K.abt.x, top: K.abt.y + z * K.abt.step + (z === 4 ? 14 : 0), width: K.abt.b, height: K.abt.step }));
+    px(beleg, { left: K.beleg.x, top: K.beleg.y, width: K.beleg.b });
+    const stufe = (K.fach.h - 40 - K.bh) / (N - 1);
+    stapel = i => ({ x: K.fach.x + K.fach.b / 2 - K.bw / 2 + versatz[i], y: K.fach.y + K.fach.h - 14 - K.bh - i * stufe, b: K.bw, h: K.bh });
+    mitte = { x: K.modell.x + K.modell.b / 2 - K.bw / 2, y: K.modell.y + K.modell.h / 2 - K.bh / 2 + 20, b: K.bw, h: K.bh };
+    const platz = {}, n = [0, 0, 0, 0, 0]; for (const i of [HAND, HELD, ...ABFLUG]) platz[i] = n[ZEILE[i]]++;
+    zelle = i => { const z = ZEILE[i], zy = K.abt.y + z * K.abt.step + (z === 4 ? 14 : 0);
+      if (i === UNSICHER) { const b = K.bw * .8, h = K.bh * .8; return { x: K.abt.track, y: zy + (K.abt.step - h) / 2, b, h }; }
+      return { x: K.abt.track + platz[i] * (K.cw + 14), y: zy + (K.abt.step - K.ch) / 2, b: K.cw, h: K.ch }; };
+  };
+  const bogenWeg = (a, b, p, hoch) => { const f = form(a, b, einaus(p)); f.y -= 4 * p * (1 - p) * hoch; return f; };
+
+  const seek = t => {
+    const fachWeg = phase(t, 10.9, 11.3);
+    for (const el of [fach, labFach]) { if (t < 10.9) { el.style.opacity = 1; el.style.transform = 'none'; } else weg(el, fachWeg, 16); }
+    if (t < 5) ankommen(labHand, phase(t, 2.2, 2.8), 12); else weg(labHand, phase(t, 5, 5.3), 8);
+    bogen.setAttribute('stroke-dasharray', `${phase(t, .3, 5) * 85 * (1 - einaus(phase(t, 9, 10.8)))} 100`);
+    for (const el of [uhr, labUhr]) { if (t < 10.9) ankommen(el, phase(t, .2, .8), 10); else weg(el, fachWeg); }
+    ankommen(modell, phase(t, 5, 5.6));
+    abt.forEach((a, i) => ankommen(a, staffel(t, .5, i, .1, .5), 12));
+    briefe.forEach((b, i) => {
+      const s = stapel(i), ta = -1.2 + i * .42, pIn = phase(t, ta - .5, ta);
+      let f = { ...s, y: s.y + mix(-240, 0, feder(pIn, .75)) }, fuell = 0, rot = dreh[i];
+      if (i === HAND) { const p = phase(t, 3.4, 5); if (p > 0) { f = bogenWeg(s, zelle(i), p, 120); fuell = phase(t, 4.7, 5); rot = mix(dreh[i], 0, p); } }
+      else if (i === HELD) { if (t >= 5.4) { const g = K.gross;
+          if (t < 6) f = bogenWeg(s, mitte, phase(t, 5.4, 6), 60);
+          else if (t < 7.7) f = form(mitte, g, feder(phase(t, 6, 6.5), .8));
+          else if (t < 8.2) f = form(g, mitte, einaus(phase(t, 7.7, 8.2)));
+          else f = bogenWeg(mitte, zelle(i), phase(t, 8.2, 8.8), 60);
+          rot = t < 6 ? mix(dreh[i], 0, phase(t, 5.4, 6)) : 0; fuell = phase(t, 7.8, 8.2); } }
+      else { const p = staffel(t, 9, ABFLUG.indexOf(i), .2, .9);
+        if (p > 0) { rot = mix(dreh[i], 0, clamp(p * 2));
+          f = p < .45 ? bogenWeg(s, mitte, p / .45, 40) : bogenWeg(mitte, zelle(i), (p - .45) / .55, 40);
+          fuell = i === UNSICHER ? 0 : phase(p, .4, .6); } }
+      setzeForm(b, f); b.style.background = farbe(HG, HAUPT, fuell); b.style.transform = `rotate(${rot}deg)`;
+      b.style.opacity = clamp(pIn * 3); b.firstChild.style.opacity = 1 - fuell;
+    });
+    inhalt.style.opacity = phase(t, 6.3, 6.6) * (1 - phase(t, 7.6, 7.8));
+    held.firstChild.style.opacity = (1 - phase(t, 7.8, 8.2)) * (1 - phase(t, 6.1, 6.35)) + phase(t, 7.6, 7.8) * (1 - phase(t, 7.8, 8.2));
+    chips[0].style.transform = `scaleX(${aus(phase(t, 6.7, 7))})`;
+    chips[1].style.transform = `scaleX(${aus(phase(t, 7.05, 7.35))})`;
+    const pf = staffel(t, 9, ABFLUG.indexOf(UNSICHER), .2, .9);
+    frage.style.transform = `scale(${feder(phase(pf, .3, .55), .5)})`;
+    frage.style.fontSize = (parseFloat(briefe[UNSICHER].style.width) * .4) + 'px';
+    ankommen(erkennt, phase(t, 10.9, 11.5), 14);
+    bl.forEach((e, i) => ankommen(e, staffel(t, 11.2, i, .15, .6), 16));
+    zahl.textContent = (Math.round(mix(0, 520, aus(phase(t, 11.3, 12.4)))) * 100).toLocaleString('de-DE');
+  };
+
+  let jetzt = DAUER;
+  const passen = () => {
+    const w = buehne.clientWidth, name = w < 600 ? 'schmal' : 'breit';
+    if (name !== layoutName) aufbauen(name);
+    const s = w / K.w; ig.style.transform = `scale(${s})`; buehne.style.height = (K.h * s) + 'px';
+    seek(jetzt);
+  };
+  new ResizeObserver(passen).observe(buehne); passen();
+
+  const ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let start = null, laeuft = false;
+  const bild = ts => { if (start === null) start = ts; jetzt = Math.min(DAUER, (ts - start) / 1000); seek(jetzt);
+    if (jetzt < DAUER) requestAnimationFrame(bild); else { laeuft = false; knopf.classList.add('an'); } };
+  const abspielen = () => { if (laeuft) return; laeuft = true; start = null; knopf.classList.remove('an'); requestAnimationFrame(bild); };
+  knopf.onclick = abspielen;
+  if (ruhig) { knopf.classList.add('an'); return; }
+  jetzt = 0; seek(0);
+  const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { io.disconnect(); abspielen(); } }, { threshold: .5 });
+  io.observe(buehne);
+})();
+</script>
       </article>
       <article class="fall">
         <h3>Angebote in 30 Minuten statt 20 Stunden</h3>
