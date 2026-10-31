@@ -65,7 +65,7 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .profil p{max-width:760px;color:var(--text2)}
 .profil .oben{display:grid;grid-template-columns:1fr 220px;gap:48px;align-items:start}
 .profil .foto{width:220px;height:220px;display:block;margin-top:8px}
-.zahlen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.zahlen{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
 .zahl{border-top:3px solid var(--nacht);padding-top:14px}
 .zahl b{display:block;font-size:clamp(30px,4vw,42px);line-height:1;font-weight:800;color:var(--nacht)}
 .zahl span{display:block;margin-top:8px;font-size:15px;color:var(--text2);line-height:1.4}
@@ -220,7 +220,7 @@ footer p{margin:0 0 10px}
   .mehr[open] summary::after{content:" ▴"}
   .mehr .auf,.mehr[open] .zu{display:none}
   .mehr[open] .auf{display:inline}
-  .zahlen{gap:12px}
+  .zahlen{gap:24px 12px;grid-template-columns:repeat(2,1fr)}
   .zahl b{font-size:28px}
   .zahl span{font-size:13px}
   .fakten{grid-template-columns:1fr;gap:0}
@@ -266,6 +266,7 @@ footer p{margin:0 0 10px}
     <div class="zahlen">
       <div class="zahl"><b>20+</b><span>Jahre Prozesspraxis auf allen operativen Ebenen</span></div>
       <div class="zahl"><b>60+</b><span>Serviceprozesse analysiert und verbessert</span></div>
+      <div class="zahl"><b>100+</b><span>Kolleg:innen für den Technik-Support geschult, Privat- und Businesskunden</span></div>
       <div class="zahl"><b>16.000+</b><span>Stunden Handarbeit pro Jahr automatisiert, in vier Projekten</span></div>
     </div>
   </div>
