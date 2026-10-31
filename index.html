@@ -371,7 +371,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
 .ablauf .brief{background:var(--hg);border:3px solid var(--haupt);border-radius:5px;overflow:hidden;z-index:5;box-sizing:border-box}
 .ablauf .brief svg{position:absolute;inset:0;width:100%;height:100%}
 .ablauf .frage{position:absolute;right:-2px;top:-2px;width:50%;aspect-ratio:1;border-radius:50%;background:var(--akzent);color:var(--nacht);font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1}
-.ablauf .held{z-index:8}
+.ablauf .brief-gross{z-index:8}
 .ablauf .inhalt{position:absolute;inset:0;padding:24px 28px;display:flex;flex-direction:column;gap:14px}
 .ablauf .inhalt i{display:block;height:5px;border-radius:3px;background:var(--leise)}
 .ablauf .chip{position:relative;align-self:flex-start;font-size:36px;font-weight:600;padding:0 6px;white-space:nowrap;isolation:isolate;line-height:1.25}
@@ -386,10 +386,10 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
 .ablauf .beleg .bl{font-size:34px;color:var(--text2);line-height:1.25}
 .ablauf .pf-zahl{font-size:132px;font-weight:800;line-height:1;letter-spacing:-.03em;color:var(--haupt);font-variant-numeric:tabular-nums}
 .ablauf .beleg .zwei{font-size:36px;font-weight:600}
-.ablauf .nochmal{position:absolute;right:0;bottom:-6px;background:none;border:0;padding:6px 0;font:inherit;font-size:15px;font-weight:700;color:var(--petrol);cursor:pointer;opacity:0;pointer-events:none}
+.ablauf .nochmal{position:absolute;right:0;bottom:0;background:none;border:0;padding:0;min-height:44px;font:inherit;font-size:15px;font-weight:700;color:var(--petrol);cursor:pointer;opacity:0;pointer-events:none}
 .ablauf .nochmal.an{opacity:1;pointer-events:auto}
 .ablauf figcaption{margin-top:10px;font-size:15px;color:var(--text2);line-height:1.4;padding-right:150px}
-@media(max-width:600px){.ablauf figcaption{padding-right:0}.ablauf .nochmal{position:static;display:block;margin-top:6px}}
+.ablauf.schmal figcaption{padding-right:0}.ablauf.schmal .nochmal{position:static;display:block;margin-top:2px}
 </style>
 <div class="buehne"><div class="ig">
   <div class="fach"></div>
@@ -455,7 +455,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
 
   const briefe = [];
   for (let i = 0; i < N; i++) {
-    const b = document.createElement('div'); b.className = 'brief' + (i === HELD ? ' held' : '');
+    const b = document.createElement('div'); b.className = 'brief' + (i === HELD ? ' brief-gross' : '');
     b.innerHTML = '<svg viewBox="0 0 100 66" preserveAspectRatio="none"><path d="M0 0 L50 36 L100 0" fill="none" stroke="' + HAUPT + '" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>'
       + (i === UNSICHER ? '<span class="frage">?</span>' : '')
       + (i === HELD ? '<div class="inhalt"><i style="width:55%"></i><span class="chip"><b></b>Kundennummer</span><i style="width:85%"></i><span class="chip"><b></b>Thema: Rechnung</span><i style="width:70%"></i></div>' : '');
@@ -527,7 +527,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
   let jetzt = DAUER;
   const passen = () => {
     const w = buehne.clientWidth, name = w < 600 ? 'schmal' : 'breit';
-    if (name !== layoutName) aufbauen(name);
+    if (name !== layoutName) { aufbauen(name); fig.classList.toggle('schmal', name === 'schmal'); }
     const s = w / K.w; ig.style.transform = `scale(${s})`; buehne.style.height = (K.h * s) + 'px';
     seek(jetzt);
   };
