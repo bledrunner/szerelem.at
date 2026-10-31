@@ -39,6 +39,10 @@ a{color:inherit}
 .kopf h1 img{width:min(100%,760px);height:auto}
 .kopf .rolle{margin:22px 0 0;font-size:20px;font-weight:600}
 .kopf .status{margin:4px 0 0;font-size:16px;opacity:.8}
+.kopf.klein{padding-bottom:clamp(36px,6vw,64px)}
+.kopf.klein h1{margin:clamp(36px,6vw,64px) 0 0;font-size:clamp(34px,5vw,52px);line-height:1.1;font-weight:800}
+.kopf.klein .rolle{margin-top:16px}
+.kopf.klein .status a{color:#fff}
 .knoepfe{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .knopf{display:inline-block;padding:13px 24px;border-radius:3px;font-weight:700;text-decoration:none;font-size:16px}
 .knopf.voll{background:var(--koralle);color:var(--nacht)}
@@ -243,7 +247,7 @@ footer p{margin:0 0 10px}
   <div class="rahmen">
     <div class="oben">
       <img class="logo" src="wortmarke.svg" alt="Rene Szerelem" width="764" height="108">
-      <nav><a href="#praxis">Praxis</a><a href="#arbeitsweise">Arbeitsweise</a><a href="#privat">Privat</a><a href="#ai-projekte">AI</a><a href="#kontakt">Kontakt</a></nav>
+      <nav><a href="#praxis">Praxis</a><a href="#arbeitsweise">Arbeitsweise</a><a href="projekte.html">Eigenprojekte</a><a href="#kontakt">Kontakt</a></nav>
     </div>
     <h1><img src="claim.svg" alt="Ich weiß, warum Automatisierung scheitert. Darum fange ich beim Prozess an." width="811" height="182"></h1>
     <p class="rolle">Automation &amp; Data Analyst</p>
@@ -259,7 +263,7 @@ footer p{margin:0 0 10px}
 <div class="leiste" aria-hidden="true">
   <div class="rahmen">
     <a class="hoch" href="#top" title="Nach oben" tabindex="-1"><img class="wm" src="wortmarke.svg" alt="" width="764" height="108"><img class="r" src="favicon.svg" alt="" width="26" height="26"></a>
-    <nav><a href="#praxis" tabindex="-1">Praxis</a><a href="#arbeitsweise" tabindex="-1">Arbeitsweise</a><a href="#privat" tabindex="-1">Privat</a><a href="#ai-projekte" tabindex="-1">AI</a><a href="#kontakt" tabindex="-1">Kontakt</a></nav>
+    <nav><a href="#praxis" tabindex="-1">Praxis</a><a href="#arbeitsweise" tabindex="-1">Arbeitsweise</a><a href="projekte.html" tabindex="-1">Eigenprojekte</a><a href="#kontakt" tabindex="-1">Kontakt</a></nav>
   </div>
 </div>
 
@@ -382,132 +386,11 @@ footer p{margin:0 0 10px}
   </div>
 </section>
 
-<section class="grau" id="privat">
+<section class="grau" id="eigenprojekte">
   <div class="rahmen">
-    <h2>Was ich privat baue</h2>
-    <p class="intro">Automatisierung hört bei mir nicht um fünf auf. Zuhause baue ich für meine Familie, nach denselben Prinzipien wie im Job.</p>
-    <div class="privat">
-      <article>
-        <h3>Ein Mail-Sortierer, der aus Fehlern lernt</h3>
-        <p class="werkzeug"><span>Python</span> · <span>AI/LLM</span> · <span>Microsoft Graph</span></p>
-        <details class="mehr" open><summary><span class="zu">Mehr lesen</span><span class="auf">Zuklappen</span></summary>
-        <p>AI sortiert unser Familienpostfach stündlich nach Themen und Fristen. Verschiebe ich ein Mail, merkt sich das System die Korrektur und schlägt mir jede Woche neue Regeln vor. Übernommen wird nichts ohne mein OK.</p>
-        </details>
-      </article>
-      <article>
-        <h3>Eine Lern- und Spieleplattform für die Kinder</h3>
-        <p class="werkzeug"><span>Python</span> · <span>WebSockets</span> · <span>Docker</span></p>
-        <details class="mehr" open><summary><span class="zu">Mehr lesen</span><span class="auf">Zuklappen</span></summary>
-        <p>Mathe-Training und Brettspiele wie „Mensch ärgere dich nicht“, live über mehrere Tablets, jedes Kind am eigenen Gerät. Getestet von den strengsten Anwendern, die es gibt.</p>
-        </details>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="ai-projekte">
-  <div class="rahmen">
-    <h2>Was ich mit AI gebaut habe</h2>
-    <p class="intro">Vier Projekte, die ich mit AI gebaut habe und im Alltag betreibe.</p>
-    <div class="aiprojekte">
-      <article class="proj">
-        <h3>Ein Smart Home, das sich selbst überwacht</h3>
-        <p class="werkzeug"><span>Home Assistant</span> · <span>Python</span> · <span>AI/LLM</span></p>
-        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
-        <dl>
-          <dt>Problem</dt><dd>Rund 80 Automationen von Heizung bis Rollos. Dabei fällt nicht auf, wenn eine ins Leere verweist, nie läuft oder ein Gerät hängt.</dd>
-          <dt>Lösung</dt><dd>Wächter erkennen hängende Geräte und starten sie neu, tägliche Backups sichern alles, ein Familien-Bot meldet Störungen. Dazu prüft ein Skript täglich alle Automationen, ein zweites merkt sich den Normalzustand der Geräte. Ein Modell liest nur die geänderten Automationen und bewertet sie. Repariert wird erst nach meinem OK.</dd>
-          <dt>Ergebnis</dt><dd>Im ersten Lauf waren 14 von 40 geprüften Automationen auffällig, bei Kosten von 0,34 Dollar. Mehrere davon habe ich inzwischen repariert.</dd>
-        </dl>
-        </details>
-      </article>
-      <article class="proj">
-        <h3>Ein Wetter-Display, das seine Quellen prüft</h3>
-        <p class="werkzeug"><span>Python</span> · <span>REST-APIs</span> · <span>E-Paper</span></p>
-        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
-        <dl>
-          <dt>Problem</dt><dd>Jede Regenvorhersage liegt manchmal daneben, und welche Quelle am verlässlichsten ist, weiß man vorher nicht.</dd>
-          <dt>Lösung</dt><dd>Das Display zeigt die Regenwerte mehrerer Quellen (Open-Meteo, Pirate Weather, GeoSphere Austria). Ein Protokoll hält fest, welche Quelle wie oft richtig lag.</dd>
-          <dt>Stand</dt><dd>Das Protokoll sammelt seit Oktober Daten. Die Auswertung steht noch aus.</dd>
-        </dl>
-        </details>
-      </article>
-      <article class="proj">
-        <h3>Prüf-Agenten, die AI-Ergebnisse gegenlesen</h3>
-        <p class="werkzeug"><span>Claude Code</span> · <span>Subagenten</span></p>
-        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
-        <dl>
-          <dt>Problem</dt><dd>Ergebnisse, die eine AI selbst gebaut hat, wirken überzeugend, auch wenn sie nicht stimmen.</dd>
-          <dt>Lösung</dt><dd>Drei unabhängige Prüf-Agenten für Code, Texte und Webseiten. Sie ändern nichts und liefern eine Liste mit Befunden. Sie laufen nach Änderungen an Konfiguration, Code, Webseiten und längeren Texten.</dd>
-          <dt>Ergebnis</dt><dd>Diese Seite wurde ebenfalls von einem dieser Agenten geprüft, bevor sie online ging.</dd>
-        </dl>
-        </details>
-      </article>
-      <article class="proj">
-        <h3>Ein Wissenssystem mit Cockpit</h3>
-        <p class="werkzeug"><span>Obsidian</span> · <span>Git</span> · <span>Docker</span></p>
-        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
-        <dl>
-          <dt>Problem</dt><dd>Wissen und Termine liegen verstreut, und jede AI-Sitzung beginnt bei null.</dd>
-          <dt>Lösung</dt><dd>Ein Notizarchiv mit Versionsverwaltung, Zugangsdaten verschlüsselt. Ein eigenes Cockpit zeigt Termine, Mails und Haus auf einen Blick.</dd>
-          <dt>Stand</dt><dd>Die AI liest den Kontext aus dem Notizarchiv, statt jedes Mal bei null zu starten.</dd>
-        </dl>
-        </details>
-      </article>
-    </div>
-    <div class="skills">
-      <h3>Skills: Anleitungen, die Claude bei einer Aufgabe lädt</h3>
-      <p>Ein Skill hält Ablauf, Regeln und Vorlagen für eine wiederkehrende Aufgabe fest. Ich muss die Aufgabe nicht jedes Mal neu erklären. Zwei Beispiele aus meinem Alltag:</p>
-      <ul>
-        <li><b>Textprüfung nach Hausregeln:</b> findet AI-typische Formulierungen in deutschen Texten und schreibt sie um.</li>
-        <li><b>Infografiken im eigenen Design:</b> zeichnet aus Text und echten Zahlen eine fertige Grafik. Erster Einsatz: warum lange Chats mehr Token verbrauchen.</li>
-      </ul>
-      <figure class="grafik" aria-label="Infografik: Ein langer Chat mit 12 Fragen verbraucht 78 Blöcke, dieselbe Arbeit in zwei kurzen Chats nur 42.">
-        <div class="g-reiter" role="tablist" aria-label="Ansicht" hidden>
-          <button type="button" role="tab" aria-selected="true" aria-controls="g-schema" data-ansicht="schema">Schema</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="g-beispiel" data-ansicht="beispiel">Beispiel zum Durchklicken</button>
-        </div>
-        <div class="g-schema" id="g-schema" role="tabpanel">
-        <div class="g-text">
-          <p class="g-titel">Lange Chats verbrennen Token</p>
-          <p>Bei jeder neuen Frage liest die AI den ganzen Chat noch einmal mit. Jede Säule ist eine Frage, ihre Höhe zeigt, wie viel die AI dafür liest. Darum wird jede Säule höher als die davor.</p>
-          <p>Im Schema spart das fast die Hälfte. In meinen echten Chats wäre so <mark>rund ein Fünftel</mark> der Token vermeidbar gewesen.</p>
-          <p class="g-tipp">Pro Aufgabe ein neuer Chat.</p>
-          <button type="button" class="g-zum-beispiel" data-ansicht="beispiel" hidden>Lieber an einem Beispiel? Hier durchklicken ›</button>
-        </div>
-        <div class="g-bild" aria-hidden="true">
-          <div><svg viewBox="0 0 168 168"><rect class="voll" x="1" y="155" width="12" height="12" rx="2"/><rect class="voll" x="15" y="155" width="12" height="12" rx="2"/><rect class="voll" x="15" y="141" width="12" height="12" rx="2"/><rect class="voll" x="29" y="155" width="12" height="12" rx="2"/><rect class="voll" x="29" y="141" width="12" height="12" rx="2"/><rect class="voll" x="29" y="127" width="12" height="12" rx="2"/><rect class="voll" x="43" y="155" width="12" height="12" rx="2"/><rect class="voll" x="43" y="141" width="12" height="12" rx="2"/><rect class="voll" x="43" y="127" width="12" height="12" rx="2"/><rect class="voll" x="43" y="113" width="12" height="12" rx="2"/><rect class="voll" x="57" y="155" width="12" height="12" rx="2"/><rect class="voll" x="57" y="141" width="12" height="12" rx="2"/><rect class="voll" x="57" y="127" width="12" height="12" rx="2"/><rect class="voll" x="57" y="113" width="12" height="12" rx="2"/><rect class="voll" x="57" y="99" width="12" height="12" rx="2"/><rect class="voll" x="71" y="155" width="12" height="12" rx="2"/><rect class="voll" x="71" y="141" width="12" height="12" rx="2"/><rect class="voll" x="71" y="127" width="12" height="12" rx="2"/><rect class="voll" x="71" y="113" width="12" height="12" rx="2"/><rect class="voll" x="71" y="99" width="12" height="12" rx="2"/><rect class="voll" x="71" y="85" width="12" height="12" rx="2"/><rect class="voll" x="85" y="155" width="12" height="12" rx="2"/><rect class="rot" x="85" y="141" width="12" height="12" rx="2"/><rect class="rot" x="85" y="127" width="12" height="12" rx="2"/><rect class="rot" x="85" y="113" width="12" height="12" rx="2"/><rect class="rot" x="85" y="99" width="12" height="12" rx="2"/><rect class="rot" x="85" y="85" width="12" height="12" rx="2"/><rect class="rot" x="85" y="71" width="12" height="12" rx="2"/><rect class="voll" x="99" y="155" width="12" height="12" rx="2"/><rect class="voll" x="99" y="141" width="12" height="12" rx="2"/><rect class="rot" x="99" y="127" width="12" height="12" rx="2"/><rect class="rot" x="99" y="113" width="12" height="12" rx="2"/><rect class="rot" x="99" y="99" width="12" height="12" rx="2"/><rect class="rot" x="99" y="85" width="12" height="12" rx="2"/><rect class="rot" x="99" y="71" width="12" height="12" rx="2"/><rect class="rot" x="99" y="57" width="12" height="12" rx="2"/><rect class="voll" x="113" y="155" width="12" height="12" rx="2"/><rect class="voll" x="113" y="141" width="12" height="12" rx="2"/><rect class="voll" x="113" y="127" width="12" height="12" rx="2"/><rect class="rot" x="113" y="113" width="12" height="12" rx="2"/><rect class="rot" x="113" y="99" width="12" height="12" rx="2"/><rect class="rot" x="113" y="85" width="12" height="12" rx="2"/><rect class="rot" x="113" y="71" width="12" height="12" rx="2"/><rect class="rot" x="113" y="57" width="12" height="12" rx="2"/><rect class="rot" x="113" y="43" width="12" height="12" rx="2"/><rect class="voll" x="127" y="155" width="12" height="12" rx="2"/><rect class="voll" x="127" y="141" width="12" height="12" rx="2"/><rect class="voll" x="127" y="127" width="12" height="12" rx="2"/><rect class="voll" x="127" y="113" width="12" height="12" rx="2"/><rect class="rot" x="127" y="99" width="12" height="12" rx="2"/><rect class="rot" x="127" y="85" width="12" height="12" rx="2"/><rect class="rot" x="127" y="71" width="12" height="12" rx="2"/><rect class="rot" x="127" y="57" width="12" height="12" rx="2"/><rect class="rot" x="127" y="43" width="12" height="12" rx="2"/><rect class="rot" x="127" y="29" width="12" height="12" rx="2"/><rect class="voll" x="141" y="155" width="12" height="12" rx="2"/><rect class="voll" x="141" y="141" width="12" height="12" rx="2"/><rect class="voll" x="141" y="127" width="12" height="12" rx="2"/><rect class="voll" x="141" y="113" width="12" height="12" rx="2"/><rect class="voll" x="141" y="99" width="12" height="12" rx="2"/><rect class="rot" x="141" y="85" width="12" height="12" rx="2"/><rect class="rot" x="141" y="71" width="12" height="12" rx="2"/><rect class="rot" x="141" y="57" width="12" height="12" rx="2"/><rect class="rot" x="141" y="43" width="12" height="12" rx="2"/><rect class="rot" x="141" y="29" width="12" height="12" rx="2"/><rect class="rot" x="141" y="15" width="12" height="12" rx="2"/><rect class="voll" x="155" y="155" width="12" height="12" rx="2"/><rect class="voll" x="155" y="141" width="12" height="12" rx="2"/><rect class="voll" x="155" y="127" width="12" height="12" rx="2"/><rect class="voll" x="155" y="113" width="12" height="12" rx="2"/><rect class="voll" x="155" y="99" width="12" height="12" rx="2"/><rect class="voll" x="155" y="85" width="12" height="12" rx="2"/><rect class="rot" x="155" y="71" width="12" height="12" rx="2"/><rect class="rot" x="155" y="57" width="12" height="12" rx="2"/><rect class="rot" x="155" y="43" width="12" height="12" rx="2"/><rect class="rot" x="155" y="29" width="12" height="12" rx="2"/><rect class="rot" x="155" y="15" width="12" height="12" rx="2"/><rect class="rot" x="155" y="1" width="12" height="12" rx="2"/></svg><b>78 Blöcke</b><span>1 langer Chat, 12 Nachrichten</span></div>
-          <div><svg viewBox="0 0 182 168"><rect class="voll" x="1" y="155" width="12" height="12" rx="2"/><rect class="voll" x="15" y="155" width="12" height="12" rx="2"/><rect class="voll" x="15" y="141" width="12" height="12" rx="2"/><rect class="voll" x="29" y="155" width="12" height="12" rx="2"/><rect class="voll" x="29" y="141" width="12" height="12" rx="2"/><rect class="voll" x="29" y="127" width="12" height="12" rx="2"/><rect class="voll" x="43" y="155" width="12" height="12" rx="2"/><rect class="voll" x="43" y="141" width="12" height="12" rx="2"/><rect class="voll" x="43" y="127" width="12" height="12" rx="2"/><rect class="voll" x="43" y="113" width="12" height="12" rx="2"/><rect class="voll" x="57" y="155" width="12" height="12" rx="2"/><rect class="voll" x="57" y="141" width="12" height="12" rx="2"/><rect class="voll" x="57" y="127" width="12" height="12" rx="2"/><rect class="voll" x="57" y="113" width="12" height="12" rx="2"/><rect class="voll" x="57" y="99" width="12" height="12" rx="2"/><rect class="voll" x="71" y="155" width="12" height="12" rx="2"/><rect class="voll" x="71" y="141" width="12" height="12" rx="2"/><rect class="voll" x="71" y="127" width="12" height="12" rx="2"/><rect class="voll" x="71" y="113" width="12" height="12" rx="2"/><rect class="voll" x="71" y="99" width="12" height="12" rx="2"/><rect class="voll" x="71" y="85" width="12" height="12" rx="2"/><rect class="voll" x="99" y="155" width="12" height="12" rx="2"/><rect class="weg" x="99" y="141" width="12" height="12" rx="2"/><rect class="weg" x="99" y="127" width="12" height="12" rx="2"/><rect class="weg" x="99" y="113" width="12" height="12" rx="2"/><rect class="weg" x="99" y="99" width="12" height="12" rx="2"/><rect class="weg" x="99" y="85" width="12" height="12" rx="2"/><rect class="weg" x="99" y="71" width="12" height="12" rx="2"/><rect class="voll" x="113" y="155" width="12" height="12" rx="2"/><rect class="voll" x="113" y="141" width="12" height="12" rx="2"/><rect class="weg" x="113" y="127" width="12" height="12" rx="2"/><rect class="weg" x="113" y="113" width="12" height="12" rx="2"/><rect class="weg" x="113" y="99" width="12" height="12" rx="2"/><rect class="weg" x="113" y="85" width="12" height="12" rx="2"/><rect class="weg" x="113" y="71" width="12" height="12" rx="2"/><rect class="weg" x="113" y="57" width="12" height="12" rx="2"/><rect class="voll" x="127" y="155" width="12" height="12" rx="2"/><rect class="voll" x="127" y="141" width="12" height="12" rx="2"/><rect class="voll" x="127" y="127" width="12" height="12" rx="2"/><rect class="weg" x="127" y="113" width="12" height="12" rx="2"/><rect class="weg" x="127" y="99" width="12" height="12" rx="2"/><rect class="weg" x="127" y="85" width="12" height="12" rx="2"/><rect class="weg" x="127" y="71" width="12" height="12" rx="2"/><rect class="weg" x="127" y="57" width="12" height="12" rx="2"/><rect class="weg" x="127" y="43" width="12" height="12" rx="2"/><rect class="voll" x="141" y="155" width="12" height="12" rx="2"/><rect class="voll" x="141" y="141" width="12" height="12" rx="2"/><rect class="voll" x="141" y="127" width="12" height="12" rx="2"/><rect class="voll" x="141" y="113" width="12" height="12" rx="2"/><rect class="weg" x="141" y="99" width="12" height="12" rx="2"/><rect class="weg" x="141" y="85" width="12" height="12" rx="2"/><rect class="weg" x="141" y="71" width="12" height="12" rx="2"/><rect class="weg" x="141" y="57" width="12" height="12" rx="2"/><rect class="weg" x="141" y="43" width="12" height="12" rx="2"/><rect class="weg" x="141" y="29" width="12" height="12" rx="2"/><rect class="voll" x="155" y="155" width="12" height="12" rx="2"/><rect class="voll" x="155" y="141" width="12" height="12" rx="2"/><rect class="voll" x="155" y="127" width="12" height="12" rx="2"/><rect class="voll" x="155" y="113" width="12" height="12" rx="2"/><rect class="voll" x="155" y="99" width="12" height="12" rx="2"/><rect class="weg" x="155" y="85" width="12" height="12" rx="2"/><rect class="weg" x="155" y="71" width="12" height="12" rx="2"/><rect class="weg" x="155" y="57" width="12" height="12" rx="2"/><rect class="weg" x="155" y="43" width="12" height="12" rx="2"/><rect class="weg" x="155" y="29" width="12" height="12" rx="2"/><rect class="weg" x="155" y="15" width="12" height="12" rx="2"/><rect class="voll" x="169" y="155" width="12" height="12" rx="2"/><rect class="voll" x="169" y="141" width="12" height="12" rx="2"/><rect class="voll" x="169" y="127" width="12" height="12" rx="2"/><rect class="voll" x="169" y="113" width="12" height="12" rx="2"/><rect class="voll" x="169" y="99" width="12" height="12" rx="2"/><rect class="voll" x="169" y="85" width="12" height="12" rx="2"/><rect class="weg" x="169" y="71" width="12" height="12" rx="2"/><rect class="weg" x="169" y="57" width="12" height="12" rx="2"/><rect class="weg" x="169" y="43" width="12" height="12" rx="2"/><rect class="weg" x="169" y="29" width="12" height="12" rx="2"/><rect class="weg" x="169" y="15" width="12" height="12" rx="2"/><rect class="weg" x="169" y="1" width="12" height="12" rx="2"/></svg><b>42 Blöcke</b><span>2 kurze Chats, 36 gespart</span></div>
-        </div>
-        </div>
-        <div class="g-beispiel" id="g-beispiel" role="tabpanel" hidden>
-          <div class="g-text g-intro">
-            <p class="g-titel">Erst Urlaub, dann Bewerbung</p>
-            <p>Die AI merkt sich nichts zwischen zwei Antworten. Vor jeder Antwort liest sie den ganzen Chat von vorn, wie ein Kollege, der vor jedem Satz das ganze Protokoll durchblättert.</p>
-            <p>Du stellst 6 Fragen zum Urlaub, dann 6 zu einer Bewerbung. Links bleibt alles in einem Chat, rechts fängt bei Frage 7 ein neuer an.</p>
-          </div>
-          <div class="g-text g-steuer">
-            <div class="g-frage"><small class="g-nr"></small><q class="g-q"></q></div>
-            <p class="g-erklaer" aria-live="polite"></p>
-            <div class="g-knoepfe">
-              <button type="button" class="g-zurueck">‹ Zurück</button>
-              <button type="button" class="g-weiter">Nächste Frage ›</button>
-            </div>
-          </div>
-          <div class="g-bild" aria-hidden="true">
-            <div><svg viewBox="0 0 168 168" class="g-lang"></svg><b class="g-summe-lang"></b><span>ein Chat für alles</span></div>
-            <div><svg viewBox="0 0 182 168" class="g-kurz"></svg><b class="g-summe-kurz"></b><span class="g-text-kurz"></span></div>
-          </div>
-        </div>
-        <p class="g-legende" aria-label="Legende: Eine Säule ist eine Frage von dir. Ein Block ist eine Nachricht, die die AI dafür mitliest. Rot nur wegen des langen Verlaufs. Gestrichelt mit neuem Chat gespart.">
-          <span><svg class="saeule" viewBox="0 0 12 40" aria-hidden="true"><rect class="voll" width="12" height="12" rx="2"/><rect class="voll" y="14" width="12" height="12" rx="2"/><rect class="voll" y="28" width="12" height="12" rx="2"/></svg>1 Säule = eine Frage von dir</span>
-          <span><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="voll" width="12" height="12" rx="2"/></svg>1 Block = eine Nachricht, die die AI dafür mitliest</span>
-          <span><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="rot" width="12" height="12" rx="2"/></svg>nur wegen des langen Verlaufs</span>
-          <span><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="weg" x=".6" y=".6" width="10.8" height="10.8" rx="2"/></svg>mit neuem Chat gespart</span>
-        </p>
-        <figcaption>Mit dem Infografik-Skill entworfen. Vereinfachtes Schema, die Zahl ist eine Modellrechnung aus meinen Claude-Code-Logs vom 10.09. bis 28.10.2026, keine Messung.</figcaption>
-      </figure>
-    </div>
+    <h2>Eigenprojekte</h2>
+    <p class="intro">Was ich nach Feierabend baue, betreibe ich selbst: ein Smart Home, das sich selbst überwacht, Prüf-Agenten für AI-Ergebnisse, ein Wissenssystem, einen Mail-Sortierer, der aus Korrekturen lernt, und eine Lernplattform für die Kinder.</p>
+    <div class="knoepfe"><a class="knopf voll" href="projekte.html">Alle Eigenprojekte ansehen</a></div>
   </div>
 </section>
 
@@ -548,18 +431,6 @@ footer p{margin:0 0 10px}
 const handy = matchMedia('(max-width:520px)');
 const klappen = () => document.querySelectorAll('.mehr').forEach(d => d.open = !handy.matches);
 handy.addEventListener('change', klappen); klappen();
-// Leiste ein, sobald der Kopf weg ist; aktiven Abschnitt markieren
-const leiste = document.querySelector('.leiste');
-new IntersectionObserver(([e]) => leiste.classList.toggle('an', !e.isIntersecting))
-  .observe(document.querySelector('.kopf .knoepfe'));
-const links = leiste.querySelectorAll('nav a');
-const markieren = () => {
-  let aktiv = null;
-  for (const a of links) if (document.querySelector(a.hash).getBoundingClientRect().top < innerHeight * 0.4) aktiv = a;
-  if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) aktiv = links[links.length - 1];
-  links.forEach(a => a.classList.toggle('aktiv', a === aktiv));
-};
-addEventListener('scroll', markieren, {passive: true}); markieren();
 // Fallback, wenn am Firmenrechner kein Mailprogramm eingerichtet ist
 const k = document.querySelector('.kopieren');
 if (navigator.clipboard) {
@@ -569,63 +440,19 @@ if (navigator.clipboard) {
     setTimeout(() => k.textContent = 'Mail-Adresse kopieren', 2500);
   });
 }
-// Token-Grafik: Reiter Schema/Beispiel, Beispiel Frage für Frage
-const fig = document.querySelector('.grafik');
-if (fig) {
-  const reiter = fig.querySelectorAll('[role=tab]');
-  const schema = fig.querySelector('.g-schema'), bsp = fig.querySelector('.g-beispiel');
-  const zeigen = (ansicht) => {
-    schema.hidden = ansicht !== 'schema'; bsp.hidden = ansicht !== 'beispiel';
-    reiter.forEach(r => r.setAttribute('aria-selected', r.dataset.ansicht === ansicht));
-  };
-  fig.querySelector('.g-reiter').hidden = false;
-  fig.querySelector('.g-zum-beispiel').hidden = false;
-  fig.querySelectorAll('[data-ansicht]').forEach(b => b.addEventListener('click', () => zeigen(b.dataset.ansicht)));
-  const fragen = ['Such mir eine Ferienwohnung in Kroatien für Juli, mit Kindern.', 'Welche davon liegt nah am Strand?',
-    'Wie lang fahren wir von Wien hin?', 'Mach mir eine Packliste für eine Woche.', 'Was kann man dort bei Schlechtwetter machen?',
-    'Fass mir alles in einer Nachricht zusammen.', 'Was anderes: Hilf mir bei einem Anschreiben.', 'Da ist die Stellenanzeige.',
-    'Der Einstieg ist mir zu steif.', 'Bitte kürzer.', 'Passt mein Lebenslauf dazu?', 'Schreib mir noch eine kurze Mail dazu.'];
-  const ns = 'http://www.w3.org/2000/svg';
-  const block = (x, y, art, neu) => {
-    const r = document.createElementNS(ns, 'rect');
-    if (art === 'weg') { r.setAttribute('x', x + .6); r.setAttribute('y', y + .6); r.setAttribute('width', 10.8); r.setAttribute('height', 10.8); }
-    else { r.setAttribute('x', x); r.setAttribute('y', y); r.setAttribute('width', 12); r.setAttribute('height', 12); }
-    r.setAttribute('rx', 2); r.setAttribute('class', art + (neu ? ' neu' : '')); return r;
-  };
-  // Säule i: unten die Nachrichten zum aktuellen Thema, oben ab Frage 7 die 6 Urlaubs-Nachrichten
-  const saeule = (svg, i, n, kurz) => {
-    const x = 1 + 14 * (i - 1) + (kurz && i > 6 ? 14 : 0), eigene = i > 6 ? i - 6 : i;
-    for (let k = 0; k < i; k++) svg.append(block(x, 155 - 14 * k, k < eigene ? 'voll' : (kurz ? 'weg' : 'rot'), i === n));
-  };
-  const summe = (n, kurz) => { let s = 0; for (let i = 1; i <= n; i++) s += kurz && i > 6 ? i - 6 : i; return s; };
-  const lang = fig.querySelector('.g-lang'), kurz = fig.querySelector('.g-kurz');
-  const zurueck = fig.querySelector('.g-zurueck'), weiter = fig.querySelector('.g-weiter');
-  let n = 1;
-  const malen = () => {
-    lang.replaceChildren(); kurz.replaceChildren();
-    for (let i = 1; i <= n; i++) { saeule(lang, i, n, false); saeule(kurz, i, n, true); }
-    const sl = summe(n, false), sk = summe(n, true);
-    fig.querySelector('.g-nr').textContent = `Frage ${n} von 12 · ${n <= 6 ? 'Urlaub' : 'Bewerbung'}`;
-    fig.querySelector('.g-q').textContent = fragen[n - 1];
-    const bloecke = (z) => z === 1 ? '1 Block' : `${z} Blöcke`;
-    fig.querySelector('.g-summe-lang').textContent = bloecke(sl);
-    fig.querySelector('.g-summe-kurz').textContent = bloecke(sk);
-    fig.querySelector('.g-text-kurz').textContent = n > 6 ? `neuer Chat ab Frage 7, ${sl - sk} gespart` : 'neuer Chat ab Frage 7';
-    fig.querySelector('.g-erklaer').textContent =
-      n === 1 ? 'Die AI liest nur deine Frage: 1 Block. Rechts ist es bis Frage 6 genau gleich.' :
-      n <= 6 ? `Die AI liest deine Frage und ${n === 2 ? 'die eine' : `die ${n - 1}`} davor, also ${n} Blöcke. Alles gehört zum Urlaub, nichts davon ist umsonst.` :
-      n === 7 ? 'Neues Thema. Links liest die AI trotzdem alle 6 Urlaubs-Nachrichten mit (rot), obwohl sie fürs Anschreiben nichts bringen. Rechts im neuen Chat liest sie nur deine Frage.' :
-      n < 12 ? `Links liest die AI ${n} Nachrichten, 6 davon zum Urlaub. Rechts nur die ${n - 6} zur Bewerbung.` :
-      `Gleiche Arbeit, aber links ${sl} Blöcke und rechts ${sk}. Der neue Chat hat ${sl - sk} Blöcke gespart, fast die Hälfte.`;
-    zurueck.disabled = n === 1;
-    weiter.textContent = n === 12 ? 'Noch einmal von vorn' : 'Nächste Frage ›';
-  };
-  const vor = () => { n = n === 12 ? 1 : n + 1; malen(); };
-  weiter.addEventListener('click', vor);
-  zurueck.addEventListener('click', () => { if (n > 1) { n--; malen(); } });
-  bsp.querySelector('.g-bild').addEventListener('click', vor);
-  malen();
-}
 </script>
-</body>
+<script>
+// Leiste ein, sobald der Kopf weg ist; aktiven Abschnitt markieren
+const leiste = document.querySelector('.leiste');
+new IntersectionObserver(([e]) => leiste.classList.toggle('an', !e.isIntersecting))
+  .observe(document.querySelector('.kopf .knoepfe'));
+const links = leiste.querySelectorAll('nav a');
+const markieren = () => {
+  let aktiv = null;
+  for (const a of links) if (a.hash && document.querySelector(a.hash).getBoundingClientRect().top < innerHeight * 0.4) aktiv = a;
+  if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) aktiv = [...links].reverse().find(a => a.hash);
+  links.forEach(a => a.classList.toggle('aktiv', a === aktiv));
+};
+addEventListener('scroll', markieren, {passive: true}); markieren();
+</script></body>
 </html>
