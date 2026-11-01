@@ -6,7 +6,7 @@
 <title>Wie ich mit AI baue – Rene Szerelem</title>
 <meta name="description" content="Wie ich bei meinen Eigenprojekten mit AI baue: Smart Home, Mail-Sortierer, Prüf-Agenten, Wissensarchiv. Dazu drei Fehler, aus denen ich gelernt habe.">
 <meta property="og:title" content="Wie ich mit AI baue – Rene Szerelem">
-<meta property="og:description" content="Ich weiß, warum Automatisierung scheitert. Darum fange ich beim Prozess an.">
+<meta property="og:description" content="Was bei mir mit AI im Alltag läuft, wie ich es baue und aus welchen Fehlern ich gelernt habe.">
 <meta property="og:image" content="https://szerelem.at/og.png">
 <meta property="og:url" content="https://szerelem.at/projekte">
 <meta property="og:type" content="website">
@@ -30,6 +30,7 @@ a{color:inherit}
 .kopf{background:var(--nacht);color:#fff;overflow:hidden}
 .kopf .oben{display:flex;justify-content:space-between;align-items:center;padding-top:28px}
 .kopf .logo{height:34px;width:auto;display:block}
+.kopf .oben>a{display:block;padding:8px 0;margin:-8px 0}
 /* Wortmarke: einmaliger Wisch von links, 0,8 s, ease-out-quart; ohne Bewegung (reduced-motion) bleibt sie statisch */
 @keyframes wisch{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
 @media (prefers-reduced-motion:no-preference){.kopf .logo{animation:wisch .8s cubic-bezier(.25,1,.5,1) .15s backwards}}
@@ -454,7 +455,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
     <div class="aiprojekte">
       <article class="proj">
         <h3>Ein Smart Home, das sich selbst überwacht</h3>
-        <p class="werkzeug"><span>Home Assistant</span> · <span>Python</span> · <span>AI/LLM</span></p>
+        <p class="werkzeug"><span>Home Assistant</span> ·&nbsp;<span>Python</span> ·&nbsp;<span>AI/LLM</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Rund 70 Automationen von Heizung bis Rollos. Dabei fällt nicht auf, wenn eine ins Leere verweist, nie läuft oder ein Gerät hängt.</dd>
@@ -464,15 +465,8 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
         </details>
       </article>
       <article class="proj">
-        <h3>Ein Mail-Sortierer, der aus Fehlern lernt</h3>
-        <p class="werkzeug"><span>Python</span> · <span>AI/LLM</span> · <span>Microsoft Graph</span></p>
-        <details class="mehr" open><summary><span class="zu">Mehr lesen</span><span class="auf">Zuklappen</span></summary>
-        <p>AI sortiert mein Postfach stündlich nach Themen und Fristen. Verschiebe ich ein Mail, merkt sich das System die Korrektur und schlägt mir jede Woche neue Regeln vor, die ich selbst freigebe.</p>
-        </details>
-      </article>
-      <article class="proj">
         <h3>Ein Wetter-Display, das seine Quellen prüft</h3>
-        <p class="werkzeug"><span>Python</span> · <span>REST-APIs</span> · <span>E-Paper</span></p>
+        <p class="werkzeug"><span>Python</span> ·&nbsp;<span>REST-APIs</span> ·&nbsp;<span>E-Paper</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Jede Regenvorhersage liegt manchmal daneben, und welche Quelle am verlässlichsten ist, weiß man vorher nicht.</dd>
@@ -482,8 +476,15 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
         </details>
       </article>
       <article class="proj">
+        <h3>Ein Mail-Sortierer, der aus Fehlern lernt</h3>
+        <p class="werkzeug"><span>Python</span> ·&nbsp;<span>AI/LLM</span> ·&nbsp;<span>Microsoft Graph</span></p>
+        <details class="mehr" open><summary><span class="zu">Mehr lesen</span><span class="auf">Zuklappen</span></summary>
+        <p>AI sortiert mein Postfach stündlich nach Themen und Fristen. Verschiebe ich ein Mail, merkt sich das System die Korrektur und schlägt mir jede Woche neue Regeln vor, die ich selbst freigebe.</p>
+        </details>
+      </article>
+      <article class="proj">
         <h3>Eine Lern- und Spieleplattform für die Kinder</h3>
-        <p class="werkzeug"><span>Python</span> · <span>WebSockets</span> · <span>Docker</span></p>
+        <p class="werkzeug"><span>Python</span> ·&nbsp;<span>WebSockets</span> ·&nbsp;<span>Docker</span></p>
         <details class="mehr" open><summary><span class="zu">Mehr lesen</span><span class="auf">Zuklappen</span></summary>
         <p>Mathe-Training und Brettspiele wie „Mensch ärgere dich nicht“, live über mehrere Tablets, jedes Kind am eigenen Gerät. Getestet von den strengsten Anwendern, die es gibt.</p>
         </details>
@@ -499,7 +500,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
     <div class="aiprojekte drei">
       <article class="proj">
         <h3>Wissensarchiv mit Cockpit</h3>
-        <p class="werkzeug"><span>Obsidian</span> · <span>Git</span> · <span>Docker</span></p>
+        <p class="werkzeug"><span>Obsidian</span> ·&nbsp;<span>Git</span> ·&nbsp;<span>Docker</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Wissen und Termine liegen verstreut, und jede AI-Sitzung beginnt bei null.</dd>
@@ -510,7 +511,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
       </article>
       <article class="proj">
         <h3>Bauen mit Skills</h3>
-        <p class="werkzeug"><span>Claude Code</span> · <span>Skills</span></p>
+        <p class="werkzeug"><span>Claude Code</span> ·&nbsp;<span>Skills</span></p>
         <details class="mehr" open><summary><span class="zu">Mehr lesen</span><span class="auf">Zuklappen</span></summary>
         <p>Ein Skill ist eine Anleitung, die Claude bei einer Aufgabe lädt. Er hält Ablauf, Regeln und Vorlagen fest, damit ich eine wiederkehrende Aufgabe nicht jedes Mal neu erklären muss. Zwei Beispiele aus meinem Alltag:</p>
         <ul>
@@ -521,7 +522,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
       </article>
       <article class="proj">
         <h3>Prüf-Agenten, die AI-Ergebnisse gegenlesen</h3>
-        <p class="werkzeug"><span>Claude Code</span> · <span>Subagenten</span></p>
+        <p class="werkzeug"><span>Claude Code</span> ·&nbsp;<span>Subagenten</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Ergebnisse, die eine AI selbst gebaut hat, wirken überzeugend, auch wenn sie nicht stimmen.</dd>
@@ -616,7 +617,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
     <h2>Reden wir darüber</h2>
     <p>Ich suche eine neue Aufgabe in Prozessautomatisierung und Datenanalyse. Wenn Sie einen Prozess haben, der nach Automatisierung schreit, oder eine Stelle, die dazu passt: Schreiben Sie mir.</p>
     <dl class="fakten">
-      <dt>Rollen und Schwerpunkte</dt><dd class="werkzeug"><span>Process Automation Developer</span> · <span>Power Platform Developer</span> · <span>Data / BI Analyst</span> · <span>AI-Integration</span></dd>
+      <dt>Rollen und Schwerpunkte</dt><dd class="werkzeug"><span>Process Automation Developer</span> ·&nbsp;<span>Power Platform Developer</span> ·&nbsp;<span>Data / BI Analyst</span> ·&nbsp;<span>AI-Integration</span></dd>
       <dt>Ort</dt><dd>Wien, gerne hybrid</dd>
       <dt>Verfügbar</dt><dd>ab sofort</dd>
       <dt>Lebenslauf</dt><dd>schicke ich gern auf Anfrage</dd>
@@ -703,23 +704,24 @@ if (fig) {
   const summe = (n, kurz) => { let s = 0; for (let i = 1; i <= n; i++) s += kurz && i > 6 ? i - 6 : i; return s; };
   const lang = fig.querySelector('.g-lang'), kurz = fig.querySelector('.g-kurz');
   const zurueck = fig.querySelector('.g-zurueck'), weiter = fig.querySelector('.g-weiter');
+  const erklaer = (n, sl, sk) =>
+    n === 1 ? 'Die AI liest nur Ihre Frage: 1 Block. Rechts ist es bis Frage 6 genau gleich.' :
+      n <= 6 ? `Die AI liest Ihre Frage und ${n === 2 ? 'die eine' : `die ${n - 1}`} davor, also ${n} Blöcke. Alles gehört zum Urlaub, nichts davon ist umsonst.` :
+      n === 7 ? 'Neues Thema. Links liest die AI trotzdem alle 6 Urlaubs-Nachrichten mit (rot), obwohl sie fürs Anschreiben nichts bringen. Rechts im neuen Chat liest sie nur Ihre Frage.' :
+      n < 12 ? `Links liest die AI ${n} Nachrichten, 6 davon zum Urlaub. Rechts nur die ${n - 6} zur Bewerbung.` :
+      `Gleiche Arbeit, aber links ${sl} Blöcke und rechts ${sk}. Der neue Chat hat ${sl - sk} Blöcke gespart, fast die Hälfte.`;
   let n = 1;
   const malen = () => {
     lang.replaceChildren(); kurz.replaceChildren();
     for (let i = 1; i <= n; i++) { saeule(lang, i, n, false); saeule(kurz, i, n, true); }
     const sl = summe(n, false), sk = summe(n, true);
-    fig.querySelector('.g-nr').textContent = `Frage ${n} von 12 · ${n <= 6 ? 'Urlaub' : 'Bewerbung'}`;
+    fig.querySelector('.g-nr').textContent = `Frage ${n} von 12\u00a0· ${n <= 6 ? 'Urlaub' : 'Bewerbung'}`;
     fig.querySelector('.g-q').textContent = fragen[n - 1];
     const bloecke = (z) => z === 1 ? '1 Block' : `${z} Blöcke`;
     fig.querySelector('.g-summe-lang').textContent = bloecke(sl);
     fig.querySelector('.g-summe-kurz').textContent = bloecke(sk);
     fig.querySelector('.g-text-kurz').textContent = n > 6 ? `neuer Chat ab Frage 7, ${sl - sk} gespart` : 'neuer Chat ab Frage 7';
-    fig.querySelector('.g-erklaer').textContent =
-      n === 1 ? 'Die AI liest nur Ihre Frage: 1 Block. Rechts ist es bis Frage 6 genau gleich.' :
-      n <= 6 ? `Die AI liest Ihre Frage und ${n === 2 ? 'die eine' : `die ${n - 1}`} davor, also ${n} Blöcke. Alles gehört zum Urlaub, nichts davon ist umsonst.` :
-      n === 7 ? 'Neues Thema. Links liest die AI trotzdem alle 6 Urlaubs-Nachrichten mit (rot), obwohl sie fürs Anschreiben nichts bringen. Rechts im neuen Chat liest sie nur Ihre Frage.' :
-      n < 12 ? `Links liest die AI ${n} Nachrichten, 6 davon zum Urlaub. Rechts nur die ${n - 6} zur Bewerbung.` :
-      `Gleiche Arbeit, aber links ${sl} Blöcke und rechts ${sk}. Der neue Chat hat ${sl - sk} Blöcke gespart, fast die Hälfte.`;
+    fig.querySelector('.g-erklaer').textContent = erklaer(n, sl, sk);
     zurueck.disabled = n === 1;
     weiter.textContent = n === 12 ? 'Noch einmal von vorn' : 'Nächste Frage ›';
   };
@@ -727,6 +729,19 @@ if (fig) {
   weiter.addEventListener('click', vor);
   zurueck.addEventListener('click', () => { if (n > 1) { n--; malen(); } });
   bsp.querySelector('.g-bild').addEventListener('click', vor);
+  // Höhe von Frage und Erklärtext auf den längsten Schritt fixieren, damit die Knöpfe nicht springen
+  const frage = fig.querySelector('.g-frage'), erkl = fig.querySelector('.g-erklaer');
+  const fixieren = () => {
+    if (bsp.hidden) return;
+    const merk = n; let hf = 0, he = 0;
+    frage.style.minHeight = erkl.style.minHeight = '';
+    for (n = 1; n <= 12; n++) { malen(); hf = Math.max(hf, frage.offsetHeight); he = Math.max(he, erkl.offsetHeight); }
+    n = merk; malen();
+    frage.style.minHeight = hf + 'px'; erkl.style.minHeight = he + 'px';
+  };
+  let breite = innerWidth;
+  addEventListener('resize', () => { if (innerWidth !== breite) { breite = innerWidth; fixieren(); } });
+  fig.querySelectorAll('[data-ansicht="beispiel"]').forEach(b => b.addEventListener('click', fixieren));
   malen();
 }
 </script></body>
