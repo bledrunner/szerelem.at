@@ -526,7 +526,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Ergebnisse, die eine AI selbst gebaut hat, wirken überzeugend, auch wenn sie nicht stimmen.</dd>
-          <dt>Lösung</dt><dd>Drei unabhängige Prüf-Agenten für Code, Texte und Webseiten. Sie ändern nichts und liefern eine Liste mit Befunden. Sie laufen nach Änderungen an Konfiguration, Code, Webseiten und längeren Texten.</dd>
+          <dt>Lösung</dt><dd>Drei unabhängige Prüf-Agenten für Code, Texte und Webseiten. Sie ändern nichts und liefern eine Liste mit Befunden. Sie laufen nach Änderungen an Konfiguration, Code, Webseiten und längeren Texten. Bei großen Prüfläufen arbeiten mehrere Kopien eines Agenten parallel, jede an einem Teil.</dd>
           <dt>Ergebnis</dt><dd>Bevor diese Seite online ging, hat sie der Agent für Webseiten geprüft.</dd>
         </dl>
         </details>
@@ -551,7 +551,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
         <h3>Alles in einem langen Chat</h3>
         <dl>
           <dt>Folge</dt><dd>Die AI liest bei jeder Frage den ganzen Verlauf mit, auch Themen, die längst erledigt sind. Laut meinen eigenen Logs wäre rund ein Fünftel der Token vermeidbar gewesen.</dd>
-          <dt>Seither</dt><dd>Pro Aufgabe ein neuer Chat. Die Grafik unten zeigt, warum.</dd>
+          <dt>Seither</dt><dd>Pro Aufgabe ein neuer Chat. Dazu zeigt mir ein eigenes Live-Dashboard, was ein Auftrag auslöst, wie viel die AI dabei mitliest und was das kostet. Beides sehen Sie unten.</dd>
         </dl>
       </article>
       <article class="proj">
@@ -608,6 +608,243 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
         </p>
         <figcaption>Mit dem Infografik-Skill entworfen. Vereinfachtes Schema, die Zahl ist eine Modellrechnung aus meinen Claude-Code-Logs vom 10.09. bis 28.10.2026, keine Messung.</figcaption>
       </figure>
+      <figure class="cl" id="ablauf-cclive" aria-label="Animierte Grafik: Was ein Auftrag an Claude Code auslöst. Echter Prüflauf vom 26.10.2026: Die Hauptsitzung holt die Automationen aus Home Assistant, verteilt 64 davon auf drei parallel arbeitende Prüf-Agenten, findet 18 weitere und startet dafür einen vierten. Sie stellt eine Rückfrage und baut die Korrekturen ein. Nach gut 6 Minuten sind 15 Automationen korrigiert, nach knapp 10 Minuten ist auch der vierte Agent fertig. 76 Werkzeug-Aufrufe, Kosten 2,31 Dollar zum Listenpreis.">
+<style>
+.cl{margin:40px 0 8px;position:relative;background:#fff;border-top:3px solid var(--nacht);padding:22px 26px 18px;scroll-margin-top:64px}
+.cl .cl-titel{margin:0;font-weight:700;font-size:22px;line-height:1.25;color:var(--nacht)}
+.cl .cl-unter{margin:4px 0 0;font-size:15px;color:var(--text2)}
+.cl .cl-buehne{position:relative;overflow:hidden;margin-top:18px}
+.cl .cl-ig{position:absolute;left:0;top:0;transform-origin:0 0;font-family:var(--schrift);color:var(--schwarz);--linie:#A3B5B5;--rot:#B3261E}
+.cl .cl-ig>*{position:absolute;margin:0;box-sizing:border-box}
+.cl .cl-ig svg.cl-draht{left:0;top:0;overflow:visible}
+.cl .cl-klein{font-size:26px;color:var(--text2);line-height:1.3;white-space:nowrap}
+.cl .cl-auftrag{border-left:6px solid var(--nacht);padding:6px 0 6px 26px}
+.cl .cl-auftrag q{display:block;font-size:40px;font-weight:700;line-height:1.25;color:var(--nacht);quotes:"„" "“"}
+.cl .cl-box{border:3px solid var(--nacht);border-radius:10px;background:#fff;padding:20px 24px}
+.cl .cl-box b{display:block;font-size:32px;line-height:1.2;color:var(--nacht)}
+.cl .cl-ha .cl-ha-zahl{display:block;font-size:30px;margin-top:10px;color:var(--text2)}
+.cl .cl-ha-ok{display:flex;flex-direction:column;gap:6px}
+.cl .cl-ha-ok span{font-size:28px;font-weight:600;color:var(--petrol);white-space:nowrap}
+.cl .cl-haupt{background:var(--grau);transition:none}
+.cl .cl-status{position:absolute;left:24px;right:24px;top:80px;font-size:34px;line-height:1.3;font-weight:600;color:var(--schwarz)}
+.cl .cl-status.fehler{color:var(--rot)}
+.cl .cl-ctx{position:absolute;left:24px;right:24px;bottom:22px}
+.cl .cl-ctx .cl-klein{display:block;margin-bottom:8px}
+.cl .cl-ctx .cl-wert{font-weight:700;white-space:nowrap;color:var(--nacht);font-variant-numeric:tabular-nums}
+.cl .cl-balken{height:16px;border-radius:8px;background:#fff;border:2px solid var(--linie);overflow:hidden}
+.cl .cl-balken i{display:block;height:100%;width:0;background:var(--petrol)}
+.cl .cl-agent{border:3px solid var(--linie);border-radius:10px;background:#fff;padding:12px 20px}
+.cl .cl-agent b{display:block;font-size:30px;line-height:1.2;color:var(--nacht)}
+.cl .cl-agent span{display:block;font-size:26px;line-height:1.3;color:var(--text2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.cl .cl-agent em{position:absolute;right:18px;top:14px;font-style:normal;font-size:26px;font-weight:700;color:var(--petrol)}
+.cl .cl-agent.fertig{border-color:var(--petrol)}
+.cl .cl-stat .cl-klein{display:block}
+.cl .cl-stat strong{display:inline-block;position:relative;font-size:64px;line-height:1.05;font-weight:800;letter-spacing:-.02em;color:var(--nacht);font-variant-numeric:tabular-nums;white-space:nowrap;isolation:isolate}
+.cl .cl-stat strong u{position:absolute;left:-4px;right:-4px;bottom:4px;height:30%;background:var(--koralle);z-index:-1;transform:scaleX(0);transform-origin:left center}
+.cl .cl-frage{border:3px solid var(--nacht);border-radius:10px;padding:16px 22px 16px 86px;background:#fff}
+.cl .cl-frage::before{content:"?";position:absolute;left:20px;top:50%;margin-top:-24px;width:48px;height:48px;border-radius:50%;background:var(--nacht);color:#fff;font-weight:800;font-size:32px;line-height:48px;text-align:center}
+.cl .cl-frage b{display:block;font-size:28px;color:var(--nacht);line-height:1.2}
+.cl .cl-frage span{display:block;font-size:28px;line-height:1.3;color:var(--text2)}
+.cl.schmal .cl-auftrag q{font-size:44px}
+.cl.schmal .cl-status{font-size:38px}
+.cl.schmal .cl-box b,.cl.schmal .cl-agent b{font-size:36px}
+.cl.schmal .cl-klein,.cl.schmal .cl-agent span,.cl.schmal .cl-agent em,.cl.schmal .cl-ha .cl-ha-zahl,.cl.schmal .cl-ha-ok span,.cl.schmal .cl-frage b,.cl.schmal .cl-frage span{font-size:32px}
+.cl.schmal .cl-stat strong{font-size:60px}
+.cl.schmal .cl-stat{width:230px}.cl.schmal .cl-stat .cl-klein,.cl.schmal .cl-ctx .cl-klein{white-space:normal}
+.cl .cl-nochmal{position:absolute;right:26px;bottom:14px;background:none;border:0;padding:0;min-height:44px;font:inherit;font-size:15px;font-weight:700;color:var(--petrol);cursor:pointer;opacity:0;pointer-events:none}
+.cl .cl-nochmal.an{opacity:1;pointer-events:auto}
+.cl figcaption{margin-top:10px;font-size:15px;color:var(--text2);line-height:1.4;padding-right:170px}
+.cl.schmal{padding:18px 16px 14px}
+.cl.schmal .cl-buehne{max-width:480px}
+.cl.schmal figcaption{padding-right:0}.cl.schmal .cl-nochmal{position:static;display:block;margin-top:2px}
+</style>
+<p class="cl-titel">Was ein Auftrag auslöst</p>
+<p class="cl-unter">Nachgezeichnet aus den Protokollen eines echten Prüflaufs im Smart Home.</p>
+<div class="cl-buehne"><div class="cl-ig">
+  <svg class="cl-draht" aria-hidden="true"></svg>
+  <div class="cl-auftrag"><span class="cl-klein">Mein Auftrag an Claude Code (sinngemäß)</span><q></q></div>
+  <div class="cl-box cl-ha"><b>Home Assistant</b><span class="cl-ha-zahl">64 Automationen</span></div>
+  <div class="cl-ha-ok"><span>Backup ✓</span><span>Prüfung ✓</span><span>neu geladen ✓</span></div>
+  <div class="cl-box cl-haupt"><b>Hauptsitzung</b><p class="cl-status"></p>
+    <div class="cl-ctx"><span class="cl-klein">liest pro Schritt mit: <span class="cl-wert">0 Token</span></span><div class="cl-balken"><i></i></div></div></div>
+  <div class="cl-agent"><b>Prüf-Agent 1</b><span></span><em></em></div>
+  <div class="cl-agent"><b>Prüf-Agent 2</b><span></span><em></em></div>
+  <div class="cl-agent"><b>Prüf-Agent 3</b><span></span><em></em></div>
+  <div class="cl-agent"><b>Prüf-Agent 4</b><span></span><em></em></div>
+  <div class="cl-stat"><span class="cl-klein">Dauer (Min.:Sek.)</span><strong>0:00</strong></div>
+  <div class="cl-stat"><span class="cl-klein">Werkzeug-Aufrufe</span><strong>0</strong></div>
+  <div class="cl-stat"><span class="cl-klein">Kosten (Listenpreis)</span><strong><u></u><span>0,00 $</span></strong></div>
+  <div class="cl-frage"><b>Rückfrage an mich</b><span>Eine Durchsage ist seit zwei Wochen aus. Absicht?</span></div>
+</div></div>
+<figcaption>Echter Auftrag vom 26.10.2026, knapp 10 Minuten im Zeitraffer. Zeiten, Aufrufe und Kosten stammen aus denselben Protokollen, die das Dashboard live auswertet.</figcaption>
+<button class="cl-nochmal" type="button">Nochmal abspielen ↻</button>
+</figure>
+<script>
+(() => {
+  const fig = document.getElementById('ablauf-cclive'); if (!fig) return;
+  const buehne = fig.querySelector('.cl-buehne'), ig = fig.querySelector('.cl-ig'), knopf = fig.querySelector('.cl-nochmal');
+  const DAUER = 18.6;
+  // Zeit-Helfer (wie infografik-claude/scripts/zeit.js)
+  const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+  const phase = (t, v, b) => clamp((t - v) / (b - v));
+  const aus = p => 1 - Math.pow(1 - clamp(p), 3);
+  const feder = (p, z = .6) => { p = clamp(p); if (p === 0 || p === 1) return p; const w0 = 11, wd = w0 * Math.sqrt(1 - z * z);
+    const f = q => 1 - Math.exp(-z * w0 * q) * (Math.cos(wd * q) + (z * w0 / wd) * Math.sin(wd * q)); return f(p) / f(1); };
+  const mix = (a, b, p) => a + (b - a) * p;
+  const ankommen = (el, p, dy = 20) => { const f = feder(p, .8); el.style.opacity = clamp(p * 2.5); el.style.transform = `translateY(${mix(dy, 0, f)}px)`; };
+
+  // Echte Daten: Session 26.10.2026 18:26:16, r = Sekunden ab Prompt (aus Transcript + Subagent-Transcripts)
+  const PROMPT = 'Prüf jede einzelne Home-Assistant-Automation und verbessere Fehler gleich.';
+  // Hauptsitzung je Antwort: [r, mitgelesene Token in Tausend, Kosten kumuliert $]
+  const HAUPT = [[3,52.2,.118],[6,56.4,.148],[12,57.2,.17],[19,57.9,.188],[23,59.8,.233],[41,63.6,.263],[159,70.3,.306],[171,76.4,.348],[222,83.4,.399],[228,86.3,.431],[238,89.8,.475],[251,91.4,.515],[259,93.4,.547],[264,95,.578],[270,96.1,.606],[275,96.9,.631],[278,98.9,.664],[286,100.7,.696],[291,101.7,.726],[297,102.5,.753],[300,104.4,.786],[304,106.5,.847],[323,110,.885],[327,110.4,.911],[330,110.8,.939],[334,111.5,.971],[342,112.6,1.009],[352,114.3,1.046],[358,115.1,1.078],[372,116,1.119]];
+  const HAUPT_AUFRUFE = [4,8,15,21,29,33,37,225,230,241,255,261,267,272,275,281,286,293,297,301,320,324,327,331,337,346,353,358];
+  const AGENTEN = [
+    { was: 'Automationen 1–22', von: 37, bis: 159, kosten: .163, aufrufe: [40,42,43,49,113,119,157] },
+    { was: 'Automationen 23–44', von: 37, bis: 168, kosten: .156, aufrufe: [40,42,43,47,54,79,120,167] },
+    { was: 'Automationen 45–64', von: 37, bis: 220, kosten: .241, aufrufe: [40,42,46,54,150,155,177,219] },
+    { was: '18 weitere', von: 241, bis: 587, kosten: .631, aufrufe: [243,246,249,249,252,257,263,269,274,345,350,386,390,440,443,491,492,497,499,503,509,531,536,543,586] },
+  ];
+  const STATUS = [[0,'liest den Auftrag'],[3,'holt alle Automationen aus Home Assistant'],[23,'teilt 64 Automationen auf drei Prüf-Agenten auf'],
+    [41,'wartet auf die Berichte'],[159,'Bericht 1: nichts Kritisches, eine Rückfrage'],[171,'Bericht 2 da, Bericht 3 läuft noch'],
+    [222,'findet 18 weitere Automationen und startet Agent 4'],[251,'baut die Korrekturen ein'],[320,'Fehler: Skript hängt an alter Schreibweise',1],
+    [327,'passt das Skript an, zweiter Lauf'],[346,'Backup, Konfiguration prüfen, neu laden'],[372,'15 Automationen korrigiert und live']];
+  const ENDE = 587;
+  // Zeitraffer: echte Sekunden → Animationssekunden (stückweise linear)
+  // je Status mindestens 1,2 s sichtbar
+  const ZEIT = [[0,1.5],[3,2.7],[23,3.9],[41,5.1],[159,6.9],[171,8.1],[222,9.3],[251,10.5],[320,11.9],[327,13.1],[346,14.3],[372,15.5],[587,17.3]];
+  const anim = r => { for (let i = 1; i < ZEIT.length; i++) if (r <= ZEIT[i][0]) { const [r0,t0] = ZEIT[i-1], [r1,t1] = ZEIT[i]; return mix(t0, t1, (r - r0) / (r1 - r0)); } return ZEIT.at(-1)[1]; };
+  const echt = t => { if (t <= ZEIT[0][1]) return 0; for (let i = 1; i < ZEIT.length; i++) if (t <= ZEIT[i][1]) { const [r0,t0] = ZEIT[i-1], [r1,t1] = ZEIT[i]; return mix(r0, r1, (t - t0) / (t1 - t0)); } return ENDE; };
+  const stufe = (liste, r, k) => { let v = 0; for (const e of liste) if (e[0] <= r) v = e[k]; return v; };
+  const zahl = (x, n = 0) => x.toLocaleString('de-DE', { minimumFractionDigits: n, maximumFractionDigits: n });
+
+  const LAYOUT = {
+    breit: { w: 1600, h: 830, auftrag: { x: 0, y: 0, b: 1600 }, ha: { x: 0, y: 300, b: 330, h: 170 }, ok: { x: 24, y: 490 },
+      haupt: { x: 520, y: 200, b: 520, h: 390 }, agent: (i) => ({ x: 1170, y: 190 + i * 112, b: 430, h: 96 }),
+      stat: (i) => ({ x: i * 330, y: 670 }), frage: { x: 1000, y: 670, b: 600, h: 130 } },
+    schmal: { w: 720, h: 1660, auftrag: { x: 0, y: 0, b: 720 }, ha: { x: 0, y: 330, b: 300, h: 250 }, ok: { x: 10, y: 600 },
+      haupt: { x: 330, y: 300, b: 390, h: 440 }, agent: (i) => ({ x: 60, y: 810 + i * 120, b: 660, h: 104 }),
+      stat: (i) => ({ x: i * 245, y: 1300 }), frage: { x: 0, y: 1500, b: 720, h: 150 } },
+  };
+  const q = s => ig.querySelector(s), qa = s => [...ig.querySelectorAll(s)];
+  const draht = q('.cl-draht'), auftrag = q('.cl-auftrag'), quote = auftrag.querySelector('q'), ha = q('.cl-ha'), okBox = q('.cl-ha-ok'), oks = [...okBox.children];
+  const haupt = q('.cl-haupt'), status = q('.cl-status'), ctxWert = q('.cl-ctx .cl-wert'), ctxBalken = q('.cl-balken i');
+  const agenten = qa('.cl-agent'), stats = qa('.cl-stat'), werte = stats.map(s => s.querySelector('strong')), frage = q('.cl-frage');
+  const kostenText = werte[2].querySelector('span'), strich = werte[2].querySelector('u'), haZahl = ha.querySelector('.cl-ha-zahl');
+  const NS = 'http://www.w3.org/2000/svg', HAUPTF = '#0B3C41', PETROL = '#22666A', LINIE = '#A3B5B5', KORALLE = '#FF7A59';
+
+  // Leitungen: 0 = Home Assistant ↔ Hauptsitzung, 1–4 = Hauptsitzung → Prüf-Agent
+  const LEIT = [
+    { an: [[3, 23, 1], [251, 360, -1]], zeichnen: 1.4 },
+    ...AGENTEN.map(a => ({ an: [[a.von, a.bis, 1]], zurueck: a.bis, zeichnen: anim(a.von) - .4 })),
+  ];
+  let pfade = [], laengen = [], punkte = [], anzahl = [], K, layoutName;
+  const aufbauen = name => {
+    layoutName = name; K = LAYOUT[name];
+    ig.style.width = K.w + 'px'; ig.style.height = K.h + 'px';
+    draht.setAttribute('width', K.w); draht.setAttribute('height', K.h); draht.setAttribute('viewBox', `0 0 ${K.w} ${K.h}`);
+    const px = (el, o) => Object.entries(o).forEach(([k, v]) => el.style[k] = typeof v === 'number' ? v + 'px' : v);
+    px(auftrag, { left: K.auftrag.x, top: K.auftrag.y, width: K.auftrag.b });
+    px(ha, { left: K.ha.x, top: K.ha.y, width: K.ha.b, height: K.ha.h });
+    px(okBox, { left: K.ok.x, top: K.ok.y });
+    px(haupt, { left: K.haupt.x, top: K.haupt.y, width: K.haupt.b, height: K.haupt.h });
+    agenten.forEach((a, i) => { const g = K.agent(i); px(a, { left: g.x, top: g.y, width: g.b, height: g.h }); });
+    stats.forEach((s, i) => { const g = K.stat(i); px(s, { left: g.x, top: g.y }); });
+    px(frage, { left: K.frage.x, top: K.frage.y, width: K.frage.b, height: K.frage.h, display: 'flex', flexDirection: 'column', justifyContent: 'center' });
+    // Pfade
+    const H = K.haupt, d = [];
+    const hy = K.ha.y + K.ha.h / 2;
+    d.push(`M${K.ha.x + K.ha.b} ${hy} H${H.x}`);
+    AGENTEN.forEach((_, i) => { const g = K.agent(i), gy = g.y + g.h / 2;
+      if (name === 'breit') { const sy = H.y + 90 + i * 70; d.push(`M${H.x + H.b} ${sy} H${H.x + H.b + 70} V${gy} H${g.x}`); }
+      else { const sx = H.x + H.b / 2; d.push(`M${sx} ${H.y + H.h} V${H.y + H.h + 30} H20 V${gy} H${g.x}`); } });
+    draht.replaceChildren(); pfade = []; punkte = [];
+    d.forEach(s => { const p = document.createElementNS(NS, 'path'); p.setAttribute('d', s); p.setAttribute('fill', 'none');
+      p.setAttribute('stroke-width', 6); p.setAttribute('stroke-linejoin', 'round'); draht.append(p); pfade.push(p); });
+    laengen = pfade.map(p => p.getTotalLength());
+    anzahl = laengen.map(L => clamp(Math.floor(L / 60), 1, 4));  // kurze Leitung: weniger Impulse, sonst verschmelzen sie
+    pfade.forEach((_, i) => { const reihe = []; for (let k = 0; k < 4; k++) { const c = document.createElementNS(NS, 'circle'); c.setAttribute('r', 9); c.setAttribute('fill', KORALLE); draht.append(c); reihe.push(c); } punkte.push(reihe); });
+  };
+
+  const seek = t => {
+    const r = echt(t);
+    // Auftrag tippt sich
+    ankommen(auftrag, phase(t, 0, .4), 14);
+    const n = Math.round(PROMPT.length * aus(phase(t, .2, 1.3)));
+    quote.textContent = PROMPT.slice(0, n) || ' ';
+    // Boxen erscheinen
+    ankommen(haupt, phase(t, 1.2, 1.7), 16); ankommen(ha, phase(t, 1.3, 1.8), 16);
+    haZahl.style.opacity = phase(t, anim(19), anim(19) + .3);
+    haZahl.textContent = (r >= 222 ? 82 : 64) + ' Automationen';
+    oks.forEach((o, i) => ankommen(o, phase(t, anim([346, 353, 358][i]), anim([346, 353, 358][i]) + .3), 10));
+    // Status der Hauptsitzung
+    let si = 0; STATUS.forEach((s, i) => { if (s[0] <= r && t >= 1.5) si = i; });
+    const s = STATUS[si];
+    if (status.textContent !== s[1]) status.textContent = s[1];
+    status.classList.toggle('fehler', !!s[2]);
+    ankommen(status, t < 1.5 ? 0 : phase(t, anim(s[0]), anim(s[0]) + .25), 10);
+    haupt.style.borderColor = s[2] ? '#B3261E' : HAUPTF;
+    // mitgelesene Token
+    const ctx = stufe(HAUPT, r, 1);
+    ctxWert.textContent = zahl(Math.round(ctx) * 1000) + ' Token';
+    ctxBalken.style.width = (ctx / 200 * 100) + '%';
+    // Prüf-Agenten
+    let aufrufe = HAUPT_AUFRUFE.filter(x => x <= r).length, kosten = stufe(HAUPT, r, 2);
+    AGENTEN.forEach((a, i) => {
+      const el = agenten[i], z = a.aufrufe.filter(x => x <= r).length; aufrufe += z;
+      kosten += a.kosten * clamp((r - a.von) / (a.bis - a.von));
+      ankommen(el, phase(t, anim(a.von) - .2, anim(a.von) + .2), 14);
+      const fertig = r >= a.bis;
+      el.classList.toggle('fertig', fertig);
+      el.querySelector('span').textContent = `${a.was} · ${z} Aufrufe`;
+      el.querySelector('em').textContent = r < a.von ? '' : fertig ? 'Bericht ✓' : 'prüft' + '.'.repeat(1 + Math.floor(t * 3) % 3);
+    });
+    // Leitungen + Impulse
+    LEIT.forEach((l, i) => {
+      const p = pfade[i], L = laengen[i], sichtbar = phase(t, l.zeichnen, l.zeichnen + .4);
+      p.setAttribute('stroke-dasharray', `${L * sichtbar} ${L}`);
+      const aktiv = l.an.find(([v, b]) => r >= v && r < b);
+      p.setAttribute('stroke', aktiv ? PETROL : LINIE);
+      punkte[i].forEach((c, k) => {
+        let pos = null;
+        if (aktiv && k < anzahl[i]) { const f = ((t * .9) + k / anzahl[i]) % 1; pos = aktiv[2] > 0 ? f : 1 - f; }
+        else if (k === 0 && l.zurueck !== undefined) { const tz = anim(l.zurueck), pz = phase(t, tz, tz + .5); if (pz > 0 && pz < 1) pos = 1 - pz; }
+        if (pos === null) { c.setAttribute('opacity', 0); return; }
+        const pt = p.getPointAtLength(pos * L); c.setAttribute('cx', pt.x); c.setAttribute('cy', pt.y); c.setAttribute('opacity', 1);
+      });
+    });
+    // Rückfrage
+    ankommen(frage, phase(t, anim(159), anim(159) + .4), 14);
+    // Zähler
+    stats.forEach((st, i) => ankommen(st, phase(t, 1.4 + i * .1, 1.8 + i * .1), 12));
+    const sek = Math.round(r);
+    werte[0].textContent = `${Math.floor(sek / 60)}:${String(sek % 60).padStart(2, '0')}`;
+    werte[1].textContent = aufrufe;
+    kostenText.textContent = zahl(kosten, 2) + ' $';
+    strich.style.transform = `scaleX(${aus(phase(t, 17.4, 18))})`;
+  };
+
+  let jetzt = DAUER;
+  const passen = () => {
+    // Schwelle an der Außenbreite (nicht am layoutabhängigen Padding, sonst Flackern); unter 900 px wäre breit zu klein
+    const name = fig.clientWidth < 900 ? 'schmal' : 'breit';
+    if (name !== layoutName) { fig.classList.toggle('schmal', name === 'schmal'); aufbauen(name); }
+    const s = buehne.clientWidth / K.w; ig.style.transform = `scale(${s})`; buehne.style.height = (K.h * s) + 'px';
+    seek(jetzt);
+  };
+  new ResizeObserver(passen).observe(fig); passen();
+
+  const ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let start = null, laeuft = false;
+  const bild = ts => { if (start === null) start = ts; jetzt = Math.min(DAUER, (ts - start) / 1000); seek(jetzt);
+    if (jetzt < DAUER) requestAnimationFrame(bild); else { laeuft = false; knopf.classList.add('an'); } };
+  const abspielen = () => { if (laeuft) return; laeuft = true; start = null; knopf.classList.remove('an'); requestAnimationFrame(bild); };
+  knopf.onclick = () => { if (layoutName === 'schmal') fig.scrollIntoView({ block: 'start', behavior: 'smooth' }); abspielen(); };
+  if (ruhig) { knopf.classList.add('an'); return; }
+  jetzt = 0; seek(0);
+  const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { io.disconnect(); abspielen(); } }, { threshold: .5 });
+  io.observe(buehne);
+})();
+</script>
     </div>
   </div>
 </section>
