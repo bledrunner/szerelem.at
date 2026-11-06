@@ -628,7 +628,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
     </div>
     <div>
       <h4>Datenschutz</h4>
-      <p>Diese Seite setzt keine Cookies, verwendet kein Tracking und lädt keine Inhalte von Dritten. Beim Aufruf verarbeitet der Hosting-Anbieter technisch notwendige Verbindungsdaten (z.&nbsp;B. IP-Adresse) für die Auslieferung.</p>
+      <p>Diese Seite setzt keine Cookies. Beim Aufruf verarbeitet der Hosting-Anbieter (GitHub Pages) technisch notwendige Verbindungsdaten (z.&nbsp;B. IP-Adresse) für die Auslieferung. Zur anonymen Reichweitenmessung nutzt die Seite den cookielosen Dienst GoatCounter: Es werden weder IP-Adressen noch persönliche Daten gespeichert, nur Seitenaufruf, Herkunft, Land, Browser und Bildschirmgröße in zusammengefasster Form.</p>
     </div>
   </div>
 </footer>
@@ -660,5 +660,8 @@ const markieren = () => {
   links.forEach(a => a.classList.toggle('aktiv', a === aktiv));
 };
 addEventListener('scroll', markieren, {passive: true}); markieren();
-</script></body>
+</script>
+<!-- Besucherzähler (seit 06.11.): GoatCounter, ohne Cookies/IP-Speicherung; file:// und localhost zählt es selbst nicht. Quelle per ?ref=… im Link -->
+<script data-goatcounter="https://szerelem.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
 </html>
