@@ -92,8 +92,8 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .fall .werkzeug{font-size:13px;color:var(--petrol);font-weight:600;margin:0}
 .fall .meinerolle{margin:8px 0 0;font-size:15px;color:var(--text2)}
 .fall .meinerolle b{color:var(--nacht)}
-.kennzahl{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:14px;margin:18px 0 0}
-.kennzahl b{font-size:clamp(32px,4vw,42px);line-height:1.1;font-weight:800;color:var(--nacht)}
+.kennzahl{display:flex;flex-wrap:wrap;align-items:center;column-gap:14px;margin:18px 0 0}
+.kennzahl b{font-size:clamp(32px,4vw,42px);line-height:1;font-weight:800;color:var(--nacht)}
 .kennzahl span{font-size:15px;line-height:1.45;color:var(--text2);flex:1 1 260px}
 .kennzahl .einheit{display:block;font-weight:700;color:var(--nacht)}
 .kennzahl.satz{display:block;font-size:19px;line-height:1.4;font-weight:700;color:var(--nacht);max-width:760px}
@@ -376,7 +376,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
         </details>
         <figure class="ablauf" id="ablauf-postfach" aria-label="Animierter Ablauf: Mails landen im Sammelpostfach, ein Sprachmodell liest Kundennummer und Thema und legt den Fall in der richtigen Abteilung an. Unsichere Fälle gehen an einen Menschen.">
 <style>
-.ablauf{margin:22px 0 4px;position:relative}
+.ablauf{margin:22px 0 4px;position:relative;max-width:820px}
 .ablauf .buehne{position:relative;overflow:hidden}
 .ablauf .ig{position:absolute;left:0;top:0;transform-origin:0 0;font-family:var(--schrift);color:var(--schwarz);
   --haupt:var(--nacht);--akzent:var(--koralle);--hg:#fff;--flaeche:var(--grau);--linie:#DCE4E4;--leise:#8C9A9B}
@@ -399,7 +399,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
 .ablauf .abt.mensch{border-bottom:none;font-weight:700;color:var(--haupt)}
 .ablauf .beleg{display:flex;flex-direction:column;gap:4px}
 .ablauf .beleg .bl{font-size:34px;color:var(--text2);line-height:1.25}
-.ablauf .pf-zahl{font-size:132px;font-weight:800;line-height:1;letter-spacing:-.03em;color:var(--haupt);font-variant-numeric:tabular-nums}
+.ablauf .pf-zahl{font-size:100px;font-weight:800;line-height:1;letter-spacing:-.03em;color:var(--haupt);font-variant-numeric:tabular-nums}
 .ablauf .beleg .zwei{font-size:36px;font-weight:600}
 .ablauf .nochmal{position:absolute;right:0;bottom:0;background:none;border:0;padding:0;min-height:44px;font:inherit;font-size:15px;font-weight:700;color:var(--petrol);cursor:pointer;opacity:0;pointer-events:none}
 .ablauf .nochmal.an{opacity:1;pointer-events:auto}
