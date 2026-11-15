@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de-AT">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +9,12 @@
 <meta property="og:description" content="Ich weiß, warum Automatisierung scheitert. Darum fange ich beim Prozess an.">
 <meta property="og:image" content="https://szerelem.at/og.png">
 <meta property="og:url" content="https://szerelem.at/">
+<link rel="canonical" href="https://szerelem.at/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_AT">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Rene Szerelem", "url": "https://szerelem.at/", "jobTitle": "Process Automation Developer", "image": "https://szerelem.at/foto.webp", "address": {"@type": "PostalAddress", "addressLocality": "Wien", "addressCountry": "AT"}, "sameAs": ["https://www.linkedin.com/in/rene-szerelem"], "knowsAbout": ["Prozessautomatisierung", "Power Platform", "Power Automate", "Power BI", "Celonis", "Process Mining", "AI-Integration"]}</script>
 <meta property="og:type" content="profile">
 <meta name="theme-color" content="#0B3C41">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -75,6 +81,11 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .zahl{border-top:3px solid var(--nacht);padding-top:14px}
 .zahl b{display:block;font-size:clamp(30px,4vw,42px);line-height:1;font-weight:800;color:var(--nacht)}
 .zahl span{display:block;margin-top:8px;font-size:15px;color:var(--text2);line-height:1.4}
+.vn{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 4px}
+.vn>div{padding:12px 14px;border-radius:6px;background:var(--grau);font-size:15px;line-height:1.45;color:var(--text2)}
+.vn b{display:block;margin-bottom:2px;color:var(--nacht)}
+.vn .nach{border-left:4px solid var(--koralle)}
+@media (max-width:640px){.vn{grid-template-columns:1fr}}
 .stationen{margin-top:56px;max-width:860px}
 .stationen h3{margin:0 0 6px;font-size:22px;line-height:1.25;color:var(--nacht)}
 .stationen ol{list-style:none;margin:20px 0 0;padding:0;border-top:3px solid var(--nacht)}
@@ -267,7 +278,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
     <div class="held"><div>
     <h1><img src="claim.svg" alt="Ich weiß, warum Automatisierung scheitert. Darum fange ich beim Prozess an." width="811" height="182"></h1>
     <p class="rolle">Process Automation Developer</p>
-    <p class="status">Offen für eine neue Stelle ·&nbsp;Wien, gerne hybrid</p>
+    <p class="status">Offen für eine neue Stelle ·&nbsp;Wien, hybrid</p>
     <div class="knoepfe">
       <a class="knopf voll" href="mailto:rene@szerelem.at?subject=Anfrage%20%C3%BCber%20szerelem.at">rene@szerelem.at</a>
       <a class="knopf rand" href="https://www.linkedin.com/in/rene-szerelem">LinkedIn-Profil</a>
@@ -319,6 +330,10 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
         <p class="werkzeug"><span>Power Automate Desktop (RPA)</span></p>
         <p class="meinerolle"><b>Meine Rolle:</b> Entwicklung und Analyse, allein</p>
         <p class="kennzahl"><b>8.900</b><span><span class="einheit">Stunden pro Jahr gespart</span>40.000 Fälle pro Jahr, bis zu 99 % davon automatisierbar.</span></p>
+        <div class="vn">
+          <div class="vor"><b>Vorher</b><span>Pro Fall rund 15 Minuten von Hand: Zahlzeitraum prüfen, Betrag samt Zinsen und Kosten berechnen. Bei 40.000 Fällen pro Jahr.</span></div>
+          <div class="nach"><b>Nachher</b><span>Der Roboter geht dieselben Schritte durch, ohne Pausen. Bis zu 99 % der Fälle laufen automatisch, 8.900 Stunden pro Jahr bleiben frei.</span></div>
+        </div>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Anwaltskanzleien fordern die Servicepauschale massenhaft zurück. Jeder Fall heißt prüfen, seit wann der Kunde zahlt, und die Rückerstattung samt Zinsen und Kosten berechnen. Das dauert rund 15 Minuten pro Fall.</dd>
@@ -618,7 +633,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
     <p>Ich suche eine neue Aufgabe in Prozessautomatisierung und Datenanalyse. Wenn Sie einen Prozess haben, der nach Automatisierung schreit, oder eine Stelle, die dazu passt: Schreiben Sie mir.</p>
     <dl class="fakten">
       <dt>Rollen und Schwerpunkte</dt><dd class="werkzeug"><span>Process Automation Developer</span> ·&nbsp;<span>Power Platform Developer</span> ·&nbsp;<span>Data / BI Analyst</span> ·&nbsp;<span>AI-Integration</span></dd>
-      <dt>Ort</dt><dd>Wien, gerne hybrid</dd>
+      <dt>Ort</dt><dd>Wien, hybrid</dd>
       <dt>Verfügbar</dt><dd>ab sofort</dd>
       <dt>Lebenslauf und Dienstzeugnis</dt><dd>schicke ich gern auf Anfrage</dd>
     </dl>
