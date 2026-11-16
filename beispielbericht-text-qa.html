@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<title>Beispielbericht Prüf-Agent text-qa</title>
+<meta name="description" content="Echter Lauf eines meiner Prüf-Agenten auf szerelem.at: Befunde, was daraus wurde und was der Agent nicht kann.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://szerelem.at/beispielbericht-text-qa">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root{--bg:#fff;--ink:#14232b;--mut:#5b6b73;--line:#d9e0e4;--ok:#1f7a4d;--warn:#b35c00;--hi:#a8322d;--card:#f4f7f8}
+  @media (prefers-color-scheme:dark){:root{--bg:#10191e;--ink:#e6eef1;--mut:#93a4ad;--line:#2a3a43;--ok:#4cc38a;--warn:#f0a050;--hi:#f07a73;--card:#17242b}}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Segoe UI",sans-serif;padding:2rem 1rem}
+  main{max-width:960px;margin:0 auto}
+  main>p a{color:var(--ink)}
+  h1{font-size:1.6rem;margin:.2rem 0}
+  h2{font-size:1.1rem;margin:2rem 0 .5rem}
+  .sub{color:var(--mut);margin:0 0 1.2rem}
+  .kpis{display:flex;gap:.8rem;flex-wrap:wrap;margin:1rem 0}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.7rem 1rem;flex:1 1 180px}
+  .kpi b{display:block;font-size:1.5rem}
+  .tw{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;min-width:680px}
+  th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+  q{font-style:normal;background:var(--card);padding:0 .25rem;border-radius:4px}
+  .t{font-weight:600;white-space:nowrap}
+  .hoch{color:var(--hi)}.mittel{color:var(--warn)}.niedrig{color:var(--mut)}
+  .ok{color:var(--ok);font-weight:600}
+  .note{background:var(--card);border-left:4px solid var(--warn);padding:.7rem 1rem;border-radius:6px;margin:1rem 0}
+  footer{color:var(--mut);font-size:.85rem;margin-top:2rem}
+</style>
+</head>
+<body>
+<main>
+<p><a href="projekte#pruefagenten">‹ Zurück zu „Wie ich mit AI baue“</a></p>
+<h1>Beispielbericht: Prüf-Agent text-qa</h1>
+<p class="sub">Echter Lauf auf der öffentlichen Seite szerelem.at (Startseite und „Wie ich mit AI baue“), Stand 16.11.2026. Der Agent liest nur, ändert nichts und liefert eine Befundliste. Entscheiden tut der Autor.</p>
+
+<div class="kpis">
+  <div class="kpi"><b>0</b>Verstöße gegen die harten Hausregeln (AI statt KI, Anführungszeichen, verbotene Angaben)</div>
+  <div class="kpi"><b>2 hoch, 4 mittel</b>Stilbefunde im Vorher-Stand (Merksätze, „nicht X, sondern Y“)</div>
+  <div class="kpi"><b>2</b>Zahlenwidersprüche, die ein Leser sofort bemerkt hätte</div>
+</div>
+
+<h2>So läuft es</h2>
+<p>Der Agent bekommt nur den sichtbaren Text und das Regelwerk (Hausregeln, Muster typischer AI-Formulierungen). Er kennt weder meinen Entwurfsprozess noch meine Absicht. Das ist gewollt: Er soll lesen wie jemand, der die Seite zum ersten Mal sieht. Was er nicht beurteilen kann, nennt er selbst (zum Beispiel, ob eine Zahl stimmt).</p>
+
+<h2>Befunde im Vorher-Stand und was daraus wurde</h2>
+<div class="tw">
+<table>
+<thead><tr><th>Schwere</th><th>Fundstelle</th><th>Zitat (Vorher)</th><th>Befund des Agenten</th><th>Stand heute</th></tr></thead>
+<tbody>
+<tr><td class="t mittel">mittel</td><td>Startseite, Rückforderungen</td><td><q>8.900 Stunden pro Jahr</q> neben <q>bis zu 99 %</q> und <q>40.000 Fälle</q></td><td>40.000 × 15 Minuten ergeben 10.000 Stunden, 99 % davon rund 9.900. Die 8.900 passen ohne Erklärung nicht dazu.</td><td class="ok">Korrigiert: 99 % steht als Potenzial, 8.900 Stunden als Angabe des Fachbereichs, nirgends mehr als Rechenweg gekoppelt.</td></tr>
+<tr><td class="t mittel">mittel</td><td>Eigenprojekte, Kopf</td><td><q>Die Abschnitte darunter folgen ihr: zuerst, was am Ende läuft, dann die einzelnen Stationen.</q></td><td>Text über den Text, die Grafik zeigt das bereits.</td><td class="ok">Korrigiert: Satz gestrichen.</td></tr>
+<tr><td class="t mittel">mittel</td><td>Eigenprojekte, Fehler-Intro</td><td><q>Drei Fehler aus meinen Eigenprojekten, nicht aus den beruflichen Fällen.</q></td><td>Kontrastformel „nicht X“ im Negativ-Schwanz.</td><td class="ok">Korrigiert: „Drei Fehler aus meinen Eigenprojekten.“</td></tr>
+<tr><td class="t niedrig">niedrig</td><td>Startseite vs. Eigenprojekte</td><td><q>neue Kolleginnen und Kollegen ausgebildet</q> gegenüber <q>Kolleg:innen für den Technik-Support geschult</q></td><td>Uneinheitliche Schreibweise.</td><td class="ok">Korrigiert: überall „Kolleg:innen“.</td></tr>
+<tr><td class="t hoch">hoch</td><td>Eigenprojekte, Agenten</td><td><q>Sie ändern nichts, sie liefern Befunde.</q></td><td>Muster „nicht X, sondern Y“. Vorschlag: ein Satz ohne Gegenüberstellung.</td><td>Unverändert, Entscheidung beim Autor (der Satz beschreibt eine echte Eigenschaft).</td></tr>
+<tr><td class="t hoch">hoch</td><td>Eigenprojekte, Lernen</td><td><q>Pro Aufgabe ein neuer Chat.</q></td><td>Merksatz, der Satz davor sagt dasselbe.</td><td>Unverändert.</td></tr>
+<tr><td class="t mittel">mittel</td><td>Eigenprojekte, Smart Home</td><td><q>Rund 70 Automationen</q> neben <q>64 Automationen</q></td><td>Zwei Zahlen für dasselbe, eventuell durch „nur aktive“ erklärbar.</td><td class="ok">Korrigiert: einheitlich 82 Automationen, die Zahl stammt aus Home Assistant.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">Der Agent schlägt auch Stellen an, die der Autor stehen lassen kann. Er ist ein zweites Augenpaar. Von sieben ausgewählten Befunden wurden fünf korrigiert, zwei bewusst unverändert gelassen.</div>
+
+<h2>Neuer Lauf auf dem heutigen Stand</h2>
+<p>Ein zweiter, unabhängiger Lauf auf der aktuellen Fassung meldet weiterhin keinen Hausregel-Verstoß. Neu gegenüber dem Vorher-Lauf ist ein Gedankenstrich im Seitentitel (<q>Wie ich mit AI baue – Rene Szerelem</q>), der im sichtbaren Text nicht vorkommt. Auch er ist inzwischen durch einen Doppelpunkt ersetzt. Beide Läufe melden die Frage, ob „0,00 $“ als Kostenanzeige gewollt ist. Zwei Läufe liefern nie exakt dieselbe Liste, deshalb lohnt sich die Prüfung nach jeder Änderung.</p>
+
+<footer>Quellen: text-qa-Läufe vom 16.11.2026 auf dem Stand vom 15.11. (Commit 19b4c86) und dem Stand heute. Keine Mail-, Familien- oder Arbeitgeberdaten im Bericht.</footer>
+</main>
+</body>
+</html>

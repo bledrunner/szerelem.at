@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wie ich mit AI baue – Rene Szerelem</title>
-<meta name="description" content="Wie ich bei meinen Eigenprojekten mit AI baue: Smart Home, Mail-Sortierer, Prüf-Agenten, Wissensarchiv. Dazu drei Fehler, aus denen ich gelernt habe.">
-<meta property="og:title" content="Wie ich mit AI baue – Rene Szerelem">
+<title>Wie ich mit AI baue: Rene Szerelem</title>
+<meta name="description" content="Wie ich bei meinen Eigenprojekten mit AI baue: Prüf-Agenten, Mail-Sortierer mit Outlook-Add-in, Smart-Home-Wächter, Cockpit und Skills. Mit Screenshots und drei Fehlern, aus denen ich gelernt habe.">
+<meta property="og:title" content="Wie ich mit AI baue: Rene Szerelem">
 <meta property="og:description" content="Was bei mir mit AI im Alltag läuft, wie ich es baue und aus welchen Fehlern ich gelernt habe.">
 <meta property="og:image" content="https://szerelem.at/og.png">
 <meta property="og:url" content="https://szerelem.at/projekte">
@@ -138,6 +138,17 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .proj dd{margin:4px 0 0;font-size:16px;line-height:1.5;color:var(--text2)}
 .grau .proj{background:#fff}
 .aiprojekte.drei{grid-template-columns:repeat(3,1fr)}
+.aiprojekte.eins{grid-template-columns:1fr}
+.shots{display:grid;gap:18px;margin-top:22px;align-items:start}
+.shots.mail{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.5fr)}
+.shots.drei{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.55fr)}
+.shots.eins{grid-template-columns:minmax(0,1fr)}
+.shots.eins figure{max-width:560px}
+.shots.eins.breit figure{max-width:760px}
+.shots figure{margin:0}
+.shots img{display:block;width:100%;max-width:560px;height:auto;border:1px solid #C9D4D5;border-radius:6px;background:#10191E}
+.shots figcaption{font-size:14px;line-height:1.4;color:var(--text2);margin-top:8px}
+.shots figcaption a{color:var(--nacht);font-weight:600;text-underline-offset:2px}
 .proj details>p{margin:14px 0 0;font-size:16px;line-height:1.5;color:var(--text2)}
 .proj ul{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}
 .proj li{border-left:3px solid var(--nacht);padding-left:12px;font-size:16px;line-height:1.5;color:var(--text2)}
@@ -219,6 +230,8 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
 
 @media (max-width:820px){
   .schritte,.aiprojekte,.aiprojekte.drei,.grafik{grid-template-columns:1fr}
+  .shots.mail,.shots.drei{grid-template-columns:1fr}
+  .shots figure.schmal-m{max-width:320px}
   .grafik{padding:22px 20px 18px}
   .grafik .g-bild{max-width:520px}
   .g-beispiel{grid-template-columns:1fr;grid-template-areas:"intro" "bild" "steuer";gap:12px}
@@ -276,7 +289,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
   <div class="rahmen">
     <div class="oben">
       <a href="./" title="Zur Startseite"><img class="logo" src="wortmarke.svg" alt="Rene Szerelem" width="764" height="108"></a>
-      <nav><a href="./">Startseite</a><a href="#laeuft">Läuft</a><a href="#bauen">Bauen</a><a href="#gelernt">Gelernt</a><a href="#kontakt">Kontakt</a></nav>
+      <nav><a href="./">Startseite</a><a href="#laeuft">Läuft</a><a href="#gelernt">Gelernt</a><a href="#kontakt">Kontakt</a></nav>
     </div>
     <h1>Wie ich mit AI baue</h1>
     <p class="rolle">Meine Eigenprojekte: was läuft, wie ich es baue und was ich dabei gelernt habe.</p>
@@ -287,7 +300,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
 <div class="leiste" aria-hidden="true">
   <div class="rahmen">
     <a class="hoch" href="#top" title="Nach oben" tabindex="-1"><img class="wm" src="wortmarke.svg" alt="" width="764" height="108"><img class="r" src="favicon.svg" alt="" width="26" height="26"></a>
-    <nav><a href="./" tabindex="-1">Startseite</a><a href="#laeuft" tabindex="-1">Läuft</a><a href="#bauen" tabindex="-1">Bauen</a><a href="#gelernt" tabindex="-1">Gelernt</a><a href="#kontakt" tabindex="-1">Kontakt</a></nav>
+    <nav><a href="./" tabindex="-1">Startseite</a><a href="#laeuft" tabindex="-1">Läuft</a><a href="#gelernt" tabindex="-1">Gelernt</a><a href="#kontakt" tabindex="-1">Kontakt</a></nav>
   </div>
 </div>
 
@@ -465,84 +478,67 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
 <section class="grau" id="laeuft">
   <div class="rahmen">
     <h2>Was bei mir läuft</h2>
-    <p class="intro">Vier Systeme, die ich gebaut habe und im Alltag selbst betreibe, für mich und meine Familie.</p>
-    <div class="aiprojekte">
-      <article class="proj">
-        <h3>Ein Smart Home, das sich selbst überwacht</h3>
-        <p class="werkzeug"><span>Home Assistant</span> ·&nbsp;<span>Python</span> ·&nbsp;<span>AI/LLM</span></p>
-        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
-        <dl>
-          <dt>Problem</dt><dd>Rund 70 Automationen von Heizung bis Rollos. Dabei fällt nicht auf, wenn eine ins Leere verweist, nie läuft oder ein Gerät hängt.</dd>
-          <dt>Lösung</dt><dd>Wächter erkennen hängende Geräte und starten sie neu. Tägliche Backups sichern alles, und bei Störungen meldet sich ein Familien-Bot. Dazu prüft ein Skript täglich alle Automationen, ein zweites merkt sich den Normalzustand der Geräte. Ein Modell liest nur die geänderten Automationen und bewertet sie. Die Automationen selbst ändere ich erst nach eigener Prüfung.</dd>
-          <dt>Ergebnis</dt><dd>Das Modell bewertet höchstens 40 Automationen pro Lauf, der Rest folgt am nächsten Tag. Im ersten Lauf waren 14 der 40 auffällig, für wenige Cent. Mehrere habe ich inzwischen repariert.</dd>
-        </dl>
-        </details>
-      </article>
-      <article class="proj">
-        <h3>Ein Wetter-Display, das seine Quellen prüft</h3>
-        <p class="werkzeug"><span>Python</span> ·&nbsp;<span>REST-APIs</span> ·&nbsp;<span>E-Paper</span></p>
-        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
-        <dl>
-          <dt>Problem</dt><dd>Jede Regenvorhersage liegt manchmal daneben, und welche Quelle am verlässlichsten ist, weiß man vorher nicht.</dd>
-          <dt>Lösung</dt><dd>Das Display zeigt die Regenwerte mehrerer Quellen (Open-Meteo, Pirate Weather, GeoSphere Austria). Ein Protokoll hält fest, welche Quelle wie oft richtig lag.</dd>
-          <dt>Stand</dt><dd>Das Protokoll sammelt seit Oktober Daten. Die Auswertung steht noch aus.</dd>
-        </dl>
-        </details>
-      </article>
-      <article class="proj">
-        <h3>Ein Mail-Sortierer, der aus Fehlern lernt</h3>
-        <p class="werkzeug"><span>Python</span> ·&nbsp;<span>AI/LLM</span> ·&nbsp;<span>Microsoft Graph</span></p>
-        <details class="mehr" open><summary><span class="zu">Mehr lesen</span><span class="auf">Zuklappen</span></summary>
-        <p>AI sortiert mein Postfach stündlich nach Themen und Fristen. Verschiebe ich ein Mail, merkt sich das System die Korrektur und schlägt mir jede Woche neue Regeln vor, die ich selbst freigebe.</p>
-        </details>
-      </article>
-      <article class="proj">
-        <h3>Eine Lern- und Spieleplattform für die Kinder</h3>
-        <p class="werkzeug"><span>Python</span> ·&nbsp;<span>WebSockets</span> ·&nbsp;<span>Docker</span></p>
-        <details class="mehr" open><summary><span class="zu">Mehr lesen</span><span class="auf">Zuklappen</span></summary>
-        <p>Mathe-Training und Brettspiele wie „Mensch ärgere dich nicht“, live über mehrere Tablets, jedes Kind am eigenen Gerät. Getestet von den strengsten Anwendern, die es gibt.</p>
-        </details>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="bauen">
-  <div class="rahmen">
-    <h2>Wie ich baue</h2>
-    <p class="intro">Die Stationen der Schleife: Das Archiv liefert den Stand, Skills bringen den Ablauf mit, Prüf-Agenten lesen gegen, bevor etwas in Betrieb geht.</p>
-    <div class="aiprojekte drei">
-      <article class="proj">
-        <h3>Wissensarchiv mit Cockpit</h3>
-        <p class="werkzeug"><span>Obsidian</span> ·&nbsp;<span>Git</span> ·&nbsp;<span>Docker</span></p>
-        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
-        <dl>
-          <dt>Problem</dt><dd>Wissen und Termine liegen verstreut, und jede AI-Sitzung beginnt bei null.</dd>
-          <dt>Lösung</dt><dd>Ein Notizarchiv mit Versionsverwaltung, Zugangsdaten verschlüsselt. Ein eigenes Cockpit zeigt Termine, Mails und Haus auf einen Blick.</dd>
-          <dt>Stand</dt><dd>Zu Beginn jeder Sitzung liest die AI Regeln und Projektstand aus dem Notizarchiv.</dd>
-        </dl>
-        </details>
-      </article>
-      <article class="proj">
-        <h3>Bauen mit Skills</h3>
-        <p class="werkzeug"><span>Claude Code</span> ·&nbsp;<span>Skills</span></p>
-        <details class="mehr" open><summary><span class="zu">Mehr lesen</span><span class="auf">Zuklappen</span></summary>
-        <p>Ein Skill ist eine Anleitung, die Claude bei einer Aufgabe lädt. Er hält Ablauf, Regeln und Vorlagen fest, damit ich eine wiederkehrende Aufgabe nicht jedes Mal neu erklären muss. Zwei Beispiele aus meinem Alltag:</p>
-        <ul>
-          <li><b>Textprüfung nach meinen Stilregeln:</b> findet AI-typische Formulierungen in deutschen Texten und schreibt sie um.</li>
-          <li><b>Infografiken im eigenen Design:</b> zeichnet aus Text und echten Zahlen eine fertige Grafik, etwa die Schleife oben auf dieser Seite.</li>
-        </ul>
-        </details>
-      </article>
-      <article class="proj">
+    <p class="intro">Fünf Systeme, die ich gebaut habe und im Alltag selbst betreibe. Die meisten Bilder stammen aus meinem Cockpit, mit erfundenen Demodaten, wo es dabeisteht.</p>
+    <div class="aiprojekte eins">
+      <article class="proj" id="pruefagenten">
         <h3>Prüf-Agenten, die AI-Ergebnisse gegenlesen</h3>
         <p class="werkzeug"><span>Claude Code</span> ·&nbsp;<span>Subagenten</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Ergebnisse, die eine AI selbst gebaut hat, wirken überzeugend, auch wenn sie nicht stimmen.</dd>
           <dt>Lösung</dt><dd>Drei unabhängige Prüf-Agenten für Code, Texte und Webseiten. Sie ändern nichts und liefern eine Liste mit Befunden. Sie laufen nach Änderungen an Konfiguration, Code, Webseiten und längeren Texten. Bei großen Prüfläufen arbeiten mehrere Kopien eines Agenten parallel, jede an einem Teil.</dd>
-          <dt>Ergebnis</dt><dd>Bevor diese Seite online ging, hat sie der Agent für Webseiten geprüft.</dd>
+          <dt>Ergebnis</dt><dd>Bevor diese Seite online ging, hat sie der Agent für Webseiten geprüft. Der Textprüfer hat sie ebenfalls gelesen. Der Beispielbericht zeigt, was er gefunden hat, was daraus wurde und wo ich ihm nicht gefolgt bin.</dd>
         </dl>
+        <div class="shots eins"><figure><a href="beispielbericht-text-qa"><img src="bilder/beispielbericht-text-qa.webp" width="1000" height="1371" loading="lazy" decoding="async" alt="Beispielbericht des Prüf-Agenten für Texte: Kennzahlen, Tabelle mit Befunden, Fundstelle, Zitat und was daraus wurde"></a><figcaption>Echter Lauf auf dieser Website, keine Demodaten. <a href="beispielbericht-text-qa">Ganzen Bericht lesen</a></figcaption></figure></div>
+        </details>
+      </article>
+      <article class="proj" id="mail">
+        <h3>Ein Mail-Sortierer, der aus Fehlern lernt</h3>
+        <p class="werkzeug"><span>Python</span> ·&nbsp;<span>AI/LLM</span> ·&nbsp;<span>Microsoft Graph</span> ·&nbsp;<span>Outlook-Add-in</span></p>
+        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
+        <dl>
+          <dt>Problem</dt><dd>Ein Postfach sortiert sich nicht von selbst, und feste Regeln veralten schnell.</dd>
+          <dt>Lösung</dt><dd>AI sortiert mein Postfach stündlich nach Themen und Fristen. Verschiebe ich ein Mail, merkt sich das System die Korrektur und schlägt mir jede Woche neue Regeln vor, die ich selbst freigebe. Den Mail-Butler habe ich als Add-in für Outlook gebaut: Bei einer falsch eingeordneten Mail wähle ich Thema oder Kategorie, schreibe optional einen Grund und speichere die Korrektur. Im Cockpit prüfe ich die Zuordnung des Tages, und ein Qualitätsbericht zeigt, wo das System danebenlag.</dd>
+          <dt>Hinweis</dt><dd>Die Bilder zeigen Demodaten: Absender, Betreffe und Zahlen sind erfunden, mein echtes Postfach ist nirgends zu sehen.</dd>
+        </dl>
+        <div class="shots mail"><figure><img src="bilder/cockpit-mail-heute.webp" width="1200" height="833" loading="lazy" decoding="async" alt="Cockpit, Reiter Heute: Liste eingegangener Mails mit Thema und Kategorie, jeweils per Auswahl korrigierbar"><figcaption>Cockpit, Reiter „Heute“: Zuordnung prüfen und direkt korrigieren. Demodaten, erfunden.</figcaption></figure><figure><img src="bilder/cockpit-mail-themen.webp" width="1200" height="833" loading="lazy" decoding="async" alt="Cockpit, Reiter Themen und Qualität: Themen mit Ordnern und ein Qualitätsbericht mit vorgeschlagenen Regeln"><figcaption>Cockpit, Reiter „Themen &amp; Qualität“: Qualitätsbericht mit Regelvorschlägen. Demodaten, erfunden.</figcaption></figure><figure><img src="bilder/butler-taskpane.webp" width="560" height="964" loading="lazy" decoding="async" alt="Mail-Butler in Outlook: Auswahl für Thema, Unterkategorie, Kategorie und ein Feld für den Grund der Korrektur"><figcaption>Mail-Butler, das Add-in in Outlook. Demodaten, erfunden.</figcaption></figure></div>
+        </details>
+      </article>
+      <article class="proj" id="waechter">
+        <h3>Ein Smart Home, das sich selbst überwacht</h3>
+        <p class="werkzeug"><span>Home Assistant</span> ·&nbsp;<span>Python</span> ·&nbsp;<span>AI/LLM</span> ·&nbsp;<span>Telegram</span></p>
+        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
+        <dl>
+          <dt>Problem</dt><dd>82 Automationen von Heizung bis Rollos. Dabei fällt nicht auf, wenn eine ins Leere verweist, nie läuft oder ein Gerät hängt.</dd>
+          <dt>Lösung</dt><dd>Wächter erkennen hängende Geräte und starten sie neu. Tägliche Backups sichern alles. Das Cockpit zeigt den Zustand als Ampel für Server, Mac, Home Assistant und Zertifikate. Jeden Morgen sucht ein Überwacher nach tot gelaufenen Auslösern, fehlenden Entities und leeren Batterien, und ein Modell liest nur die geänderten Automationen und bewertet sie. Bei Störungen kommt eine Telegram-Nachricht, ein Klick gibt den Fall mit allen Angaben an Claude weiter. Die Automationen selbst ändere ich erst nach eigener Prüfung.</dd>
+          <dt>Ergebnis</dt><dd>Das Modell bewertet höchstens 40 Automationen pro Lauf, der Rest folgt am nächsten Tag. Im ersten Lauf waren 14 der 40 auffällig, für wenige Cent. Mehrere habe ich inzwischen repariert.</dd>
+          <dt>Rollen</dt><dd>Gebaut mit Claude Code. Was überhaupt gemeldet wird und die Praxistests an meinem eigenen Haus stammen von mir.</dd>
+        </dl>
+        <div class="shots drei"><figure><img src="bilder/waechter-ampel.webp" width="1200" height="925" loading="lazy" decoding="async" alt="Cockpit, Seite System: Ampel für NAS, Mac, Home Assistant, Dienste und Zertifikate, mit einer Störung und mehreren Warnungen"><figcaption>Ampel für alles, was automatisch läuft. Demodaten, erfunden, mit Attrappen statt echter Geräte.</figcaption></figure><figure><img src="bilder/waechter-haus-befunde.webp" width="1200" height="883" loading="lazy" decoding="async" alt="Cockpit, Haus-Ansicht: Raumtemperaturen, niedrige Batterien, Befunde des Überwachers und Triage mit Handlungsvorschlägen"><figcaption>Haus-Ansicht mit Befunden und Triage. Demodaten, erfunden.</figcaption></figure><figure><img src="bilder/waechter-telegram.webp" width="560" height="640" loading="lazy" decoding="async" alt="Nachgebaute Telegram-Meldungsfolge: Warnung zu einem Sensor, einer Batterie, Befunde des Überwachers und eine Entwarnung"><figcaption>Meldungsfolge in Telegram, als Mockup nachgebaut. Texte und Formate wie im Code, Inhalte erfunden.</figcaption></figure></div>
+        </details>
+      </article>
+      <article class="proj" id="cockpit">
+        <h3>Wissensarchiv mit Cockpit</h3>
+        <p class="werkzeug"><span>Obsidian</span> ·&nbsp;<span>Git</span> ·&nbsp;<span>Docker</span></p>
+        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
+        <dl>
+          <dt>Problem</dt><dd>Wissen und Termine liegen verstreut, und jede AI-Sitzung beginnt bei null.</dd>
+          <dt>Lösung</dt><dd>Ein Notizarchiv mit Versionsverwaltung, Zugangsdaten verschlüsselt. Ein eigenes Cockpit zeigt Termine, Mails und Haus auf einen Blick.</dd>
+          <dt>Stand</dt><dd>Zu Beginn jeder Sitzung liest die AI Regeln und Projektstand aus dem Notizarchiv. Mail-Sortierer, Wächter und Skills haben im Cockpit ihre Oberfläche, die meisten Bilder auf dieser Seite stammen daraus.</dd>
+        </dl>
+        </details>
+      </article>
+      <article class="proj" id="skills">
+        <h3>Skills, die Claude per Klick im Cockpit startet</h3>
+        <p class="werkzeug"><span>Claude Code</span> ·&nbsp;<span>Skills</span> ·&nbsp;<span>Python</span></p>
+        <details class="mehr" open><summary><span class="zu">Mehr lesen</span><span class="auf">Zuklappen</span></summary>
+        <p>Ein Skill ist eine Anleitung, die Claude bei einer Aufgabe lädt. Er hält Ablauf, Regeln und Vorlagen fest, damit ich eine wiederkehrende Aufgabe nicht jedes Mal neu erklären muss. Im Cockpit liegt dafür ein fester Katalog, etwa für AI-News, Artikel und Videos als Notiz, Dateien aufräumen oder Firmenrecherche. Ein Klick legt einen Auftrag an, mein Mac holt ihn ab, führt die Claude-CLI mit eingeschränkten Rechten aus und schickt das Ergebnis zurück. Aufgaben mit viel Hin und Her bleiben bewusst in der Claude-Session, weil ein einmaliger Auftrag dafür nicht passt.</p>
+        <p>Zwei Beispiele, die ich selbst nutze:</p>
+        <ul>
+          <li><b>Textprüfung nach meinen Stilregeln:</b> findet AI-typische Formulierungen in deutschen Texten und schreibt sie um.</li>
+          <li><b>Infografiken im eigenen Design:</b> zeichnet aus Text und echten Zahlen eine fertige Grafik, etwa die Schleife oben auf dieser Seite.</li>
+        </ul>
+        <div class="shots eins breit"><figure><img src="bilder/skills-katalog.webp" width="1200" height="621" loading="lazy" decoding="async" alt="Cockpit, Seite Skills: Katalog mit Kacheln, gruppiert nach Jobsuche sowie AI und News, je mit Beschreibung und Knopf zum Öffnen"><figcaption>Ausschnitt aus dem Skill-Katalog im Cockpit. Demodaten, erfunden.</figcaption></figure></div>
         </details>
       </article>
     </div>
