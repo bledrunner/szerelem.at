@@ -78,6 +78,7 @@ h2::before{content:"";display:block;width:56px;height:6px;background:var(--koral
 .held{display:flex;align-items:flex-end;justify-content:space-between;gap:48px}
 .held .foto{flex:none;width:clamp(170px,19vw,240px);height:auto;display:block;border-radius:50%}
 .zahlen{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.zahlen.drei{grid-template-columns:repeat(3,1fr)}
 .zahl{border-top:3px solid var(--nacht);padding-top:14px}
 .zahl b{display:block;font-size:clamp(30px,4vw,42px);line-height:1;font-weight:800;color:var(--nacht)}
 .zahl span{display:block;margin-top:8px;font-size:15px;color:var(--text2);line-height:1.4}
@@ -255,6 +256,8 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
   .mehr .auf,.mehr[open] .zu{display:none}
   .mehr[open] .auf{display:inline}
   .zahlen{gap:24px 12px;grid-template-columns:repeat(2,1fr)}
+  .zahlen.drei{grid-template-columns:repeat(2,1fr)}
+  .zahlen.drei .zahl:last-child{grid-column:1/-1}
   .zahl b{font-size:28px}
   .zahl span{font-size:13px}
   .fakten{grid-template-columns:1fr;gap:0}
@@ -312,13 +315,12 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
 <section id="zahlen">
   <div class="rahmen">
     <h2>Die Zahlen und woher sie stammen</h2>
-    <div class="zahlen">
+    <div class="zahlen drei">
       <div class="zahl"><b>40.000</b><span>Fälle pro Jahr, auf die der Roboter ausgelegt ist</span></div>
       <div class="zahl"><b>15 Min.</b><span>Handarbeit pro Fall, davor</span></div>
-      <div class="zahl"><b>8.900</b><span>Stunden Handarbeit pro Jahr, die entfallen</span></div>
       <div class="zahl"><b>bis 99 %</b><span>der Fälle gelten als automatisierbar (Potenzial)</span></div>
     </div>
-    <p class="quelle">Alle Stunden- und Fallzahlen sind Angaben des Fachbereichs, jeweils pro Jahr. „Bis zu 99 %“ ist das Potenzial, also die Zielquote. Die 8.900 Stunden sind eine eigene Angabe des Fachbereichs und kein Rechenweg aus den anderen Zahlen.</p>
+    <p class="quelle">Alle Stunden- und Fallzahlen sind Angaben des Fachbereichs, jeweils pro Jahr. „Bis zu 99 %“ ist das Potenzial, also die Zielquote.</p>
   </div>
 </section>
 
