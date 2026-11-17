@@ -63,7 +63,7 @@ a{color:inherit}
 .leiste{position:fixed;top:0;left:0;right:0;z-index:10;background:var(--nacht);box-shadow:0 1px 0 rgba(255,255,255,.08);transform:translateY(-100%);transition:transform .2s;visibility:hidden}
 .leiste.an{transform:none;visibility:visible}
 .leiste .rahmen{display:flex;justify-content:space-between;align-items:center;height:56px}
-.leiste .hoch{display:flex;align-items:center;line-height:0}
+.leiste .hoch{display:flex;align-items:center;line-height:0;min-height:44px;min-width:44px}
 .leiste .hoch img{height:20px;width:auto}
 .leiste .r{display:none}
 .leiste nav a{color:#fff;text-decoration:none;font-weight:600;font-size:15px;margin-left:22px;opacity:.75;padding:17px 0 15px;border-bottom:2px solid transparent}
@@ -72,7 +72,7 @@ a{color:inherit}
 
 /* Abschnitte */
 section{padding:clamp(64px,8vw,104px) 0}
-#praxis{padding:clamp(80px,10vw,136px) 0}
+#praxis{padding:clamp(64px,8vw,104px) 0}
 h2{font-size:clamp(26px,3.2vw,34px);line-height:1.15;font-weight:800;margin:0 0 8px;color:var(--nacht)}
 h2::before{content:"";display:block;width:36px;height:4px;background:var(--koralle);margin-bottom:16px}
 .lead{font-size:clamp(20px,2.4vw,25px);line-height:1.45;font-weight:600;color:var(--nacht);max-width:34em;margin:24px 0 20px}
@@ -131,6 +131,7 @@ h2::before{content:"";display:block;width:36px;height:4px;background:var(--koral
 .fall .grafiken summary::after{content:" ▾"}
 .fall .grafiken[open] summary::after{content:" ▴"}
 .fall .cg{display:block;width:100%;height:auto;font-family:inherit}
+.gleis,.blick{max-width:760px;margin-top:28px}.gleis svg,.blick svg{display:block}.gleis .m,.blick .m{display:none}@media (max-width:640px){.gleis .d,.blick .d{display:none}.gleis .m,.blick .m{display:block}}
 
 /* Kachel-Übersichten (Startseite: Praxisfälle, /projekte: Projekte) */
 .fall[id],.proj[id]{scroll-margin-top:72px}
@@ -307,6 +308,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
   .kopf .oben{flex-wrap:wrap}
   .kopf nav{width:100%;margin-top:4px;display:flex;justify-content:space-between}
   .kopf nav a{display:inline-block;margin:0;padding:13px 0}
+  .leiste .hoch{min-width:0}
   .leiste .hoch .wm{display:none}
   .leiste .r{display:block;height:26px !important;border-radius:3px}
   .leiste nav a{margin-left:14px;font-size:14px}
@@ -330,6 +332,66 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
 @media (max-width:380px){
   .kopf nav a{font-size:15px}
   .leiste nav a{margin-left:9px;font-size:13px}
+}
+
+/* Faden-Linie (nur breite Bildschirme) */
+.faden{display:none}
+@media (min-width:1180px){
+ main{position:relative}
+ .faden{display:block;position:absolute;top:0;bottom:0;left:calc(50% - 540px - 34px);width:14px;pointer-events:none}
+ .faden .spur,.faden .lauf{position:absolute;left:6px;width:2px;border-radius:1px}
+ .faden .spur{background:#CBD6D7}
+ .faden .lauf{background:var(--koralle);height:0}
+ .faden .kopf{position:absolute;left:0;width:14px;height:14px;margin-top:-7px;border-radius:50%;background:var(--koralle);box-shadow:0 0 0 4px rgba(255,122,89,.2)}
+ .faden .st{position:absolute;left:2px;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:#fff;border:2px solid #CBD6D7;box-sizing:border-box}
+ .faden .st.an{border-color:var(--koralle);background:var(--koralle)}
+ .faden .st{width:12px;left:1px;margin-top:-6px}
+ .faden .un{position:absolute;left:7px;width:14px;height:2px;margin-top:-1px;background:#CBD6D7}
+ .faden .us{position:absolute;left:19px;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:#CBD6D7;box-sizing:border-box}
+ .faden .un.an{background:var(--koralle)}
+ .faden .us.an{background:var(--koralle)}
+}
+@media (prefers-reduced-motion:reduce){.faden .lauf{transition:none}}
+
+/* Praxisfälle: gleich hohe Karten, klickbar, Detail auf eigener Seite */
+.faelle.zwei{grid-template-columns:1fr;gap:20px;margin-top:40px}
+@media (min-width:760px){.faelle.zwei{grid-template-columns:1fr 1fr;gap:32px;align-items:stretch}}
+.fallkarte{display:flex;flex-direction:column;background:#fff;border-top:3px solid var(--nacht);padding:32px 36px 28px;color:inherit;text-decoration:none;transition:box-shadow .15s,transform .15s}
+.fallkarte:hover{box-shadow:0 8px 24px rgba(11,60,65,.12);transform:translateY(-2px)}
+.fallkarte:focus-visible{outline:3px solid var(--petrol);outline-offset:3px}
+.fallkarte h3{margin:0 0 6px;font-size:22px;line-height:1.25;color:var(--nacht)}
+.fallkarte .werkzeug{font-size:13px;color:var(--petrol);font-weight:600;margin:0}
+.fallkarte .werkzeug span{white-space:normal}
+.fallkarte .meinerolle{margin:10px 0 0;font-size:15px;line-height:1.5;color:var(--text2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.fallkarte .meinerolle b{color:var(--nacht)}
+.fallkarte .kennzahl{margin-top:20px;flex-wrap:nowrap;align-items:center}
+.fallkarte .kennzahl b{flex:none;min-width:5.2ch}
+.fallkarte .kennzahl .einheit{flex:1;font-size:15px;line-height:1.4}
+.fallkarte .mehrlink{margin-top:auto;padding-top:22px;font-weight:700;color:var(--petrol);font-size:16px}
+.fallkarte:hover .mehrlink{text-decoration:underline}
+@media (min-width:760px){
+  .faelle.zwei{row-gap:0}
+  .faelle.zwei .fallkarte{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:0;margin-bottom:32px;align-content:start}
+  .faelle.zwei .fallkarte .mehrlink{align-self:end}
+}
+
+/* Postfach: am Handy statisches Bild statt skalierter Animation */
+.nur-klein{display:none;margin:20px 0 0}
+.nur-klein img{display:block;width:100%;max-width:420px;height:auto;border:1px solid #D9E2E3}
+.nur-klein figcaption{margin-top:10px;font-size:14px;color:var(--text2);line-height:1.4}
+@media (max-width:600px){.nur-gross{display:none}.nur-klein{display:block}}
+
+/* Fallseiten: enger, Ausgangslage + Lösung nebeneinander, lesbare Weiter-Knöpfe */
+body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
+.zweispalt{display:grid;grid-template-columns:1fr;gap:24px}
+@media (min-width:720px){.zweispalt{grid-template-columns:1fr 1fr;gap:32px;align-items:stretch}}
+.spalte{background:#fff;border-top:3px solid var(--nacht);padding:32px 36px 28px}
+.spalte h2{margin-top:0}
+.spalte .intro{max-width:none}
+.spalte .vn{grid-template-columns:1fr;margin-top:24px}
+.weiternav .knopf.rand{border-color:var(--nacht);color:var(--nacht)}
+@media (max-width:520px){
+ .kopf.klein .oben nav a:not(:first-child):not(:last-child),body:has(.kopf.klein) .leiste nav a:not(:first-child):not(:last-child){display:none}
 }
 </style>
 </head>
@@ -544,7 +606,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
     <div class="aiprojekte eins">
       <article class="proj" id="pruefagenten">
         <h3>Prüf-Agenten, die AI-Ergebnisse gegenlesen</h3>
-        <p class="werkzeug"><span>Claude Code</span> ·&nbsp;<span>Subagenten</span></p>
+        <p class="werkzeug"><span>Claude Code&nbsp;·</span> <span>Subagenten</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Ergebnisse, die eine AI selbst gebaut hat, wirken überzeugend, auch wenn sie nicht stimmen.</dd>
@@ -556,7 +618,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
       </article>
       <article class="proj" id="mail">
         <h3>Ein Mail-Sortierer, der aus Fehlern lernt</h3>
-        <p class="werkzeug"><span>Python</span> ·&nbsp;<span>AI/LLM</span> ·&nbsp;<span>Microsoft Graph</span> ·&nbsp;<span>Outlook-Add-in</span></p>
+        <p class="werkzeug"><span>Python&nbsp;·</span> <span>AI/LLM&nbsp;·</span> <span>Microsoft Graph&nbsp;·</span> <span>Outlook-Add-in</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Ein Postfach sortiert sich nicht von selbst, und feste Regeln veralten schnell.</dd>
@@ -570,7 +632,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
       </article>
       <article class="proj" id="waechter">
         <h3>Ein Smart Home, das sich selbst überwacht</h3>
-        <p class="werkzeug"><span>Home Assistant</span> ·&nbsp;<span>Python</span> ·&nbsp;<span>AI/LLM</span> ·&nbsp;<span>Telegram</span></p>
+        <p class="werkzeug"><span>Home Assistant&nbsp;·</span> <span>Python&nbsp;·</span> <span>AI/LLM&nbsp;·</span> <span>Telegram</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>82 Automationen von Heizung bis Rollos. Dabei fällt nicht auf, wenn eine ins Leere verweist, nie läuft oder ein Gerät hängt.</dd>
@@ -585,7 +647,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
       </article>
       <article class="proj" id="cockpit">
         <h3>Wissensarchiv mit Cockpit</h3>
-        <p class="werkzeug"><span>Obsidian</span> ·&nbsp;<span>Git</span> ·&nbsp;<span>Docker</span></p>
+        <p class="werkzeug"><span>Obsidian&nbsp;·</span> <span>Git&nbsp;·</span> <span>Docker</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Wissen und Termine liegen verstreut, und jede AI-Sitzung beginnt bei null.</dd>
@@ -596,7 +658,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
       </article>
       <article class="proj" id="skills">
         <h3>Skills, die Claude per Klick im Cockpit startet</h3>
-        <p class="werkzeug"><span>Claude Code</span> ·&nbsp;<span>Skills</span> ·&nbsp;<span>Python</span></p>
+        <p class="werkzeug"><span>Claude Code&nbsp;·</span> <span>Skills&nbsp;·</span> <span>Python</span></p>
         <details class="mehr" open><summary><span class="zu">Mehr lesen</span><span class="auf">Zuklappen</span></summary>
         <p>Ein Skill ist eine Anleitung, die Claude bei einer Aufgabe lädt. Er hält Ablauf, Regeln und Vorlagen fest, damit ich eine wiederkehrende Aufgabe nicht jedes Mal neu erklären muss. Im Cockpit liegt dafür ein fester Katalog, etwa für AI-News, Artikel und Videos als Notiz, Dateien aufräumen oder Firmenrecherche. Ein Klick legt einen Auftrag an, mein Mac holt ihn ab, führt die Claude-CLI mit eingeschränkten Rechten aus und schickt das Ergebnis zurück. Aufgaben mit viel Hin und Her bleiben bewusst in der Claude-Session, weil ein einmaliger Auftrag dafür nicht passt.</p>
         <p>Zwei Beispiele, die ich selbst nutze:</p>
@@ -930,7 +992,7 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
     <h2>Reden wir darüber</h2>
     <p>Ich suche eine neue Aufgabe in Prozessautomatisierung und Datenanalyse. Wenn Sie einen Prozess haben, der nach Automatisierung schreit, oder eine Stelle, die dazu passt: Schreiben Sie mir.</p>
     <dl class="fakten">
-      <dt>Rollen und Schwerpunkte</dt><dd class="werkzeug"><span>Process Automation Developer</span> ·&nbsp;<span>Power Platform Developer</span> ·&nbsp;<span>Data / BI Analyst</span> ·&nbsp;<span>AI-Integration</span></dd>
+      <dt>Rollen und Schwerpunkte</dt><dd class="werkzeug"><span>Process Automation Developer&nbsp;·</span> <span>Power Platform Developer&nbsp;·</span> <span>Data / BI Analyst&nbsp;·</span> <span>AI-Integration</span></dd>
       <dt>Ort</dt><dd>Wien, hybrid</dd>
       <dt>Verfügbar</dt><dd>ab sofort</dd>
       <dt>Lebenslauf und Dienstzeugnis</dt><dd>schicke ich gern auf Anfrage</dd>
@@ -958,9 +1020,9 @@ footer a[href^="mailto"]{display:inline-block;padding:13px 0;margin:-13px 0}
   </div>
 </footer>
 <script>
-// Handy: Problem/Lösung zugeklappt (ohne JS bleibt alles offen), Desktop immer offen
+// Handy: Problem/Lösung zugeklappt (ohne JS bleibt alles offen), Desktop wie im HTML (open = offen)
 const handy = matchMedia('(max-width:520px)');
-const klappen = () => document.querySelectorAll('.mehr').forEach(d => d.open = !handy.matches);
+const klappen = () => document.querySelectorAll('.mehr').forEach(d => { if (d.dataset.start === undefined) d.dataset.start = d.open ? '1' : ''; d.open = handy.matches ? false : !!d.dataset.start; });
 handy.addEventListener('change', klappen); klappen();
 // Sprung per Anker (Kachel, Link, Adresse mit #): Details der Zielkarte öffnen, ohne JS bleibt es ein normaler Anker
 const oeffneZiel = id => {
