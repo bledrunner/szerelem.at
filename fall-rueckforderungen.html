@@ -424,14 +424,14 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
     <p class="intro">Anwaltskanzleien fordern die Servicepauschale massenhaft zurück. Jeder einzelne Fall will geprüft sein: Seit wann zahlt der Kunde, und wie hoch ist die Rückerstattung samt Zinsen und Kosten? Von Hand dauert das rund 13,5 Minuten pro Fall.</p>
     <div class="vn">
       <div class="vor"><b>Vorher</b><span>Pro Fall rund 13,5 Minuten von Hand: Zahlzeitraum prüfen, Betrag samt Zinsen und Kosten berechnen.</span></div>
-      <div class="nach"><b>Nachher</b><span>Der Roboter übernimmt die Schritte. Bei 99 % Zielquote entfallen rund 8.900 Stunden Handarbeit pro Jahr.</span></div>
+      <div class="nach"><b>Nachher</b><span>Der Roboter übernimmt die Schritte. Bei 99 % Zielquote würden rund 8.900 Stunden Handarbeit pro Jahr entfallen. Zuletzt liefen nach meiner Einschätzung rund 93 % der Fälle ohne Mensch durch.</span></div>
     </div>
     <p class="meinerolle intro"><b>Meine Rolle:</b> Entwicklung und Analyse, allein.</p>
       </div>
       <div class="spalte" id="loesung">
         <h2>Lösung</h2>
     <p class="intro">Ein Software-Roboter ermittelt den Zahlzeitraum und rechnet den Betrag im bestehenden Berechnungstool aus. Er macht dieselben Schritte wie vorher ein Mensch, nur ohne Pausen und Feierabend.</p>
-    <p class="intro">Ich habe den Roboter auch im täglichen Betrieb verantwortet, mit Teststrategie und laufenden Statusmeldungen an den Fachbereich.</p>
+    <p class="intro">Ich habe den Roboter auch im täglichen Betrieb betreut.</p>
       </div>
     </div>
   </div>
@@ -448,6 +448,14 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
   </div>
 </section>
 
+<section class="grau" id="betrieb">
+  <div class="rahmen">
+    <h2>Wie es im Betrieb lief</h2>
+    <p class="intro">Jeder Fehler wurde in einer Dataverse-Tabelle protokolliert, mit einer Dringlichkeitsstufe, und löste automatisch eine Meldung an Teams aus. Ein fehlgeschlagener Lauf startete nach ein paar Minuten Wartezeit noch einmal. Scheiterte auch der zweite Versuch, landete der Fall in einer Liste. Dort prüfte eine Person im Fachbereich, was los war, und ich sah als Entwickler dieselbe Liste an, um die Ursache zu finden.</p>
+    <p class="intro">Die Quote stieg nicht weiter, weil die Rechtsanwälte immer wieder Texte und Aufbau ihrer Briefe änderten. Dann musste der Ablauf angepasst werden, und das dauerte. Für das Berechnungstool und die Outlook-Instanzen gab es keine Testsysteme.</p>
+  </div>
+</section>
+
 <section id="zahlen">
   <div class="rahmen">
     <h2>Die Zahlen und woher sie stammen</h2>
@@ -455,9 +463,9 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
       <div class="zahl"><b>40.000</b><span>Fälle pro Jahr, auf die der Roboter ausgelegt ist</span></div>
       <div class="zahl"><b>13,5 Min.</b><span>Handarbeit pro Fall, davor</span></div>
       <div class="zahl"><b>2 Min.</b><span>pro Fall im Schnitt, jetzt, rund um die Uhr</span></div>
-      <div class="zahl"><b>bis 99 %</b><span>der Fälle gelten als automatisierbar (Potenzial)</span></div>
+      <div class="zahl"><b>rund 93 %</b><span>der Fälle liefen ohne Mensch durch, geschätzt, über ein Jahr lang (Ziel 99 %)</span></div>
     </div>
-    <p class="quelle">Die Fallzahl ist eine Angabe des Fachbereichs, jeweils pro Jahr. „Bis zu 99 %“ ist die Zielquote, also das Potenzial. Die rund 8.900 Stunden ergeben sich aus 40.000 Fällen × rund 13,5 Minuten × 99 % Zielquote. Die 2 Minuten sind der Durchschnitt der Power-Automate-Läufe.</p>
+    <p class="quelle">Die Fallzahl ist eine Angabe des Fachbereichs, jeweils pro Jahr. „Bis zu 99 %“ ist die Zielquote, also das Potenzial. Die rund 8.900 Stunden ergeben sich aus 40.000 Fällen × rund 13,5 Minuten × 99 % Zielquote. Die 2 Minuten sind der Durchschnitt der Power-Automate-Läufe. Die rund 93 % und die bisher bearbeiteten etwa 25.000 bis 30.000 Fälle sind meine eigene Einschätzung, keine Auswertung aus einem Bericht.</p>
   </div>
 </section>
 
