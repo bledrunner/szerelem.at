@@ -421,10 +421,10 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
   <div class="rahmen">
     <nav class="kacheln fuenf" aria-label="Die fünf Projekte im Überblick">
       <a class="kachel" href="#pruefagenten"><span class="titel">Prüf-Agenten</span><span class="satz">Drei Agenten prüfen Code, Texte und Webseiten und liefern eine Befundliste.</span></a>
-      <a class="kachel" href="#mail"><span class="titel">Mail-Sortierer und Mail-Butler</span><span class="satz">AI sortiert mein Postfach und lernt aus meinen Korrekturen, auch direkt in Outlook.</span></a>
-      <a class="kachel" href="#waechter"><span class="titel">Smart-Home-Wächter</span><span class="satz">Ampel, Überwacher und Telegram-Meldung bei Störungen.</span></a>
-      <a class="kachel" href="#cockpit"><span class="titel">Cockpit</span><span class="satz">Notizarchiv mit Versionsverwaltung und Übersicht für Termine, Mails und Haus.</span></a>
       <a class="kachel" href="#skills"><span class="titel">Skills</span><span class="satz">Wiederkehrende Aufgaben als Anleitung für Claude, per Klick gestartet.</span></a>
+      <a class="kachel" href="#mail"><span class="titel">Mail-Sortierer und Mail-Butler</span><span class="satz">AI sortiert mein Postfach und lernt aus meinen Korrekturen, auch direkt in Outlook.</span></a>
+      <a class="kachel" href="#cockpit"><span class="titel">Cockpit</span><span class="satz">Notizarchiv mit Versionsverwaltung und Übersicht für Termine, Mails und Haus.</span></a>
+      <a class="kachel" href="#waechter"><span class="titel">Smart-Home-Wächter</span><span class="satz">Ampel, Überwacher und Telegram-Meldung bei Störungen.</span></a>
     </nav>
   </div>
 </section>
@@ -616,6 +616,19 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
         <div class="shots eins hoch"><figure><a href="beispielbericht-text-qa"><img src="bilder/beispielbericht-text-qa.webp" width="1000" height="1371" loading="lazy" decoding="async" alt="Beispielbericht des Prüf-Agenten für Texte: Kennzahlen, Tabelle mit Befunden, Fundstelle, Zitat und was daraus wurde"></a><figcaption>Echter Lauf auf dieser Website, keine Demodaten. <a href="beispielbericht-text-qa">Ganzen Bericht lesen</a></figcaption></figure></div>
         </details>
       </article>
+      <article class="proj" id="skills">
+        <h3>Skills, die Claude per Klick im Cockpit startet</h3>
+        <p class="werkzeug"><span>Claude Code&nbsp;·</span> <span>Skills&nbsp;·</span> <span>Python</span></p>
+        <details class="mehr" open><summary><span class="zu">Mehr lesen</span><span class="auf">Zuklappen</span></summary>
+        <p>Ein Skill ist eine Anleitung, die Claude bei einer Aufgabe lädt. Er hält Ablauf, Regeln und Vorlagen fest, damit ich eine wiederkehrende Aufgabe nicht jedes Mal neu erklären muss. Im Cockpit liegt dafür ein fester Katalog, etwa für AI-News, Artikel und Videos als Notiz, Dateien aufräumen oder Firmenrecherche. Ein Klick legt einen Auftrag an, mein Mac holt ihn ab, führt die Claude-CLI mit eingeschränkten Rechten aus und schickt das Ergebnis zurück. Aufgaben mit viel Hin und Her bleiben bewusst in der Claude-Session, weil ein einmaliger Auftrag dafür nicht passt.</p>
+        <p>Zwei Beispiele, die ich selbst nutze:</p>
+        <ul>
+          <li><b>Textprüfung nach meinen Stilregeln:</b> findet AI-typische Formulierungen in deutschen Texten und schreibt sie um.</li>
+          <li><b>Infografiken im eigenen Design:</b> zeichnet aus Text und echten Zahlen eine fertige Grafik, etwa die Schleife oben auf dieser Seite.</li>
+        </ul>
+        <div class="shots eins"><figure><img src="bilder/skills-katalog.webp" width="1200" height="621" loading="lazy" decoding="async" alt="Cockpit, Seite Skills: Katalog mit Kacheln, gruppiert nach Jobsuche sowie AI und News, je mit Beschreibung und Knopf zum Öffnen"><figcaption>Ausschnitt aus dem Skill-Katalog im Cockpit. Demodaten, erfunden.</figcaption></figure></div>
+        </details>
+      </article>
       <article class="proj" id="mail">
         <h3>Ein Mail-Sortierer, der aus Fehlern lernt</h3>
         <p class="werkzeug"><span>Python&nbsp;·</span> <span>AI/LLM&nbsp;·</span> <span>Microsoft Graph&nbsp;·</span> <span>Outlook-Add-in</span></p>
@@ -628,6 +641,17 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
         <div class="shots eins"><figure><img src="bilder/cockpit-mail-heute.webp" width="1200" height="833" loading="lazy" decoding="async" alt="Cockpit, Reiter Heute: Liste eingegangener Mails mit Thema und Kategorie, jeweils per Auswahl korrigierbar"><figcaption>Cockpit, Reiter „Heute“: Zuordnung prüfen und direkt korrigieren. Demodaten, erfunden.</figcaption></figure></div>
         <details class="weitere"><summary>Zwei weitere Ansichten: Themen und Qualität, Mail-Butler</summary>
         <div class="shots zwei"><figure><img src="bilder/cockpit-mail-themen.webp" width="1200" height="833" loading="lazy" decoding="async" alt="Cockpit, Reiter Themen und Qualität: Themen mit Ordnern und ein Qualitätsbericht mit vorgeschlagenen Regeln"><figcaption>Cockpit, Reiter „Themen &amp; Qualität“: Qualitätsbericht mit Regelvorschlägen. Demodaten, erfunden.</figcaption></figure><figure><img src="bilder/butler-taskpane.webp" width="560" height="964" loading="lazy" decoding="async" alt="Mail-Butler in Outlook: Auswahl für Thema, Unterkategorie, Kategorie und ein Feld für den Grund der Korrektur"><figcaption>Mail-Butler, das Add-in in Outlook. Demodaten, erfunden.</figcaption></figure></div></details>
+        </details>
+      </article>
+      <article class="proj" id="cockpit">
+        <h3>Wissensarchiv mit Cockpit</h3>
+        <p class="werkzeug"><span>Obsidian&nbsp;·</span> <span>Git&nbsp;·</span> <span>Docker</span></p>
+        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
+        <dl>
+          <dt>Problem</dt><dd>Wissen und Termine liegen verstreut, und jede AI-Sitzung beginnt bei null.</dd>
+          <dt>Lösung</dt><dd>Ein Notizarchiv mit Versionsverwaltung, Zugangsdaten verschlüsselt. Ein eigenes Cockpit zeigt Termine, Mails und Haus auf einen Blick.</dd>
+          <dt>Stand</dt><dd>Zu Beginn jeder Sitzung liest die AI Regeln und Projektstand aus dem Notizarchiv. Mail-Sortierer, Wächter und Skills haben im Cockpit ihre Oberfläche, die meisten Bilder auf dieser Seite stammen daraus.</dd>
+        </dl>
         </details>
       </article>
       <article class="proj" id="waechter">
@@ -643,30 +667,6 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
         <div class="shots eins"><figure><img src="bilder/waechter-ampel.webp" width="1200" height="925" loading="lazy" decoding="async" alt="Cockpit, Seite System: Ampel für NAS, Mac, Home Assistant, Dienste und Zertifikate, mit einer Störung und mehreren Warnungen"><figcaption>Ampel für alles, was automatisch läuft. Demodaten, erfunden, mit Attrappen statt echter Geräte.</figcaption></figure></div>
         <details class="weitere"><summary>Zwei weitere Ansichten: Haus-Befunde und Telegram</summary>
         <div class="shots zwei"><figure><img src="bilder/waechter-haus-befunde.webp" width="1200" height="883" loading="lazy" decoding="async" alt="Cockpit, Haus-Ansicht: Raumtemperaturen, niedrige Batterien, Befunde des Überwachers und Triage mit Handlungsvorschlägen"><figcaption>Haus-Ansicht mit Befunden und Triage. Demodaten, erfunden.</figcaption></figure><figure><img src="bilder/waechter-telegram.webp" width="560" height="640" loading="lazy" decoding="async" alt="Nachgebaute Telegram-Meldungsfolge: Warnung zu einem Sensor, einer Batterie, Befunde des Überwachers und eine Entwarnung"><figcaption>Meldungsfolge in Telegram, als Mockup nachgebaut. Texte und Formate wie im Code, Inhalte erfunden.</figcaption></figure></div></details>
-        </details>
-      </article>
-      <article class="proj" id="cockpit">
-        <h3>Wissensarchiv mit Cockpit</h3>
-        <p class="werkzeug"><span>Obsidian&nbsp;·</span> <span>Git&nbsp;·</span> <span>Docker</span></p>
-        <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
-        <dl>
-          <dt>Problem</dt><dd>Wissen und Termine liegen verstreut, und jede AI-Sitzung beginnt bei null.</dd>
-          <dt>Lösung</dt><dd>Ein Notizarchiv mit Versionsverwaltung, Zugangsdaten verschlüsselt. Ein eigenes Cockpit zeigt Termine, Mails und Haus auf einen Blick.</dd>
-          <dt>Stand</dt><dd>Zu Beginn jeder Sitzung liest die AI Regeln und Projektstand aus dem Notizarchiv. Mail-Sortierer, Wächter und Skills haben im Cockpit ihre Oberfläche, die meisten Bilder auf dieser Seite stammen daraus.</dd>
-        </dl>
-        </details>
-      </article>
-      <article class="proj" id="skills">
-        <h3>Skills, die Claude per Klick im Cockpit startet</h3>
-        <p class="werkzeug"><span>Claude Code&nbsp;·</span> <span>Skills&nbsp;·</span> <span>Python</span></p>
-        <details class="mehr" open><summary><span class="zu">Mehr lesen</span><span class="auf">Zuklappen</span></summary>
-        <p>Ein Skill ist eine Anleitung, die Claude bei einer Aufgabe lädt. Er hält Ablauf, Regeln und Vorlagen fest, damit ich eine wiederkehrende Aufgabe nicht jedes Mal neu erklären muss. Im Cockpit liegt dafür ein fester Katalog, etwa für AI-News, Artikel und Videos als Notiz, Dateien aufräumen oder Firmenrecherche. Ein Klick legt einen Auftrag an, mein Mac holt ihn ab, führt die Claude-CLI mit eingeschränkten Rechten aus und schickt das Ergebnis zurück. Aufgaben mit viel Hin und Her bleiben bewusst in der Claude-Session, weil ein einmaliger Auftrag dafür nicht passt.</p>
-        <p>Zwei Beispiele, die ich selbst nutze:</p>
-        <ul>
-          <li><b>Textprüfung nach meinen Stilregeln:</b> findet AI-typische Formulierungen in deutschen Texten und schreibt sie um.</li>
-          <li><b>Infografiken im eigenen Design:</b> zeichnet aus Text und echten Zahlen eine fertige Grafik, etwa die Schleife oben auf dieser Seite.</li>
-        </ul>
-        <div class="shots eins"><figure><img src="bilder/skills-katalog.webp" width="1200" height="621" loading="lazy" decoding="async" alt="Cockpit, Seite Skills: Katalog mit Kacheln, gruppiert nach Jobsuche sowie AI und News, je mit Beschreibung und Knopf zum Öffnen"><figcaption>Ausschnitt aus dem Skill-Katalog im Cockpit. Demodaten, erfunden.</figcaption></figure></div>
         </details>
       </article>
     </div>
