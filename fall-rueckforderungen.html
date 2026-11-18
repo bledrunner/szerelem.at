@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rene Szerelem: 40.000 Rückforderungen ohne Aktenberg</title>
-<meta name="description" content="Wie ein Software-Roboter 13,5 Minuten Handarbeit pro Rückforderung übernimmt: Ausgangslage, Lösung, meine Rolle und woher die Zahlen stammen.">
+<meta name="description" content="Wie ein automatischer Ablauf 13,5 Minuten Handarbeit pro Rückforderung übernimmt: Ausgangslage, Lösung, meine Rolle und woher die Zahlen stammen.">
 <meta property="og:title" content="40.000 Rückforderungen ohne Aktenberg">
-<meta property="og:description" content="Aus 13,5 Minuten Handarbeit pro Fall wird ein Roboterlauf: Praxisfall von Rene Szerelem, Process Automation Developer.">
+<meta property="og:description" content="Aus 13,5 Minuten Handarbeit pro Fall wird ein automatischer Ablauf: Praxisfall von Rene Szerelem, Process Automation Developer.">
 <meta property="og:image" content="https://szerelem.at/og.png">
 <meta property="og:url" content="https://szerelem.at/fall-rueckforderungen">
 <link rel="canonical" href="https://szerelem.at/fall-rueckforderungen">
@@ -401,17 +401,17 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
   <div class="rahmen">
     <div class="oben">
       <a href="./" title="Zur Startseite"><img class="logo" src="wortmarke.svg" alt="Rene Szerelem" width="764" height="108"></a>
-      <nav><a href="./#praxis">Alle Praxisfälle</a><a href="#ausgangslage">Ausgangslage</a><a href="#zahlen">Zahlen</a><a href="#kontakt">Kontakt</a></nav>
+      <nav><a href="./#praxis">Alle Praxisfälle</a><a href="#ausgangslage">Ausgangslage</a><a href="#betrieb">Technik</a><a href="#zahlen">Zahlen</a><a href="#kontakt">Kontakt</a></nav>
     </div>
     <h1>40.000 Rückforderungen ohne Aktenberg</h1>
-    <p class="rolle">Praxisfall: Power Automate Desktop (RPA)</p>
+    <p class="rolle">Praxisfall: Power Automate (Cloud Flows und Schnittstellen)</p>
   </div>
 </header>
 
 <div class="leiste" aria-hidden="true">
   <div class="rahmen">
     <a class="hoch" href="#top" title="Nach oben" tabindex="-1"><img class="wm" src="wortmarke.svg" alt="" width="764" height="108"><img class="r" src="favicon.svg" alt="" width="26" height="26"></a>
-    <nav><a href="./#praxis" tabindex="-1">Alle Praxisfälle</a><a href="#ausgangslage" tabindex="-1">Ausgangslage</a><a href="#zahlen" tabindex="-1">Zahlen</a><a href="#kontakt" tabindex="-1">Kontakt</a></nav>
+    <nav><a href="./#praxis" tabindex="-1">Alle Praxisfälle</a><a href="#ausgangslage" tabindex="-1">Ausgangslage</a><a href="#betrieb" tabindex="-1">Technik</a><a href="#zahlen" tabindex="-1">Zahlen</a><a href="#kontakt" tabindex="-1">Kontakt</a></nav>
   </div>
 </div>
 
@@ -424,14 +424,14 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
     <p class="intro">Anwaltskanzleien fordern die Servicepauschale massenhaft zurück. Jeder einzelne Fall will geprüft sein: Seit wann zahlt der Kunde, und wie hoch ist die Rückerstattung samt Zinsen und Kosten? Von Hand dauert das rund 13,5 Minuten pro Fall.</p>
     <div class="vn">
       <div class="vor"><b>Vorher</b><span>Pro Fall rund 13,5 Minuten von Hand: Zahlzeitraum prüfen, Betrag samt Zinsen und Kosten berechnen.</span></div>
-      <div class="nach"><b>Nachher</b><span>Der Roboter übernimmt die Schritte. Bei 99 % Zielquote würden rund 8.900 Stunden Handarbeit pro Jahr entfallen. Zuletzt liefen nach meiner Einschätzung rund 93 % der Fälle ohne Mensch durch.</span></div>
+      <div class="nach"><b>Nachher</b><span>Der Roboter übernimmt die Schritte. Bei 99 % Zielquote würden rund 8.900 Stunden Handarbeit pro Jahr entfallen. Über ein Jahr liefen nach meiner Einschätzung rund 93 % der Fälle ohne Mensch durch.</span></div>
     </div>
     <p class="meinerolle intro"><b>Meine Rolle:</b> Entwicklung und Analyse, allein.</p>
       </div>
       <div class="spalte" id="loesung">
         <h2>Lösung</h2>
-    <p class="intro">Ein Software-Roboter ermittelt den Zahlzeitraum und rechnet den Betrag im bestehenden Berechnungstool aus. Er macht dieselben Schritte wie vorher ein Mensch, nur ohne Pausen und Feierabend.</p>
-    <p class="intro">Ich habe den Roboter auch im täglichen Betrieb betreut.</p>
+    <p class="intro">Ein automatischer Ablauf liest die PDFs der Anwaltskanzleien aus, holt Kundennummer und Forderung über Schnittstellen und ermittelt den Betrag. Er macht dieselben Schritte wie vorher ein Mensch.</p>
+    <p class="intro">Den täglichen Betrieb habe ich ebenfalls betreut, Details unten.</p>
       </div>
     </div>
   </div>
@@ -450,9 +450,13 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
 
 <section class="grau" id="betrieb">
   <div class="rahmen">
-    <h2>Wie es im Betrieb lief</h2>
-    <p class="intro">Jeder Fehler wurde in einer Dataverse-Tabelle protokolliert, mit einer Dringlichkeitsstufe, und löste automatisch eine Meldung an Teams aus. Ein fehlgeschlagener Lauf startete nach ein paar Minuten Wartezeit noch einmal. Scheiterte auch der zweite Versuch, landete der Fall in einer Liste. Dort prüfte eine Person im Fachbereich, was los war, und ich sah als Entwickler dieselbe Liste an, um die Ursache zu finden.</p>
-    <p class="intro">Die Quote stieg nicht weiter, weil die Rechtsanwälte immer wieder Texte und Aufbau ihrer Briefe änderten. Dann musste der Ablauf angepasst werden, und das dauerte. Für das Berechnungstool und die Outlook-Instanzen gab es keine Testsysteme.</p>
+    <h2>Technik und Betrieb</h2>
+    <p class="intro"><b>Aufbau.</b> Der Ablauf besteht aus Power-Automate-Cloud-Flows. Dazu kommen SharePoint, Teams und Outlook, ein selbst gebauter Connector für Regex (Muster zum Auslesen von Text) und zwei Schnittstellen: eine liefert die Kundennummer, die andere die Beträge aus der Datenbank. Die Berechnungsformel liegt in der Datenbank, der Flow fragt nur das Ergebnis ab. Selbst gerechnet hat der Flow nur Hochrechnungen, etwa wenn eine Kanzlei 6, 7 oder 8 Monate Servicepauschale zurückfordert und aus dem Grundbetrag der Betrag für den ganzen Zeitraum wird.</p>
+    <p class="intro"><b>Ein Fall.</b> Bekannte Kanzleien schicken ein PDF an ein eigenes Postfach. Der Flow startet, wenn der Absender passt und ein Anhang dabei ist. Per Regex zerlege ich den Text in Bausteine, hole Kundennummer und Forderung über die Schnittstellen und prüfe alles. Stimmt alles, bearbeitet der Flow den Fall und dokumentiert ihn in einer SharePoint-Liste. Sonst übernimmt ein Mensch.</p>
+    <p class="intro"><b>Sicherheit.</b> Jede Schnittstelle hatte ein eigenes Servicekonto, die Zugangsdaten lagen im Azure Key Vault. Datenschutz und IT waren von Anfang an eingebunden. Freigegeben wurde gemeinsam mit dem Fachbereich nach Tests.</p>
+    <p class="intro"><b>Änderungen.</b> Power Automate und die Schnittstellen gab es als Entwicklungs-, Test- und Produktivumgebung. Viele Umsysteme, zum Beispiel Outlook und einzelne Datenbanken, gab es nur in Produktion. Änderungen baute ich deshalb meist als Kopie des Flows, testete sie und dokumentierte sie, statt sie über Solutions durch die Umgebungen zu schieben. Nachteil: keine saubere Versionierung über Umgebungen hinweg.</p>
+    <p class="intro"><b>Fehler.</b> Zu jedem fehlgeschlagenen Lauf speicherte ich den Link, die Lauf-ID und die Fehlermeldung von Power Automate in einer Dataverse-Tabelle, mit einer Dringlichkeitsstufe. Dazu kam eine Meldung in einen eigenen Teams-Kanal und per Mail an mich und Kollegen. Ein fehlgeschlagener Lauf startete nach ein paar Minuten Wartezeit noch einmal. Scheiterte auch der zweite Versuch, landete der Fall in einer Liste. Dort prüfte eine Person im Fachbereich, was los war, und ich sah als Entwickler dieselbe Liste an, um die Ursache zu finden. Ein Mensch musste eingreifen, wenn sich Fehler in kurzer Zeit häuften oder bestimmte Meldungen kamen. Was nachts passierte, sah ich spätestens um 8 Uhr, bei Bedarf behob ich es auch nachts.</p>
+    <p class="intro"><b>Stolpersteine.</b> Die größte Hürde war die Sicherheit: das Gateway mit seinem Größenlimit und Firewall-Regeln, die Flows blockierten. Was das Gateway nicht weiterreichte, löste ich über eigene Schnittstellen oder Custom Connectors. Firewall-Regeln und Sicherheits-Updates stimmte ich mit IT und Security ab. Die Quote stieg nicht weiter, weil die Rechtsanwälte immer wieder Texte und Aufbau ihrer Briefe änderten. Dann musste der Ablauf angepasst werden, und das dauerte.</p>
   </div>
 </section>
 
@@ -465,7 +469,7 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
       <div class="zahl"><b>2 Min.</b><span>pro Fall im Schnitt, jetzt, rund um die Uhr</span></div>
       <div class="zahl"><b>rund 93 %</b><span>der Fälle liefen ohne Mensch durch, geschätzt, über ein Jahr lang (Ziel 99 %)</span></div>
     </div>
-    <p class="quelle">Die Fallzahl ist eine Angabe des Fachbereichs, jeweils pro Jahr. „Bis zu 99 %“ ist die Zielquote, also das Potenzial. Die rund 8.900 Stunden ergeben sich aus 40.000 Fällen × rund 13,5 Minuten × 99 % Zielquote. Die 2 Minuten sind der Durchschnitt der Power-Automate-Läufe. Die rund 93 % und die bisher bearbeiteten etwa 35.000 bis 38.000 Fälle sind meine eigene Einschätzung, keine Auswertung aus einem Bericht.</p>
+    <p class="quelle">Die Fallzahl ist eine Angabe des Fachbereichs pro Jahr. Die 99 % sind die Zielquote, also das Potenzial. Die rund 8.900 Stunden ergeben sich aus 40.000 Fällen × rund 13,5 Minuten × 99 % Zielquote. Die 2 Minuten sind die durchschnittliche Laufzeit der Power-Automate-Läufe, die 13,5 Minuten die Arbeitszeit von Hand. Die rund 93 % und die bisher bearbeiteten etwa 35.000 bis 38.000 Fälle sind meine eigene Einschätzung, keine Auswertung aus einem Bericht.</p>
   </div>
 </section>
 
