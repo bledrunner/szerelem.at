@@ -401,7 +401,7 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
   <div class="rahmen">
     <div class="oben">
       <a href="./" title="Zur Startseite"><img class="logo" src="wortmarke.svg" alt="Rene Szerelem" width="764" height="108"></a>
-      <nav><a href="./#praxis">Alle Praxisfälle</a><a href="#ausgangslage">Ausgangslage</a><a href="#ablauf">Ablauf</a><a href="#zahlen">Zahlen</a><a href="#kontakt">Kontakt</a></nav>
+      <nav><a href="./#praxis">Alle Praxisfälle</a><a href="#ausgangslage">Ausgangslage</a><a href="#ablauf">Ablauf</a><a href="#betrieb">Technik</a><a href="#zahlen">Zahlen</a><a href="#kontakt">Kontakt</a></nav>
     </div>
     <h1>Das Postfach, das sich selbst sortiert</h1>
     <p class="rolle">Praxisfall: Power Automate · AI/LLM · SharePoint</p>
@@ -411,7 +411,7 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
 <div class="leiste" aria-hidden="true">
   <div class="rahmen">
     <a class="hoch" href="#top" title="Nach oben" tabindex="-1"><img class="wm" src="wortmarke.svg" alt="" width="764" height="108"><img class="r" src="favicon.svg" alt="" width="26" height="26"></a>
-    <nav><a href="./#praxis" tabindex="-1">Alle Praxisfälle</a><a href="#ausgangslage" tabindex="-1">Ausgangslage</a><a href="#ablauf" tabindex="-1">Ablauf</a><a href="#zahlen" tabindex="-1">Zahlen</a><a href="#kontakt" tabindex="-1">Kontakt</a></nav>
+    <nav><a href="./#praxis" tabindex="-1">Alle Praxisfälle</a><a href="#ausgangslage" tabindex="-1">Ausgangslage</a><a href="#ablauf" tabindex="-1">Ablauf</a><a href="#betrieb" tabindex="-1">Technik</a><a href="#zahlen" tabindex="-1">Zahlen</a><a href="#kontakt" tabindex="-1">Kontakt</a></nav>
   </div>
 </div>
 
@@ -421,7 +421,7 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
     <div class="zweispalt">
       <div class="spalte">
         <h2>Ausgangslage</h2>
-    <p class="intro">Über 50.000 Kundenmails im Jahr landen in einem Sammelpostfach und müssen binnen zwei Stunden händisch der richtigen Abteilung zugeteilt werden.</p>
+    <p class="intro">Über 52.000 Kundenmails im Jahr landen in einem Sammelpostfach und müssen binnen zwei Stunden händisch der richtigen Abteilung zugeteilt werden.</p>
     <p class="meinerolle intro"><b>Meine Rolle:</b> Entwicklung und Analyse, allein</p>
       </div>
       <div class="spalte" id="loesung">
@@ -485,8 +485,8 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
   <div class="abt mensch"><span>Mensch prüft</span></div>
   <div class="beleg">
     <div class="bl">Fälle pro Jahr automatisch zugeordnet</div>
-    <div class="pf-zahl">52.000</div>
-    <div class="zwei">1.200+ Stunden pro Jahr frei</div>
+    <div class="pf-zahl">52.000+</div>
+    <div class="zwei">1.200+ Stunden pro Jahr Potenzial</div>
   </div>
 </div></div>
 <figcaption>Schematisch: Was sicher ist, landet direkt in der Abteilung. Was unsicher ist, geht an einen Menschen.</figcaption>
@@ -597,7 +597,7 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
     frage.style.fontSize = (parseFloat(briefe[UNSICHER].style.width) * .4) + 'px';
     ankommen(erkennt, phase(t, 10.9, 11.5), 14);
     bl.forEach((e, i) => ankommen(e, staffel(t, 11.2, i, .15, .6), 16));
-    zahl.textContent = (Math.round(mix(0, 520, aus(phase(t, 11.3, 12.4)))) * 100).toLocaleString('de-DE');
+    { const n = Math.round(mix(0, 520, aus(phase(t, 11.3, 12.4)))) * 100; zahl.textContent = n.toLocaleString('de-DE') + (n >= 52000 ? '+' : ''); }
   };
 
   let jetzt = DAUER;
@@ -621,19 +621,29 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
   io.observe(buehne);
 })();
 </script></div>
-    <figure class="nur-klein"><img src="bilder/postfach-handy.webp" width="810" height="1095" alt="Über 50.000 Mails im Jahr landen in einem Postfach. Ein Sprachmodell liest jedes Mail, erkennt Kundennummer und Thema und ordnet es Rechnung, Technik, Vertrag oder Kündigung zu. Unsichere Fälle entscheidet ein Mensch." loading="lazy"><figcaption>Schematisch: Was sicher ist, landet direkt in der Abteilung. Was unsicher ist, geht an einen Menschen.</figcaption></figure>
+    <figure class="nur-klein"><img src="bilder/postfach-handy.webp" width="810" height="1095" alt="Über 52.000 Mails im Jahr landen in einem Postfach. Ein Sprachmodell liest jedes Mail, erkennt Kundennummer und Thema und ordnet es Rechnung, Technik, Vertrag oder Kündigung zu. Unsichere Fälle entscheidet ein Mensch." loading="lazy"><figcaption>Schematisch: Was sicher ist, landet direkt in der Abteilung. Was unsicher ist, geht an einen Menschen.</figcaption></figure>
   </div>
 </section>
 
-<section class="grau" id="zahlen">
+<section class="grau" id="betrieb">
+  <div class="rahmen">
+    <h2>Technik und Betrieb</h2>
+    <p class="intro"><b>Aufbau.</b> Der Ablauf bestand aus Power-Automate-Flows rund um ein Sprachmodell (ein GPT-Modell von OpenAI in einer firmeneigenen Instanz, die Daten verließen das Unternehmen nicht). Dazu kamen SharePoint-Listen für die Regeln und das Kundensystem, in dem der Fall angelegt wurde.</p>
+    <p class="intro"><b>Ein Mail.</b> Das Mail landete im Sammelpostfach. Das Sprachmodell las den Text, erkannte Kundennummer und Thema und ordnete es einer Abteilung zu. Sichere Treffer legte der Flow direkt als Fall an. Was das Modell nicht sicher zuordnen konnte, wies der Flow gesondert aus, und ein Mensch übernahm es.</p>
+    <p class="intro"><b>Qualität.</b> Anfangs prüften Menschen die Zuordnungen mit. Die Trefferquote lag nach meiner Angabe anfangs bei rund 80 %, später bei 85 bis 90 %. Die Quoten sind meine Angabe, keine Auswertung aus einem Bericht.</p>
+    <p class="intro"><b>Datenschutz.</b> Datenschutz und IT-Security haben das Vorhaben freigegeben, alles wurde vorab geklärt.</p>
+  </div>
+</section>
+
+<section id="zahlen">
   <div class="rahmen">
     <h2>Die Zahl und woher sie stammt</h2>
-    <p class="kennzahl"><b>1.200+</b><span><span class="einheit">Stunden pro Jahr frei</span>52.000 Fälle pro Jahr automatisch zugeordnet.</span></p>
-    <p class="quelle">Alle Stunden- und Fallzahlen sind Angaben der jeweiligen Fachbereiche, jeweils pro Jahr.</p>
+    <p class="kennzahl"><b>1.200+</b><span><span class="einheit">Stunden pro Jahr Potenzial</span>Über 52.000 Mails pro Jahr landeten im Sammelpostfach.</span></p>
+    <p class="quelle">Die Fallzahlen sind Angaben der Fachbereiche pro Jahr. Die Stunden sind Potenzial nach meiner Einschätzung, keine Auswertung aus einem Bericht.</p>
   </div>
 </section>
 
-<section id="weiter">
+<section class="grau" id="weiter">
   <div class="rahmen">
     <h2>Weitere Fälle</h2>
     <div class="knoepfe weiternav">

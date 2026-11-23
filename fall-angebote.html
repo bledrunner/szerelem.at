@@ -401,7 +401,7 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
   <div class="rahmen">
     <div class="oben">
       <a href="./" title="Zur Startseite"><img class="logo" src="wortmarke.svg" alt="Rene Szerelem" width="764" height="108"></a>
-      <nav><a href="./#praxis">Alle Praxisfälle</a><a href="#ausgangslage">Ausgangslage</a><a href="#zahlen">Zahlen</a><a href="#kontakt">Kontakt</a></nav>
+      <nav><a href="./#praxis">Alle Praxisfälle</a><a href="#ausgangslage">Ausgangslage</a><a href="#betrieb">Technik</a><a href="#zahlen">Zahlen</a><a href="#kontakt">Kontakt</a></nav>
     </div>
     <h1>Angebote in 30 Minuten statt 20 Stunden</h1>
     <p class="rolle">Praxisfall: Power Apps · Power Automate · eigene API · Word</p>
@@ -411,7 +411,7 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
 <div class="leiste" aria-hidden="true">
   <div class="rahmen">
     <a class="hoch" href="#top" title="Nach oben" tabindex="-1"><img class="wm" src="wortmarke.svg" alt="" width="764" height="108"><img class="r" src="favicon.svg" alt="" width="26" height="26"></a>
-    <nav><a href="./#praxis" tabindex="-1">Alle Praxisfälle</a><a href="#ausgangslage" tabindex="-1">Ausgangslage</a><a href="#zahlen" tabindex="-1">Zahlen</a><a href="#kontakt" tabindex="-1">Kontakt</a></nav>
+    <nav><a href="./#praxis" tabindex="-1">Alle Praxisfälle</a><a href="#ausgangslage" tabindex="-1">Ausgangslage</a><a href="#betrieb" tabindex="-1">Technik</a><a href="#zahlen" tabindex="-1">Zahlen</a><a href="#kontakt" tabindex="-1">Kontakt</a></nav>
   </div>
 </div>
 
@@ -474,11 +474,19 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
   </div>
 </section>
 
+<section class="grau" id="betrieb">
+  <div class="rahmen">
+    <h2>Technik und Betrieb</h2>
+    <p class="intro"><b>Aufbau.</b> Die Vorlagen lagen zentral in SharePoint und liefen durch einen Freigabeprozess. Die App zur Auswahl der Bausteine ist eine Power App, die ein Kollege gebaut hat. Von mir stammen das Word-Add-in, der Power-Automate-Flow und die eigene Schnittstelle (API), die aus den gewählten Bausteinen das fertige Word-Dokument zusammensetzte.</p>
+    <p class="intro"><b>Sicherheit.</b> Die Schnittstelle war nur intern erreichbar, Power Automate griff über das Gateway darauf zu. Für die Schnittstelle gab es eine Sicherheitsprüfung.</p>
+  </div>
+</section>
+
 <section id="zahlen">
   <div class="rahmen">
     <h2>Die Zahl und woher sie stammt</h2>
-    <p class="kennzahl"><b>3.700</b><span><span class="einheit">Stunden pro Jahr gespart</span>Eine halbe statt 20 Stunden pro Konzept, und die Angebotslegung lief ohne Unterbrechung weiter.</span></p>
-    <p class="quelle">Alle Stunden- und Fallzahlen sind Angaben der jeweiligen Fachbereiche, jeweils pro Jahr.</p>
+    <p class="kennzahl"><b>3.700</b><span><span class="einheit">Stunden pro Jahr Potenzial</span>Eine halbe statt 20 Stunden pro Konzept.</span></p>
+    <p class="quelle">Die Fallzahlen sind Angaben der Fachbereiche pro Jahr. Die Stunden sind Potenzial nach meiner Einschätzung, keine Auswertung aus einem Bericht.</p>
   </div>
 </section>
 
