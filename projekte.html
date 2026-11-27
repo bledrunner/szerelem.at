@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wie ich mit AI baue: Rene Szerelem</title>
-<meta name="description" content="Wie ich bei meinen Eigenprojekten mit AI baue: Prüf-Agenten, Mail-Sortierer mit Outlook-Add-in, Smart-Home-Wächter, Cockpit und Skills. Mit Screenshots und drei Fehlern, aus denen ich gelernt habe.">
-<meta property="og:title" content="Wie ich mit AI baue: Rene Szerelem">
-<meta property="og:description" content="Was bei mir mit AI im Alltag läuft, wie ich es baue und aus welchen Fehlern ich gelernt habe.">
+<title>Wie ich mit KI baue: Rene Szerelem</title>
+<meta name="description" content="Wie ich bei meinen Eigenprojekten mit KI baue: Prüf-Agenten, Mail-Sortierer mit Outlook-Add-in, Smart-Home-Wächter, Cockpit und Skills. Mit Screenshots und drei Fehlern, aus denen ich gelernt habe.">
+<meta property="og:title" content="Wie ich mit KI baue: Rene Szerelem">
+<meta property="og:description" content="Was bei mir mit KI im Alltag läuft, wie ich es baue und aus welchen Fehlern ich gelernt habe.">
 <meta property="og:image" content="https://szerelem.at/og.png">
 <meta property="og:url" content="https://szerelem.at/projekte">
 <link rel="canonical" href="https://szerelem.at/projekte">
@@ -403,7 +403,7 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
       <a href="./" title="Zur Startseite"><img class="logo" src="wortmarke.svg" alt="Rene Szerelem" width="764" height="108"></a>
       <nav><a href="./">Startseite</a><a href="#laeuft">Läuft</a><a href="#gelernt">Gelernt</a><a href="#kontakt">Kontakt</a></nav>
     </div>
-    <h1>Wie ich mit AI baue</h1>
+    <h1>Wie ich mit KI baue</h1>
     <p class="rolle">Meine Eigenprojekte: was läuft, wie ich es baue und was ich dabei gelernt habe.</p>
     <p class="status">Die beruflichen Fälle stehen auf der <a href="./#praxis">Startseite</a>.</p>
   </div>
@@ -422,7 +422,7 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
     <nav class="kacheln fuenf" aria-label="Die fünf Projekte im Überblick">
       <a class="kachel" href="#pruefagenten"><span class="titel">Prüf-Agenten</span><span class="satz">Drei Agenten prüfen Code, Texte und Webseiten und liefern eine Befundliste.</span></a>
       <a class="kachel" href="#skills"><span class="titel">Skills</span><span class="satz">Wiederkehrende Aufgaben als Anleitung für Claude, per Klick gestartet.</span></a>
-      <a class="kachel" href="#mail"><span class="titel">Mail-Sortierer und Mail-Butler</span><span class="satz">AI sortiert mein Postfach und lernt aus meinen Korrekturen, auch direkt in Outlook.</span></a>
+      <a class="kachel" href="#mail"><span class="titel">Mail-Sortierer und Mail-Butler</span><span class="satz">KI sortiert mein Postfach und lernt aus meinen Korrekturen, auch direkt in Outlook.</span></a>
       <a class="kachel" href="#cockpit"><span class="titel">Cockpit</span><span class="satz">Notizarchiv mit Versionsverwaltung und Übersicht für Termine, Mails und Haus.</span></a>
       <a class="kachel" href="#waechter"><span class="titel">Smart-Home-Wächter</span><span class="satz">Ampel, Überwacher und Telegram-Meldung bei Störungen.</span></a>
     </nav>
@@ -459,7 +459,7 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
 <p class="sy-unter">So spielen meine Systeme zusammen.</p>
 <div class="sy-buehne"><div class="sy-ig">
   <svg class="sy-svg" aria-hidden="true"></svg>
-  <div class="sy-st sy-archiv"><b>Wissensarchiv</b><p>Notizen, Regeln und der Stand jedes Projekts. Die AI startet hier statt bei null.</p></div>
+  <div class="sy-st sy-archiv"><b>Wissensarchiv</b><p>Notizen, Regeln und der Stand jedes Projekts. Die KI startet hier statt bei null.</p></div>
   <div class="sy-st sy-bauen"><b>Bauen</b><p>Claude Code baut, Skills bringen Ablauf und Vorlagen mit.</p></div>
   <div class="sy-st sy-tor"><span class="sy-zahl">3 Prüf-Agenten</span><p>prüfen Code, Texte und Webseiten. Sie ändern nichts, sie liefern Befunde.</p></div>
   <div class="sy-st sy-cockpit"><b>Cockpit</b><p>zeigt Haus, Mails und Termine auf einen Blick</p></div>
@@ -605,11 +605,11 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
     <p class="intro">Fünf Systeme, die ich gebaut habe und im Alltag selbst betreibe. Die meisten Bilder stammen aus meinem Cockpit, mit erfundenen Demodaten, wo es dabeisteht. Ein Klick oder Tipp auf ein Bild vergrößert es.</p>
     <div class="aiprojekte eins">
       <article class="proj" id="pruefagenten">
-        <h3>Prüf-Agenten, die AI-Ergebnisse gegenlesen</h3>
+        <h3>Prüf-Agenten, die KI-Ergebnisse gegenlesen</h3>
         <p class="werkzeug"><span>Claude Code&nbsp;·</span> <span>Subagenten</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
-          <dt>Problem</dt><dd>Ergebnisse, die eine AI selbst gebaut hat, wirken überzeugend, auch wenn sie nicht stimmen.</dd>
+          <dt>Problem</dt><dd>Ergebnisse, die eine KI selbst gebaut hat, wirken überzeugend, auch wenn sie nicht stimmen.</dd>
           <dt>Lösung</dt><dd>Drei unabhängige Prüf-Agenten (Subagenten, also eigene Claude-Instanzen mit klarem Prüfauftrag) für Code, Texte und Webseiten. Sie ändern nichts und liefern eine Liste mit Befunden. Sie laufen nach Änderungen an Konfiguration, Code, Webseiten und längeren Texten. Bei großen Prüfläufen arbeiten mehrere Kopien eines Agenten parallel, jede an einem Teil.</dd>
           <dt>Ergebnis</dt><dd>Bevor diese Seite online ging, hat sie der Agent für Webseiten geprüft. Der Textprüfer hat sie ebenfalls gelesen. Der Beispielbericht zeigt, was er gefunden hat, was daraus wurde und wo ich ihm nicht gefolgt bin.</dd>
         </dl>
@@ -623,19 +623,19 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
         <p>Ein Skill ist eine Anleitung, die Claude bei einer Aufgabe lädt. Er hält Ablauf, Regeln und Vorlagen fest, damit ich eine wiederkehrende Aufgabe nicht jedes Mal neu erklären muss. Im Cockpit liegt dafür ein fester Katalog, etwa für AI-News, Artikel und Videos als Notiz, Dateien aufräumen oder Firmenrecherche. Ein Klick legt einen Auftrag an, mein Mac holt ihn ab, führt die Claude-CLI mit eingeschränkten Rechten aus und schickt das Ergebnis zurück. Aufgaben mit viel Hin und Her bleiben bewusst in der Claude-Session, weil ein einmaliger Auftrag dafür nicht passt.</p>
         <p>Zwei Beispiele, die ich selbst nutze:</p>
         <ul>
-          <li><b>Textprüfung nach meinen Stilregeln:</b> findet AI-typische Formulierungen in deutschen Texten und schreibt sie um.</li>
+          <li><b>Textprüfung nach meinen Stilregeln:</b> findet KI-typische Formulierungen in deutschen Texten und schreibt sie um.</li>
           <li><b>Infografiken im eigenen Design:</b> zeichnet aus Text und echten Zahlen eine fertige Grafik, etwa die Schleife oben auf dieser Seite.</li>
         </ul>
-        <div class="shots eins"><figure><img src="bilder/skills-katalog.webp" width="1200" height="621" loading="lazy" decoding="async" alt="Cockpit, Seite Skills: Katalog mit Kacheln, gruppiert nach Jobsuche sowie AI und News, je mit Beschreibung und Knopf zum Öffnen"><figcaption>Ausschnitt aus dem Skill-Katalog im Cockpit. Demodaten, erfunden.</figcaption></figure></div>
+        <div class="shots eins"><figure><img src="bilder/skills-katalog.webp" width="1200" height="621" loading="lazy" decoding="async" alt="Cockpit, Seite Skills: Katalog mit Kacheln, gruppiert nach Jobsuche sowie KI und News, je mit Beschreibung und Knopf zum Öffnen"><figcaption>Ausschnitt aus dem Skill-Katalog im Cockpit. Demodaten, erfunden.</figcaption></figure></div>
         </details>
       </article>
       <article class="proj" id="mail">
         <h3>Ein Mail-Sortierer, der aus Fehlern lernt</h3>
-        <p class="werkzeug"><span>Python&nbsp;·</span> <span>AI/LLM&nbsp;·</span> <span>Microsoft Graph&nbsp;·</span> <span>Outlook-Add-in</span></p>
+        <p class="werkzeug"><span>Python&nbsp;·</span> <span>KI/LLM&nbsp;·</span> <span>Microsoft Graph&nbsp;·</span> <span>Outlook-Add-in</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>Ein Postfach sortiert sich nicht von selbst, und feste Regeln veralten schnell.</dd>
-          <dt>Lösung</dt><dd>AI sortiert mein Postfach stündlich nach Themen und Fristen. Verschiebe ich ein Mail, merkt sich das System die Korrektur und schlägt mir jede Woche neue Regeln vor, die ich selbst freigebe. Den Mail-Butler habe ich als Add-in für Outlook gebaut: Bei einer falsch eingeordneten Mail wähle ich Thema oder Kategorie, schreibe optional einen Grund und speichere die Korrektur. Im Cockpit prüfe ich die Zuordnung des Tages, und ein Qualitätsbericht zeigt, wo das System danebenlag.</dd>
+          <dt>Lösung</dt><dd>KI sortiert mein Postfach stündlich nach Themen und Fristen. Verschiebe ich ein Mail, merkt sich das System die Korrektur und schlägt mir jede Woche neue Regeln vor, die ich selbst freigebe. Den Mail-Butler habe ich als Add-in für Outlook gebaut: Bei einer falsch eingeordneten Mail wähle ich Thema oder Kategorie, schreibe optional einen Grund und speichere die Korrektur. Im Cockpit prüfe ich die Zuordnung des Tages, und ein Qualitätsbericht zeigt, wo das System danebenlag.</dd>
           <dt>Hinweis</dt><dd>Die Bilder zeigen Demodaten: Absender, Betreffe und Zahlen sind erfunden, mein echtes Postfach ist nirgends zu sehen.</dd>
         </dl>
         <div class="shots eins"><figure><img src="bilder/cockpit-mail-heute.webp" width="1200" height="833" loading="lazy" decoding="async" alt="Cockpit, Reiter Heute: Liste eingegangener Mails mit Thema und Kategorie, jeweils per Auswahl korrigierbar"><figcaption>Cockpit, Reiter „Heute“: Zuordnung prüfen und direkt korrigieren. Demodaten, erfunden.</figcaption></figure></div>
@@ -648,15 +648,15 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
         <p class="werkzeug"><span>Obsidian&nbsp;·</span> <span>Git&nbsp;·</span> <span>Docker</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
-          <dt>Problem</dt><dd>Wissen und Termine liegen verstreut, und jede AI-Sitzung beginnt bei null.</dd>
+          <dt>Problem</dt><dd>Wissen und Termine liegen verstreut, und jede KI-Sitzung beginnt bei null.</dd>
           <dt>Lösung</dt><dd>Ein Notizarchiv mit Versionsverwaltung, Zugangsdaten verschlüsselt. Ein eigenes Cockpit zeigt Termine, Mails und Haus auf einen Blick.</dd>
-          <dt>Stand</dt><dd>Zu Beginn jeder Sitzung liest die AI Regeln und Projektstand aus dem Notizarchiv. Mail-Sortierer, Wächter und Skills haben im Cockpit ihre Oberfläche, die meisten Bilder auf dieser Seite stammen daraus.</dd>
+          <dt>Stand</dt><dd>Zu Beginn jeder Sitzung liest die KI Regeln und Projektstand aus dem Notizarchiv. Mail-Sortierer, Wächter und Skills haben im Cockpit ihre Oberfläche, die meisten Bilder auf dieser Seite stammen daraus.</dd>
         </dl>
         </details>
       </article>
       <article class="proj" id="waechter">
         <h3>Ein Smart Home, das sich selbst überwacht</h3>
-        <p class="werkzeug"><span>Home Assistant&nbsp;·</span> <span>Python&nbsp;·</span> <span>AI/LLM&nbsp;·</span> <span>Telegram</span></p>
+        <p class="werkzeug"><span>Home Assistant&nbsp;·</span> <span>Python&nbsp;·</span> <span>KI/LLM&nbsp;·</span> <span>Telegram</span></p>
         <details class="mehr" open><summary><span class="zu">Problem und Lösung lesen</span><span class="auf">Zuklappen</span></summary>
         <dl>
           <dt>Problem</dt><dd>82 Automationen von Heizung bis Rollos. Dabei fällt nicht auf, wenn eine ins Leere verweist, nie läuft oder ein Gerät hängt.</dd>
@@ -679,17 +679,17 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
     <p class="intro">Drei Fehler aus meinen Eigenprojekten. Aus ihnen sind die Werkzeuge oben entstanden.</p>
     <div class="aiprojekte drei lehren">
       <article class="proj">
-        <h3>AI-Ergebnisse ungeprüft übernommen</h3>
+        <h3>KI-Ergebnisse ungeprüft übernommen</h3>
         <dl>
-          <dt>Folge</dt><dd>Beim Aufräumen im Smart Home schlug mir die AI eine Liste angeblich toter Geräte zum Löschen vor. Die meisten waren völlig normal, nur vorübergehend nicht erreichbar.</dd>
-          <dt>Seither</dt><dd>Drei Prüf-Agenten lesen AI-Ergebnisse gegen, bevor ich sie übernehme. Gelöscht wird nur nach eigener Prüfung.</dd>
+          <dt>Folge</dt><dd>Beim Aufräumen im Smart Home schlug mir die KI eine Liste angeblich toter Geräte zum Löschen vor. Die meisten waren völlig normal, nur vorübergehend nicht erreichbar.</dd>
+          <dt>Seither</dt><dd>Drei Prüf-Agenten lesen KI-Ergebnisse gegen, bevor ich sie übernehme. Gelöscht wird nur nach eigener Prüfung.</dd>
         </dl>
       </article>
       <article class="proj">
         <h3>Alles in einem langen Chat</h3>
         <dl>
-          <dt>Folge</dt><dd>Die AI liest bei jeder Frage den ganzen Verlauf mit, auch Themen, die längst erledigt sind. Laut meinen eigenen Logs wäre rund ein Fünftel der Token (Recheneinheiten, nach denen AI abgerechnet wird) vermeidbar gewesen.</dd>
-          <dt>Seither</dt><dd>Pro Aufgabe ein neuer Chat. Dazu zeigt mir ein eigenes Live-Dashboard, was ein Auftrag auslöst, wie viel die AI dabei mitliest und was das kostet. Beides sehen Sie unten.</dd>
+          <dt>Folge</dt><dd>Die KI liest bei jeder Frage den ganzen Verlauf mit, auch Themen, die längst erledigt sind. Laut meinen eigenen Logs wäre rund ein Fünftel der Token (Recheneinheiten, nach denen KI abgerechnet wird) vermeidbar gewesen.</dd>
+          <dt>Seither</dt><dd>Pro Aufgabe ein neuer Chat. Dazu zeigt mir ein eigenes Live-Dashboard, was ein Auftrag auslöst, wie viel die KI dabei mitliest und was das kostet. Beides sehen Sie unten.</dd>
         </dl>
       </article>
       <article class="proj">
@@ -709,7 +709,7 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
         <div class="g-schema" id="g-schema" role="tabpanel">
         <div class="g-text">
           <p class="g-titel">Lange Chats verbrennen Token</p>
-          <p>Bei jeder neuen Frage liest die AI den ganzen Chat noch einmal mit. Jede Säule ist eine Frage, ihre Höhe zeigt, wie viel die AI dafür liest. Darum wird jede Säule höher als die davor.</p>
+          <p>Bei jeder neuen Frage liest die KI den ganzen Chat noch einmal mit. Jede Säule ist eine Frage, ihre Höhe zeigt, wie viel die KI dafür liest. Darum wird jede Säule höher als die davor.</p>
           <p>Im Schema spart das fast die Hälfte. In meinen echten Chats wäre so <mark>rund ein Fünftel</mark> der Token vermeidbar gewesen.</p>
           <p class="g-tipp">Pro Aufgabe ein neuer Chat.</p>
           <button type="button" class="g-zum-beispiel" data-ansicht="beispiel" hidden>Lieber an einem Beispiel? Hier durchklicken ›</button>
@@ -722,7 +722,7 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
         <div class="g-beispiel" id="g-beispiel" role="tabpanel" hidden>
           <div class="g-text g-intro">
             <p class="g-titel">Erst Urlaub, dann Bewerbung</p>
-            <p>Die AI merkt sich nichts zwischen zwei Antworten. Vor jeder Antwort liest sie den ganzen Chat von vorn, wie ein Kollege, der vor jedem Satz das ganze Protokoll durchblättert.</p>
+            <p>Die KI merkt sich nichts zwischen zwei Antworten. Vor jeder Antwort liest sie den ganzen Chat von vorn, wie ein Kollege, der vor jedem Satz das ganze Protokoll durchblättert.</p>
             <p>Sie stellen 6 Fragen zum Urlaub, dann 6 zu einer Bewerbung. Links bleibt alles in einem Chat, rechts fängt bei Frage 7 ein neuer an.</p>
           </div>
           <div class="g-text g-steuer">
@@ -738,9 +738,9 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
             <div><svg viewBox="0 0 182 168" class="g-kurz"></svg><b class="g-summe-kurz"></b><span class="g-text-kurz"></span></div>
           </div>
         </div>
-        <p class="g-legende" aria-label="Legende: Eine Säule ist eine Frage von Ihnen. Ein Block ist eine Nachricht, die die AI dafür mitliest. Rot nur wegen des langen Verlaufs. Gestrichelt mit neuem Chat gespart.">
+        <p class="g-legende" aria-label="Legende: Eine Säule ist eine Frage von Ihnen. Ein Block ist eine Nachricht, die die KI dafür mitliest. Rot nur wegen des langen Verlaufs. Gestrichelt mit neuem Chat gespart.">
           <span><svg class="saeule" viewBox="0 0 12 40" aria-hidden="true"><rect class="voll" width="12" height="12" rx="2"/><rect class="voll" y="14" width="12" height="12" rx="2"/><rect class="voll" y="28" width="12" height="12" rx="2"/></svg>1 Säule = eine Frage von Ihnen</span>
-          <span><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="voll" width="12" height="12" rx="2"/></svg>1 Block = eine Nachricht, die die AI dafür mitliest</span>
+          <span><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="voll" width="12" height="12" rx="2"/></svg>1 Block = eine Nachricht, die die KI dafür mitliest</span>
           <span><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="rot" width="12" height="12" rx="2"/></svg>nur wegen des langen Verlaufs</span>
           <span><svg viewBox="0 0 12 12" aria-hidden="true"><rect class="weg" x=".6" y=".6" width="10.8" height="10.8" rx="2"/></svg>mit neuem Chat gespart</span>
         </p>
@@ -992,7 +992,7 @@ body:has(.kopf.klein) section{padding:clamp(40px,5vw,64px) 0}
     <h2>Reden wir darüber</h2>
     <p>Ich suche eine neue Aufgabe in Prozessautomatisierung und Datenanalyse. Wenn Sie einen Prozess haben, der nach Automatisierung schreit, oder eine Stelle, die dazu passt: Schreiben Sie mir.</p>
     <dl class="fakten">
-      <dt>Rollen und Schwerpunkte</dt><dd class="werkzeug"><span>Process Automation Developer&nbsp;·</span> <span>Power Platform Developer&nbsp;·</span> <span>Data / BI Analyst&nbsp;·</span> <span>AI-Integration</span></dd>
+      <dt>Rollen und Schwerpunkte</dt><dd class="werkzeug"><span>Process Automation Developer&nbsp;·</span> <span>Power Platform Developer&nbsp;·</span> <span>Data / BI Analyst&nbsp;·</span> <span>KI-Integration</span></dd>
       <dt>Ort</dt><dd>Wien, hybrid</dd>
       <dt>Verfügbar</dt><dd>ab sofort</dd>
       <dt>Lebenslauf und Dienstzeugnis</dt><dd>Lebenslauf als PDF zum Download, Dienstzeugnis auf Anfrage</dd>
@@ -1107,10 +1107,10 @@ if (fig) {
   const lang = fig.querySelector('.g-lang'), kurz = fig.querySelector('.g-kurz');
   const zurueck = fig.querySelector('.g-zurueck'), weiter = fig.querySelector('.g-weiter');
   const erklaer = (n, sl, sk) =>
-    n === 1 ? 'Die AI liest nur Ihre Frage: 1 Block. Rechts ist es bis Frage 6 genau gleich.' :
-      n <= 6 ? `Die AI liest Ihre Frage und ${n === 2 ? 'die eine' : `die ${n - 1}`} davor, also ${n} Blöcke. Alles gehört zum Urlaub, nichts davon ist umsonst.` :
-      n === 7 ? 'Neues Thema. Links liest die AI trotzdem alle 6 Urlaubs-Nachrichten mit (rot), obwohl sie fürs Anschreiben nichts bringen. Rechts im neuen Chat liest sie nur Ihre Frage.' :
-      n < 12 ? `Links liest die AI ${n} Nachrichten, 6 davon zum Urlaub. Rechts nur die ${n - 6} zur Bewerbung.` :
+    n === 1 ? 'Die KI liest nur Ihre Frage: 1 Block. Rechts ist es bis Frage 6 genau gleich.' :
+      n <= 6 ? `Die KI liest Ihre Frage und ${n === 2 ? 'die eine' : `die ${n - 1}`} davor, also ${n} Blöcke. Alles gehört zum Urlaub, nichts davon ist umsonst.` :
+      n === 7 ? 'Neues Thema. Links liest die KI trotzdem alle 6 Urlaubs-Nachrichten mit (rot), obwohl sie fürs Anschreiben nichts bringen. Rechts im neuen Chat liest sie nur Ihre Frage.' :
+      n < 12 ? `Links liest die KI ${n} Nachrichten, 6 davon zum Urlaub. Rechts nur die ${n - 6} zur Bewerbung.` :
       `Gleiche Arbeit, aber links ${sl} Blöcke und rechts ${sk}. Der neue Chat hat ${sl - sk} Blöcke gespart, fast die Hälfte.`;
   let n = 1;
   const malen = () => {
